@@ -3,213 +3,200 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>LIG1 Community</title>
-<meta name="description" content="Werde Teil der LIGONE Community. Zugang für Besitzer und direkter Einstieg.">
+<!-- ===== BASIC SEO ===== -->
+<title>LIG1 – Einstieg ins neue System | LIGONE Community</title>
+<meta name="description" content="Das neue System startet mit Dir. Direkter Einstieg, Live Performance und exklusiver Zugang für LIG1 Besitzer.">
 <meta name="robots" content="index, follow">
+<link rel="canonical" href="https://ligone-token.github.io/lig1/">
+<meta name="author" content="LIGONE Community">
+<meta name="theme-color" content="#ffffff">
 
+<!-- ===== FAVICON ===== -->
 <link rel="icon" type="image/png" sizes="32x32" href="ligone_logo_32x32.png">
 
+<!-- ===== PRELOAD LOGO (LCP BOOST) ===== -->
+<link rel="preload" as="image" href="ligone_logo.jpg">
+
+<!-- ===== OPEN GRAPH ===== -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="LIG1 Community">
-<meta property="og:description" content="Werde Teil der LIGONE Community">
+<meta property="og:title" content="Das neue System startet mit Dir | LIG1">
+<meta property="og:description" content="Direkter Einstieg, Live Performance und Community Zugang.">
 <meta property="og:image" content="https://ligone-token.github.io/lig1/og-lig1.png">
 <meta property="og:url" content="https://ligone-token.github.io/lig1/">
+<meta property="og:locale" content="de_DE">
 
-<link rel="preconnect" href="https://ligone-token.github.io">
-<link rel="preconnect" href="https://polygon-rpc.com">
+<!-- ===== TWITTER ===== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Das neue System startet mit Dir">
+<meta name="twitter:description" content="Direkter Einstieg und exklusiver Zugang.">
+<meta name="twitter:image" content="https://ligone-token.github.io/lig1/og-lig1.png">
+
+<!-- ===== STRUCTURED DATA ===== -->
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"WebSite",
+ "name":"LIG1 Community",
+ "url":"https://ligone-token.github.io/lig1/",
+ "description":"Einstieg ins neue System mit direktem Zugang und Community Teilnahme.",
+ "publisher":{"@type":"Organization","name":"LIGONE"}
+}
+</script>
 
 <style>
-
-/* ===== GLOBAL ===== */
-
 body{
 margin:0;
-font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-color:#111;
-background:white;
+font-family:system-ui;
+background:linear-gradient(135deg,#ffffff 0%,#e0f2fe 60%,#fef9c3 100%);
 text-align:center;
+color:#111;
 }
 
-/* ===== HERO ===== */
-
+/* HERO */
 .hero{
-padding:90px 20px 70px;
-background:
-radial-gradient(circle at 50% 25%, #fde68a 0%, transparent 60%),
-linear-gradient(135deg,#ffffff 0%,#e0f2fe 100%);
+position:relative;
+padding:120px 20px 90px;
+overflow see-through;
+}
+
+.hero-glow{
+position:absolute;
+top:40%;
+left:50%;
+transform:translate(-50%,-50%);
+width:800px;
+height:800px;
+background:radial-gradient(circle,rgba(253,224,71,.55),transparent 70%);
+animation:pulse 4s infinite;
+}
+
+@keyframes pulse{
+0%,100%{transform:translate(-50%,-50%) scale(1)}
+50%{transform:translate(-50%,-50%) scale(1.08)}
+}
+
+.hero-card{
+position:relative;
+max-width:720px;
+margin:auto;
+padding:55px 35px;
+background:rgba(255,255,255,.85);
+border-radius:28px;
+box-shadow:0 30px 70px rgba(0,0,0,.12);
 }
 
 .hero-logo{
-width:130px;
+width:160px;
 margin-bottom:30px;
 }
 
-.hero h1{
-font-size:58px;
+h1{
+font-size:64px;
 font-weight:900;
-letter-spacing:-1px;
-margin:0 0 14px;
+margin:0 0 18px;
 }
 
-.hero p{
+.hero-sub{
 font-size:22px;
-opacity:.75;
-margin-bottom:35px;
+margin-bottom:40px;
+opacity:.8;
 }
 
-.cta-main{
+.cta{
 display:inline-block;
 padding:24px 48px;
 font-size:22px;
 font-weight:900;
 border-radius:18px;
 text-decoration:none;
-background:linear-gradient(135deg,#22c55e,#16a34a);
 color:white;
-box-shadow:0 18px 45px rgba(34,197,94,.35);
-transition:.15s;
+background:linear-gradient(135deg,#22c55e,#16a34a);
+box-shadow:0 20px 50px rgba(34,197,94,.45);
 }
-
-.cta-main:hover{transform:scale(1.06);}
-
-/* ===== CONTENT CARDS ===== */
 
 .box{
 background:white;
 padding:26px;
 border-radius:18px;
-margin:24px auto;
+margin:25px auto;
 max-width:560px;
 box-shadow:0 10px 28px rgba(0,0,0,.08);
 }
 
-.counter{
-font-size:32px;
-font-weight:900;
-min-height:38px;
-}
-
-.btn{
-display:inline-block;
-margin:8px;
-padding:16px 28px;
-border-radius:14px;
-font-weight:800;
-text-decoration:none;
-border:none;
-cursor:pointer;
-font-size:16px;
-}
-
-.buy{background:#16a34a;color:white}
-.link{background:#111;color:white}
-
-input{
-width:100%;
-padding:14px;
-border-radius:10px;
-border:1px solid #ddd;
-margin-bottom:12px;
-font-size:15px;
-}
-
+.counter{font-size:32px;font-weight:900;min-height:36px}
+.btn{padding:14px 24px;border-radius:12px;background:#111;color:white;border:none;cursor:pointer}
+input{width:100%;padding:14px;border-radius:10px;border:1px solid #ddd;margin-bottom:12px}
 .members-only{display:none}
-
 </style>
 </head>
 
 <body>
 
-<!-- ================= HERO ================= -->
-
 <section class="hero">
+<div class="hero-glow"></div>
 
-<img src="ligone_logo_32x32.png" class="hero-logo">
+<div class="hero-card">
+<img src="ligone_logo.jpg" class="hero-logo" alt="LIGONE Logo">
 
-<h1>SEI TEIL DER BEWEGUNG</h1>
+<h1>DAS NEUE SYSTEM<br>STARTET MIT DIR</h1>
+<p class="hero-sub">Direkter Zugang. Sofort möglich.</p>
 
-<p>Eine wachsende Community. Ein gemeinsamer Weg nach vorne.</p>
-
-<a class="cta-main" href="DEIN_KAUFLINK" target="_blank">
-JETZT EINSTEIGEN
-</a>
-
+<a class="cta" href="DEIN_KAUFLINK" target="_blank">JETZT EINSTEIGEN</a>
+</div>
 </section>
 
-<!-- ================= TELEGRAM ================= -->
+<section class="box">
+<h2>Was ist LIG1?</h2>
+<p>
+LIG1 ist Teil eines neuen Systems mit direktem Zugang,
+Community Beteiligung und transparenter Entwicklung.
+Diese Seite bietet Einstieg, Live Performance und
+exklusive Funktionen für Besitzer.
+</p>
+</section>
 
 <div class="box">
 <h3>Community</h3>
-<a class="btn link" href="TELEGRAM_LINK" target="_blank">
-Telegram Gruppe beitreten
-</a>
+<a class="btn" href="TELEGRAM_LINK" target="_blank">Telegram Gruppe</a>
 </div>
-
-<!-- ================= PERFORMANCE ================= -->
 
 <div class="box">
 <h3>Performance seit 16.01.2026</h3>
 <div class="counter" id="growthValue">lädt…</div>
 </div>
 
-<!-- ================= WALLET ================= -->
-
 <div class="box">
 <h3>LIG1 Besitz prüfen</h3>
-
 <input id="walletInput" placeholder="Walletadresse 0x...">
-
-<button class="btn link" onclick="checkWallet()">Wallet prüfen</button>
-<button class="btn link" onclick="connectWallet()">MetaMask verbinden</button>
-
+<button class="btn" onclick="checkWallet()">Wallet prüfen</button>
+<button class="btn" onclick="connectWallet()">MetaMask verbinden</button>
 <div id="walletResult"></div>
 </div>
-
-<!-- ================= MEMBERS ================= -->
 
 <div class="box members-only">
 <h3>Mitgliederbereich freigeschaltet</h3>
 </div>
 
-<!-- ================= SHARE ================= -->
-
-<div class="box">
-<h3>Seite teilen</h3>
-<button class="btn link" onclick="sharePage()">Teilen</button>
-<div class="counter" id="shareCount">0</div>
-</div>
-
-<!-- ================= SUPPORT ================= -->
-
 <div class="box">
 <h3>Support</h3>
-<a class="btn link" href="mailto:DEINE_EMAIL">Mail senden</a>
+<a class="btn" href="mailto:DEINE_EMAIL">Mail senden</a>
 </div>
 
 <script>
-
-/* ================= PERFORMANCE ================= */
-
 const PERF_URL="https://ligone-token.github.io/ligone-web/data/performance-since-2026-01-16.json";
 
 async function loadGrowth(){
 try{
-const res=await fetch(PERF_URL+"?v="+Date.now(),{cache:"no-store"});
-const data=await res.json();
-const lig1=data.find(a=>a.asset==="LIG1");
-if(!lig1)return;
-const el=document.getElementById("growthValue");
-el.textContent=Number(lig1.total_percent).toFixed(2)+" %";
-el.style.color=lig1.total_percent>=0?"#16a34a":"#dc2626";
+const r=await fetch(PERF_URL+"?v="+Date.now());
+const d=await r.json();
+const l=d.find(a=>a.asset==="LIG1");
+if(l)document.getElementById("growthValue").textContent=l.total_percent+" %";
 }catch{}
 }
 loadGrowth();
 setInterval(loadGrowth,60000);
-
-
-/* ================= ETHERS LAZY LOAD ================= */
 
 async function loadEthers(){
 if(window.ethers)return;
@@ -221,27 +208,18 @@ document.body.appendChild(s);
 });
 }
 
-
-/* ================= WALLET CHECK ================= */
-
 const CONTRACT="0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d";
 const RPC="https://polygon-rpc.com";
 
-const ABI=[{
-constant:true,
-inputs:[{name:"owner",type:"address"}],
-name:"balanceOf",
-outputs:[{name:"",type:"uint256"}],
-type:"function"
-}];
+const ABI=[{constant:true,inputs:[{name:"owner",type:"address"}],name:"balanceOf",outputs:[{name:"",type:"uint256"}],type:"function"}];
 
 async function checkWallet(){
 await loadEthers();
 const addr=document.getElementById("walletInput").value.trim();
 const provider=new ethers.providers.JsonRpcProvider(RPC);
-const contract=new ethers.Contract(CONTRACT,ABI,provider);
-const balance=await contract.balanceOf(addr);
-showResult(balance);
+const c=new ethers.Contract(CONTRACT,ABI,provider);
+const b=await c.balanceOf(addr);
+show(b);
 }
 
 async function connectWallet(){
@@ -251,12 +229,12 @@ await provider.send("eth_requestAccounts",[]);
 const signer=provider.getSigner();
 const addr=await signer.getAddress();
 document.getElementById("walletInput").value=addr;
-const contract=new ethers.Contract(CONTRACT,ABI,provider);
-const balance=await contract.balanceOf(addr);
-showResult(balance);
+const c=new ethers.Contract(CONTRACT,ABI,provider);
+const b=await c.balanceOf(addr);
+show(b);
 }
 
-function showResult(balance){
+function show(balance){
 const el=document.getElementById("walletResult");
 if(balance.gt(0)){
 el.textContent="Besitz bestätigt";
@@ -265,22 +243,6 @@ document.querySelector(".members-only").style.display="block";
 el.textContent="Kein Besitz";
 }
 }
-
-
-/* ================= SHARE ================= */
-
-function sharePage(){
-if(navigator.share){
-navigator.share({title:"LIG1",url:location.href});
-}
-let c=localStorage.getItem("shareCount")||0;
-c++;
-localStorage.setItem("shareCount",c);
-document.getElementById("shareCount").innerText=c;
-}
-document.getElementById("shareCount").innerText=
-localStorage.getItem("shareCount")||0;
-
 </script>
 
 </body>
