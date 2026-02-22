@@ -1,166 +1,145 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta name="google-site-verification" content="YRRh6jvBiPgsqxbRXpFUyRfganm4lP1V1yTXE7MvlhQ" />
 
 <title>LIG1 – Einstieg in ein transparentes Finanzsystem</title>
 
-<meta name="description" content="Entdecke LIG1, ein transparent aufgebautes Community Netzwerk mit exklusiven Mitgliederbereichen, Wachstum seit Start und direktem Einstieg.">
-<meta name="keywords" content="LIG1, Community Netzwerk, Blockchain Zugang, Mitgliederbereich, transparentes Finanzsystem, Token Zugang, Netzwerk Wachstum">
+<meta name="description" content="LIG1 Community Netzwerk mit Live Wachstum seit 16.01.2026, exklusivem Mitgliederzugang und direktem Einstieg.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="LIGONE">
 
 <link rel="canonical" href="https://ligone-token.github.io/lig1/">
 
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="LIG1 – Einstieg in ein transparentes Finanzsystem">
-<meta property="og:description" content="Community Netzwerk mit Wachstum, Mitgliederzugang und direktem Einstieg.">
+<meta property="og:description" content="Live Wachstum seit 16.01.2026. Exklusiver Zugang für Besitzer.">
 <meta property="og:image" content="https://ligone-token.github.io/lig1/og-lig1.png">
 <meta property="og:url" content="https://ligone-token.github.io/lig1/">
 
-<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="LIG1 – Einstieg in ein transparentes Finanzsystem">
-<meta name="twitter:description" content="Community Netzwerk mit Wachstum und exklusivem Zugang.">
 <meta name="twitter:image" content="https://ligone-token.github.io/lig1/og-lig1.png">
 
-<!-- Structured Data -->
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "Organization",
- "name": "LIG1",
- "url": "https://ligone-token.github.io/lig1/",
- "logo": "https://ligone-token.github.io/lig1/og-lig1.png"
-}
-</script>
+<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.min.js"></script>
 
 <style>
-body{
-margin:0;
-font-family:system-ui, Arial;
-background:#0f172a;
-color:white;
-text-align:center;
-padding:40px 20px;
-}
-
-h1{
-font-size:38px;
-margin-bottom:10px;
-}
-
-.subtitle{
-opacity:0.85;
-margin-bottom:25px;
-}
-
-.btn{
-display:inline-block;
-margin:8px;
-padding:16px 28px;
-border-radius:12px;
-font-weight:700;
-text-decoration:none;
-border:none;
-cursor:pointer;
-}
-
+body{margin:0;font-family:system-ui;background:#0f172a;color:white;text-align:center;padding:40px 20px}
+h1{font-size:36px;margin-bottom:10px}
+.btn{display:inline-block;margin:8px;padding:16px 28px;border-radius:12px;font-weight:700;text-decoration:none;border:none;cursor:pointer}
 .buy{background:#22c55e;color:black}
-.member{background:#3b82f6;color:white}
 .link{background:#1e293b;color:white}
-
-.box{
-background:#111827;
-padding:20px;
-border-radius:14px;
-margin:18px auto;
-max-width:520px;
-}
-
-.counter{
-font-size:26px;
-font-weight:800;
-margin-top:10px;
-}
-
-footer{
-margin-top:40px;
-opacity:0.6;
-font-size:14px;
-}
+.box{background:#111827;padding:20px;border-radius:14px;margin:18px auto;max-width:520px}
+.counter{font-size:26px;font-weight:800;margin-top:10px}
+.members-only{display:none}
 </style>
+
 </head>
 
 <body>
 
 <h1>Mehr Kontrolle über deine finanzielle Zukunft</h1>
-<div class="subtitle">
-Transparent aufgebaut. Gemeinschaftlich getragen.
-</div>
 
 <a class="btn buy" href="DEIN_KAUFLINK">LIG1 kaufen</a>
-<button class="btn member" onclick="checkAccess()">Mitgliederbereich</button>
 
 <div class="box">
 <h3>Entwicklung seit 16.01.2026</h3>
-<div class="counter">+ XX % Wachstum</div>
+<div class="counter" id="growthValue">lädt…</div>
 </div>
 
 <div class="box">
-<h3>Nur für LIG1 Besitzer</h3>
-<button class="btn link" onclick="checkAccess()">Dashboard</button>
-<button class="btn link" onclick="checkAccess()">Abstimmungen</button>
-<button class="btn link" onclick="checkAccess()">Exklusive Updates</button>
+<h3>LIG1 Besitz prüfen</h3>
+<input id="walletInput" placeholder="Walletadresse 0x..." style="width:100%;padding:12px;border-radius:8px;border:none;margin-bottom:10px">
+<button class="btn link" onclick="checkWallet()">Wallet prüfen</button>
+<button class="btn link" onclick="connectWallet()">MetaMask verbinden</button>
+<div id="walletResult" style="margin-top:10px;font-weight:700"></div>
 </div>
 
-<div class="box">
-<h3>Wichtige Links</h3>
-<a class="btn link" href="#">Preis & Liquidität</a>
-<a class="btn link" href="#">Projekt Erklärung</a>
-<a class="btn link" href="#">Community</a>
+<div class="box members-only">
+<h3>Mitgliederbereich</h3>
+<p>Zugang bestätigt</p>
 </div>
 
 <div class="box">
 <h3>Seite teilen</h3>
-<button class="btn link" onclick="sharePage()">Jetzt teilen</button>
+<button class="btn link" onclick="sharePage()">Teilen</button>
 <div class="counter" id="shareCount">0</div>
-<p>Mal geteilt</p>
 </div>
 
 <div class="box">
-<h3>Probleme oder Fragen?</h3>
+<h3>Support</h3>
 <a class="btn link" href="mailto:DEINE_EMAIL">Mail senden</a>
 </div>
 
-<footer>
-© LIG1 Community
-</footer>
-
 <script>
-function checkAccess(){
-alert("Wallet Prüfung erforderlich (Token-Gated Bereich)");
+
+/* ===== KONFIG ===== */
+
+const PERF_URL="https://ligone-token.github.io/ligone-web/data/performance-since-2026-01-16.json";
+const CONTRACT="0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d";
+const RPC="https://polygon-rpc.com";
+
+/* ===== PERFORMANCE ===== */
+
+async function loadGrowth(){
+const res=await fetch(PERF_URL+"?v="+Date.now(),{cache:"no-store"});
+const data=await res.json();
+const lig1=data.find(a=>a.asset==="LIG1");
+if(!lig1)return;
+const el=document.getElementById("growthValue");
+el.textContent=Number(lig1.total_percent).toFixed(2)+" %";
+el.style.color=lig1.total_percent>=0?"#10b981":"#ef4444";
 }
+loadGrowth();
+setInterval(loadGrowth,60000);
+
+/* ===== WALLET ===== */
+
+const ABI=[{"constant":true,"inputs":[{"name":"owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"type":"function"}];
+
+async function checkWallet(){
+const addr=document.getElementById("walletInput").value.trim();
+const provider=new ethers.providers.JsonRpcProvider(RPC);
+const contract=new ethers.Contract(CONTRACT,ABI,provider);
+const balance=await contract.balanceOf(addr);
+showResult(balance);
+}
+
+async function connectWallet(){
+const provider=new ethers.providers.Web3Provider(window.ethereum);
+await provider.send("eth_requestAccounts",[]);
+const signer=provider.getSigner();
+const addr=await signer.getAddress();
+document.getElementById("walletInput").value=addr;
+const contract=new ethers.Contract(CONTRACT,ABI,provider);
+const balance=await contract.balanceOf(addr);
+showResult(balance);
+}
+
+function showResult(balance){
+const el=document.getElementById("walletResult");
+if(balance.gt(0)){
+el.innerHTML="✅ LIG1 Besitz bestätigt";
+document.querySelector(".members-only").style.display="block";
+}else{
+el.innerHTML="❌ Kein Besitz";
+}
+}
+
+/* ===== SHARE ===== */
 
 function sharePage(){
 if(navigator.share){
-navigator.share({
-title:"LIG1",
-url:window.location.href
-});
+navigator.share({title:"LIG1",url:location.href});
 }
-let count = localStorage.getItem("shareCount") || 0;
-count++;
-localStorage.setItem("shareCount",count);
-document.getElementById("shareCount").innerText=count;
+let c=localStorage.getItem("shareCount")||0;
+c++;
+localStorage.setItem("shareCount",c);
+document.getElementById("shareCount").innerText=c;
 }
+document.getElementById("shareCount").innerText=localStorage.getItem("shareCount")||0;
 
-document.getElementById("shareCount").innerText=
-localStorage.getItem("shareCount") || 0;
 </script>
 
 </body>
