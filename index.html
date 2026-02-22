@@ -1,0 +1,1009 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>FakeNews Filter – Transparenz-Analyse für Behauptungen (Claim → Belege → Einordnung)</title>
+  <meta name="description" content="FakeNews Filter (MVP): Extrahiere überprüfbare Claims, sammle Belege, bewerte Quellenqualität und Kontext – ohne vorgefertigte Antworten, ohne politische Agenda." />
+  <meta name="keywords" content="FakeNews Filter, Faktencheck, Claim Check, Quellen prüfen, Desinformation erkennen, Manipulation erkennen, Fact Check Tool, Transparenz Score" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="LIGONE" />
+  <meta name="theme-color" content="#0b1020" />
+
+  <!-- Canonical (GitHub Pages) -->
+  <link rel="canonical" href="https://ligone-token.github.io/fakenews-filter/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="FakeNews Filter" />
+  <meta property="og:title" content="FakeNews Filter – Transparenz statt Manipulation" />
+  <meta property="og:description" content="Claim → Belege → Einordnung. Keine vorgefertigten Antworten. Jede Aussage wird nachvollziehbar anhand der Beleglage bewertet." />
+  <meta property="og:url" content="https://ligone-token.github.io/fakenews-filter/" />
+  <meta property="og:image" content="https://ligone-token.github.io/fakenews-filter/og-fakenews-filter.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="de_CH" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FakeNews Filter – Transparenz statt Manipulation" />
+  <meta name="twitter:description" content="Claim → Belege → Einordnung. Ohne vorgefertigte Antworten." />
+  <meta name="twitter:image" content="https://ligone-token.github.io/fakenews-filter/og-fakenews-filter.png" />
+
+  <!-- Structured Data (WebSite + SoftwareApplication) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"FakeNews Filter",
+    "url":"https://ligone-token.github.io/fakenews-filter/",
+    "inLanguage":"de-CH",
+    "description":"Transparenz-Analyse für Behauptungen: Claim-Extraktion, Belege, Quellenqualität und Kontext – ohne vorgefertigte Antworten.",
+    "publisher":{
+      "@type":"Organization",
+      "name":"LIGONE"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"FakeNews Filter (MVP)",
+    "applicationCategory":"WebApplication",
+    "operatingSystem":"All",
+    "url":"https://ligone-token.github.io/fakenews-filter/",
+    "description":"MVP-Tool zur transparenten Analyse überprüfbarer Behauptungen (Claims) mittels Beleglage, Quellenqualität, Kontext und Manipulationssignalen – ohne vorgefertigte Antworten.",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"CHF"}
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#0b1020;
+      --panel:#111a33;
+      --panel2:#0f1730;
+      --text:#eaf0ff;
+      --muted:#b9c2dd;
+      --faint:#7e89ad;
+      --line:rgba(255,255,255,.08);
+      --good:#38d39f;
+      --warn:#ffd166;
+      --bad:#ff5c7a;
+      --info:#63b3ff;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius:18px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--sans);
+      background:
+        radial-gradient(1100px 600px at 18% -8%, rgba(99,179,255,.24), transparent 60%),
+        radial-gradient(900px 520px at 100% 0%, rgba(56,211,159,.18), transparent 58%),
+        radial-gradient(1000px 700px at 65% 120%, rgba(255,209,102,.14), transparent 62%),
+        linear-gradient(180deg, #070b17 0%, #0b1020 30%, #0b1020 100%);
+      color:var(--text);
+    }
+    a{color:inherit}
+    .wrap{max-width:1200px;margin:0 auto;padding:22px 18px 70px}
+    header{
+      display:flex;align-items:flex-start;justify-content:space-between;gap:16px;
+      padding:12px 0 8px;
+    }
+    .brand{display:flex;flex-direction:column;gap:6px}
+    .tagline{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:8px 12px;border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
+      font-weight:900;font-size:12px;
+      width:fit-content;
+    }
+    .dot{width:10px;height:10px;border-radius:999px;background:var(--good);box-shadow:0 0 18px rgba(56,211,159,.35)}
+    h1{margin:0;font-size:28px;letter-spacing:.2px;line-height:1.1}
+    .sub{color:var(--muted);font-size:14px;line-height:1.5;max-width:820px}
+    .pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+    .pill{
+      font-size:12px;color:var(--muted);
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      padding:6px 10px;border-radius:999px
+    }
+    .rightTop{
+      display:flex;flex-direction:column;gap:8px;align-items:flex-end;
+    }
+    .mini{
+      font-size:12px;color:var(--faint);
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      padding:8px 10px;border-radius:14px;
+      text-align:right;
+    }
+
+    .hero{
+      margin-top:12px;
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .heroInner{
+      padding:18px 16px 14px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
+      align-items:stretch;
+    }
+    @media (max-width: 980px){
+      .heroInner{grid-template-columns:1fr}
+      .rightTop{align-items:flex-start}
+    }
+    .ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .btn{
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(27,42,87,.95), rgba(17,26,51,.9));
+      color:var(--text);
+      border-radius:16px;
+      padding:11px 14px;
+      font-weight:1000;
+      cursor:pointer;
+      user-select:none;
+      letter-spacing:.2px;
+    }
+    .btn:hover{filter:brightness(1.06)}
+    .btn:active{transform:translateY(1px)}
+    .btn.secondary{
+      background:rgba(255,255,255,.03);
+      color:var(--muted);
+      font-weight:900;
+    }
+
+    .trust{
+      border-left:3px solid rgba(56,211,159,.65);
+      padding:10px 12px;
+      background:rgba(56,211,159,.06);
+      border-radius:16px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.45;
+    }
+
+    .grid{
+      display:grid;gap:14px;
+      grid-template-columns: 1.15fr .85fr;
+      margin-top:14px;
+    }
+    @media (max-width: 980px){
+      .grid{grid-template-columns:1fr}
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .card .hd{
+      padding:14px 14px 12px;
+      border-bottom:1px solid var(--line);
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      background:rgba(0,0,0,.12);
+    }
+    .card .hd .ttl{font-weight:1000;font-size:13px;letter-spacing:.25px;color:var(--text)}
+    .card .bd{padding:14px}
+
+    textarea{
+      width:100%;
+      min-height:180px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.16);
+      color:var(--text);
+      padding:12px 12px;
+      outline:none;
+      resize:vertical;
+      line-height:1.45;
+      font-size:14px;
+    }
+    .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .field{
+      display:flex;flex-direction:column;gap:6px;flex:1 1 230px;
+    }
+    label{font-size:12px;color:var(--muted);font-weight:1000}
+    input[type="text"]{
+      width:100%;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.16);
+      color:var(--text);
+      padding:10px 12px;
+      outline:none;
+      font-size:13px;
+    }
+    .hint{font-size:12px;color:var(--faint);line-height:1.45}
+    .list{display:flex;flex-direction:column;gap:10px}
+    .item{
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.14);
+      border-radius:18px;
+      padding:12px;
+    }
+    .item .top{
+      display:flex;justify-content:space-between;gap:10px;align-items:flex-start;
+    }
+    .claimtxt{font-weight:1000;font-size:13px;line-height:1.35}
+    .badge{
+      font-size:11px;font-weight:1000;
+      border:1px solid var(--line);
+      padding:4px 8px;border-radius:999px;color:var(--muted);
+      background:rgba(255,255,255,.03);
+      white-space:nowrap;
+    }
+    .badge.good{color:#bff8e6;background:rgba(56,211,159,.12)}
+    .badge.warn{color:#fff2c9;background:rgba(255,209,102,.12)}
+    .badge.bad{color:#ffd0d8;background:rgba(255,92,122,.12)}
+    .meta{
+      margin-top:8px;
+      display:grid;grid-template-columns:1fr 1fr;gap:10px;
+    }
+    .meta .box{
+      border:1px dashed rgba(255,255,255,.10);
+      border-radius:16px;padding:10px;
+      background:rgba(255,255,255,.02);
+    }
+    .k{font-size:11px;color:var(--faint);font-weight:1000;margin-bottom:6px}
+    .v{font-size:12px;color:var(--muted);line-height:1.35}
+    .eviRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .evi{
+      flex:1 1 260px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:10px;
+      background:rgba(0,0,0,.12);
+    }
+    .evi input{margin-top:6px}
+    .small{font-size:12px;color:var(--muted);line-height:1.45}
+    .hr{height:1px;background:var(--line);margin:12px 0}
+    .scoreBox{
+      display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+    }
+    .score{
+      width:128px;height:128px;border-radius:22px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.14);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+    }
+    .score .n{font-size:36px;font-weight:1100;letter-spacing:-.5px}
+    .score .t{font-size:12px;color:var(--muted);font-weight:1000;margin-top:2px}
+    .explain{flex:1 1 320px}
+    ul{margin:8px 0 0 18px;color:var(--muted);font-size:13px;line-height:1.5}
+    .mono{
+      font-family:var(--mono);
+      font-size:12px;
+      color:#dce6ff;
+      background:rgba(0,0,0,.20);
+      border:1px solid var(--line);
+      padding:10px;border-radius:16px;
+      overflow:auto;
+      white-space:pre-wrap;
+      word-break:break-word;
+    }
+    footer{margin-top:18px;color:var(--faint);font-size:12px;line-height:1.55}
+    .toast{
+      position:fixed;left:50%;transform:translateX(-50%);
+      bottom:16px;
+      background:rgba(0,0,0,.65);
+      border:1px solid var(--line);
+      color:var(--text);
+      padding:10px 12px;border-radius:14px;
+      font-weight:1000;font-size:12px;
+      opacity:0;pointer-events:none;
+      transition:.2s ease;
+    }
+    .toast.on{opacity:1}
+
+    /* Accessibility */
+    :focus-visible{outline:2px solid rgba(99,179,255,.75);outline-offset:2px;border-radius:12px}
+
+    /* FB Safe Area note (not visible) */
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="brand">
+        <div class="tagline"><span class="dot"></span> Transparenz statt Manipulation • ohne vorgefertigte Antworten</div>
+        <h1>FakeNews Filter</h1>
+        <div class="sub">
+          Ein neutrales Analyse-Tool: <b>Claims extrahieren</b>, <b>Belege sammeln</b>, <b>Quellenqualität & Kontext bewerten</b>.
+          Kein politisches Framing – nur nachvollziehbare Begründungen mit Quellen.
+        </div>
+        <div class="pillrow">
+          <div class="pill">Claim → Belege → Einordnung</div>
+          <div class="pill">Quellenqualität statt Ideologie</div>
+          <div class="pill">Unsicherheit ist erlaubt</div>
+          <div class="pill">Export: Copy / JSON</div>
+        </div>
+      </div>
+
+      <div class="rightTop">
+        <div class="mini"><b>Live:</b> https://ligone-token.github.io/fakenews-filter/</div>
+        <div class="mini"><b>OG:</b> og-fakenews-filter.png (1200×630)</div>
+      </div>
+    </header>
+
+    <section class="hero" aria-label="Mission">
+      <div class="heroInner">
+        <div>
+          <div class="sub" style="font-size:15px;max-width:860px">
+            <b>Mission:</b> Wir stärken Urteilsfähigkeit, indem wir überprüfbare Behauptungen transparent analysieren.
+            Nicht um “Recht zu haben”, sondern um Klarheit zu gewinnen.
+          </div>
+
+          <div style="height:10px"></div>
+
+          <div class="trust">
+            <b>Prinzip:</b> Auch Aussagen, die wir selbst glauben, müssen der gleichen Prüfung standhalten.
+            Nur so entsteht Vertrauen.
+          </div>
+
+          <div class="ctaRow">
+            <button class="btn" id="btnJump">Jetzt prüfen</button>
+            <button class="btn secondary" id="btnDemo">Demo-Text laden</button>
+          </div>
+
+          <div style="height:10px"></div>
+          <div class="hint">
+            Tipp: Für maximale Wirkung pro Claim 1–3 unabhängige Quellen hinzufügen (Primärquellen zuerst) + kurzer Auszug.
+          </div>
+        </div>
+
+        <div>
+          <div class="card" style="box-shadow:none">
+            <div class="hd"><div class="ttl">Was dieses Tool nicht ist</div></div>
+            <div class="bd">
+              <ul>
+                <li>Kein “Wahrheitsrichter” ohne Belege</li>
+                <li>Keine politischen Vorgaben</li>
+                <li>Kein Narrativ-Katalog</li>
+              </ul>
+              <div class="hr"></div>
+              <div class="small">
+                Es bewertet <b>Beleglage</b>, <b>Quellenqualität</b>, <b>Kontext</b> und <b>Manipulationssignale</b> –
+                und zeigt transparent, warum ein Ergebnis entsteht.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid" id="app">
+      <!-- LEFT -->
+      <section class="card">
+        <div class="hd">
+          <div class="ttl">1) Eingabe</div>
+          <div class="row">
+            <button class="btn secondary" id="btnClear">Leeren</button>
+          </div>
+        </div>
+        <div class="bd">
+          <div class="hint">
+            Füge Text, Thread, Artikel-Auszug oder Transcript ein. Das Tool extrahiert daraus einzelne überprüfbare Aussagen (Claims).
+            Danach fügst du pro Claim Belege hinzu.
+          </div>
+          <div style="height:10px"></div>
+          <textarea id="inputText" placeholder="Text hier einfügen …"></textarea>
+
+          <div style="height:12px"></div>
+
+          <div class="row">
+            <button class="btn" id="btnExtract">Claims extrahieren</button>
+
+            <div class="field" style="max-width:320px">
+              <label for="proxyUrl">Optional: Proxy-Backend URL (CORS-frei)</label>
+              <input id="proxyUrl" type="text" placeholder="z.B. https://dein-worker.example.com" />
+              <div class="hint">Wenn du den Worker nutzt, wird „URL einlesen“ aktiv (hilft bei Auszügen/Context).</div>
+            </div>
+          </div>
+
+          <div class="hr"></div>
+
+          <div class="row">
+            <div class="field">
+              <label for="topic">Thema/Label (nur für Report-Titel)</label>
+              <input id="topic" type="text" placeholder="z.B. Gesundheit, Politik, Wirtschaft …" />
+            </div>
+            <div class="field">
+              <label for="lang">Sprache</label>
+              <input id="lang" type="text" value="de" />
+              <div class="hint">Für UI/Report. Analyse bleibt heuristisch & neutral.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT -->
+      <aside class="card">
+        <div class="hd">
+          <div class="ttl">2) Report</div>
+          <div class="row">
+            <button class="btn secondary" id="btnCopy">Report kopieren</button>
+            <button class="btn secondary" id="btnJson">JSON exportieren</button>
+          </div>
+        </div>
+        <div class="bd">
+          <div class="scoreBox">
+            <div class="score">
+              <div class="n" id="overallScore">—</div>
+              <div class="t">Score 0–100</div>
+            </div>
+            <div class="explain">
+              <div class="small" id="overallLabel"><b>Status:</b> —</div>
+              <ul id="overallReasons">
+                <li>Extrahiere Claims, füge Belege hinzu, dann „Score berechnen“.</li>
+              </ul>
+              <div style="height:10px"></div>
+              <button class="btn" id="btnScore">Score berechnen</button>
+            </div>
+          </div>
+
+          <div class="hr"></div>
+
+          <div class="small"><b>Export Vorschau:</b></div>
+          <div class="mono" id="reportPreview">{ }</div>
+        </div>
+      </aside>
+    </div>
+
+    <section class="card" style="margin-top:14px">
+      <div class="hd">
+        <div class="ttl">3) Claims & Belege</div>
+        <div class="row">
+          <button class="btn secondary" id="btnExpandAll">Alle öffnen</button>
+          <button class="btn secondary" id="btnCollapseAll">Alle schließen</button>
+        </div>
+      </div>
+      <div class="bd">
+        <div class="hint">
+          Für jeden Claim: Belege hinzufügen (Support / Contra / Neutral). Danach bewertet der Score Transparenz & Beleglage.
+        </div>
+        <div style="height:12px"></div>
+        <div class="list" id="claimsList"></div>
+      </div>
+    </section>
+
+    <footer>
+      <b>Hinweis:</b> Dieses MVP ersetzt keine professionelle Beratung. Es hilft, Behauptungen transparent einzuordnen:
+      Belege, Quellenqualität, Kontext, Manipulationssignale. Bei Gesundheit/Sicherheit: Primärquellen priorisieren.
+    </footer>
+  </div>
+
+  <div class="toast" id="toast">OK</div>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+
+  const state = {
+    claims: [],
+    createdAt: new Date().toISOString(),
+    topic: "",
+    lang: "de"
+  };
+
+  const MANIP_WORDS = [
+    "schock","skandal","geheim","zensur","lügenpresse","beweis","wahrheit",
+    "niemand spricht darüber","sie wollen nicht","viral","sofort","katastrophe",
+    "crash","untergang","betrug","system","elite","wach auf","endlich"
+  ];
+
+  function normalize(s){ return (s||"").trim(); }
+
+  function splitSentences(text){
+    const cleaned = text.replace(/\s+/g," ").replace(/([.!?])\s+/g,"$1\n");
+    return cleaned.split("\n").map(s=>s.trim()).filter(Boolean);
+  }
+
+  function isLikelyClaim(sentence){
+    const s = sentence.trim();
+    if (s.length < 18) return false;
+    const hasQuestion = /[?]$/.test(s);
+    const hasVerb = /\b(ist|sind|war|waren|wird|werden|hat|haben|zeigt|belegt|verursacht|führt|steigt|fällt|kostet|beträgt|gilt|galt|passierte|passiert)\b/i.test(s);
+    const hasNumberOrNamed = /\d|%|CHF|€|\b(Bund|admin\.ch|WHO|FDA|EU|UNO|UN|SNB|EZB|BIP|Inflation|Studie|Bericht|Gesetz|Verordnung)\b/i.test(s);
+    const tooOpinion = /\b(ich finde|ich glaube|meiner meinung|fühle|wir sollten|muss man)\b/i.test(s);
+    if (tooOpinion && !hasNumberOrNamed) return false;
+    if (hasQuestion && !hasNumberOrNamed) return false;
+    return hasVerb || hasNumberOrNamed;
+  }
+
+  function classifyClaim(sentence){
+    const s = sentence.trim();
+    const isQuestion = /[?]$/.test(s);
+    const hasShould = /\b(sollte|müsste|muss man|wir sollten)\b/i.test(s);
+    const hasValueWords = /\b(gerecht|ungerecht|schlimm|gut|böse|korrupt|lächerlich)\b/i.test(s);
+    if (isQuestion) return "frage";
+    if (hasShould || hasValueWords) return "wertung";
+    const hasFuture = /\b(wird|werden)\b/i.test(s) && /\b(kommen|passieren|steigt|fällt|crash)\b/i.test(s);
+    if (hasFuture) return "prognose";
+    return "fakt";
+  }
+
+  function manipulationSignals(text){
+    const t = text.toLowerCase();
+    let hits=0;
+    MANIP_WORDS.forEach(w => { if (t.includes(w)) hits++; });
+    const caps = (text.match(/[A-ZÄÖÜ]{4,}/g) || []).length;
+    const excls = (text.match(/!/g) || []).length;
+    const absolutes = (text.match(/\b(immer|nie|alle|niemand|100%|garantiert)\b/gi) || []).length;
+    return { hits, caps, excls, absolutes };
+  }
+
+  function domainFromUrl(u){
+    try { return new URL(u).hostname.replace(/^www\./,"").toLowerCase(); } catch { return ""; }
+  }
+
+  const SOURCE_HINTS = [
+    { match: /(\.gov|\.admin\.ch|\.bund\.de|\.europa\.eu)$/i, base: 85, label: "offiziell/behörde" },
+    { match: /(who\.int|cdc\.gov|ema\.europa\.eu|fda\.gov|swissmedic\.ch|bag\.admin\.ch)/i, base: 88, label: "gesundheitsbehörde" },
+    { match: /(oecd\.org|imf\.org|worldbank\.org|bis\.org|ecb\.europa\.eu|snb\.ch)/i, base: 82, label: "institution" },
+    { match: /(nature\.com|science\.org|nejm\.org|thelancet\.com|bmj\.com|jamanetwork\.com|cochranelibrary\.com|pubmed\.ncbi\.nlm\.nih\.gov)/i, base: 86, label: "peer-reviewed/medizin" },
+    { match: /(reuters\.com|apnews\.com|bbc\.(com|co\.uk)|tagesschau\.de|nzz\.ch|theguardian\.com|nytimes\.com|ft\.com)/i, base: 74, label: "nachrichten (stark)" },
+    { match: /(wikipedia\.org)/i, base: 62, label: "sekundär (wiki)" },
+    { match: /(medium\.com|substack\.com|blogspot\.|wordpress\.|tiktok\.com|facebook\.com|x\.com|twitter\.com|instagram\.com|youtube\.com)/i, base: 40, label: "user-generated" }
+  ];
+
+  function estimateSourceQuality(url){
+    const d = domainFromUrl(url);
+    if (!d) return { score: 0, label: "keine URL" };
+    for (const h of SOURCE_HINTS){
+      if (h.match.test(d)) return { score: h.base, label: h.label };
+    }
+    return { score: 55, label: "unbekannt" };
+  }
+
+  function scoreClaim(claim){
+    const m = manipulationSignals(claim.text);
+    const type = claim.type;
+
+    const ev = claim.evidence || [];
+    const urls = ev.map(e => e.url).filter(Boolean);
+    const uniqueDomains = new Set(urls.map(domainFromUrl).filter(Boolean));
+
+    let bestQ=0, avgQ=0;
+    if (ev.length){
+      const qs = ev.map(e => estimateSourceQuality(e.url).score).filter(n => n>0);
+      if (qs.length){
+        bestQ = Math.max(...qs);
+        avgQ = Math.round(qs.reduce((a,b)=>a+b,0)/qs.length);
+      }
+    }
+
+    const supportN = ev.filter(e => e.stance === "support").length;
+    const contradictN = ev.filter(e => e.stance === "contradict").length;
+    const neutralN = ev.filter(e => e.stance === "neutral").length;
+
+    const corroboration = Math.min(25, uniqueDomains.size * 8);
+
+    const hasNumbers = /\d|%|CHF|€/.test(claim.text);
+    const hasNamed = /\b(Studie|Bericht|Gesetz|Verordnung|Protokoll|Statistik|Daten)\b/i.test(claim.text);
+    const specificity = Math.min(15, (hasNumbers?8:0) + (hasNamed?7:0) + (claim.text.length>90?2:0));
+
+    const context = Math.min(15, (ev.some(e => (e.quote||"").trim().length>=30)?8:0) + (urls.length?7:0));
+
+    const manipPenalty = Math.min(15, m.hits*2 + m.caps*2 + Math.max(0,m.excls-1) + m.absolutes*2);
+
+    let typeAdj = 0;
+    if (type === "wertung" || type === "frage") typeAdj = -10;
+    if (type === "prognose") typeAdj = -6;
+
+    let stanceAdj = 0;
+    if (!ev.length) stanceAdj = -20;
+    else if (supportN && !contradictN) stanceAdj = +8;
+    else if (contradictN && !supportN) stanceAdj = -6;
+    else if (supportN && contradictN) stanceAdj = -4;
+
+    let score =
+      0
+      + Math.min(30, Math.round((avgQ*0.22) + (bestQ*0.18)))
+      + corroboration
+      + specificity
+      + context
+      + stanceAdj
+      + typeAdj
+      - manipPenalty;
+
+    score = Math.max(0, Math.min(100, Math.round(score)));
+
+    let label = "unbelegt";
+    if (type === "wertung" || type === "frage") label = "nicht verifizierbar (so formuliert)";
+    else if (!ev.length) label = "unbelegt (keine Quellen)";
+    else if (score >= 80) label = "gut belegt (methodisch stark)";
+    else if (score >= 60) label = "eher solide (weiter prüfen)";
+    else if (score >= 40) label = "kritisch (Kontext/Qualität fehlt)";
+    else label = "sehr kritisch (schwach / manipulativ / widersprüchlich)";
+
+    const reasons = [];
+    reasons.push(`Quellenqualität: best ${bestQ||0}/100, Ø ${avgQ||0}/100`);
+    reasons.push(`Unabhängige Domains: ${uniqueDomains.size} (Corroboration +${corroboration})`);
+    reasons.push(`Stances: support ${supportN}, contradict ${contradictN}, neutral ${neutralN}`);
+    if (manipPenalty) reasons.push(`Manipulationssignale: −${manipPenalty} (Trigger/CAPS/!/%/Absolut)`);
+    if (typeAdj) reasons.push(`Claim-Typ "${type}": ${typeAdj} (weniger direkt prüfbar)`);
+    if (context < 10) reasons.push(`Kontext: Zitat/Bezug dünn – mehr Auszug/Datum hilft`);
+    if (!ev.length) reasons.push(`Füge 1–3 Quellen hinzu (Primärquellen zuerst).`);
+
+    return { score, label, reasons };
+  }
+
+  function toast(msg="OK"){
+    const el = $("toast");
+    el.textContent = msg;
+    el.classList.add("on");
+    setTimeout(()=>el.classList.remove("on"), 1200);
+  }
+
+  function makeClaimObject(text){
+    const t = text.trim();
+    return {
+      id: crypto.randomUUID(),
+      text: t,
+      type: classifyClaim(t),
+      createdAt: new Date().toISOString(),
+      evidence: [
+        { url:"", stance:"support", quote:"", notes:"" },
+        { url:"", stance:"contradict", quote:"", notes:"" }
+      ],
+      open: false
+    };
+  }
+
+  function escapeHtml(s){
+    return (s||"").replace(/[&<>"']/g, (c)=>({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;" }[c]));
+  }
+  function escapeAttr(s){ return escapeHtml(s).replace(/"/g, "&quot;"); }
+
+  function renderEvidenceEditor(claim, idx, title){
+    const ev = claim.evidence[idx] || { url:"", stance:"neutral", quote:"", notes:"" };
+    const q = estimateSourceQuality(ev.url);
+    const qLabel = ev.url ? `${q.score}/100 • ${q.label}` : "—";
+
+    return `
+      <div class="evi">
+        <div class="k">${escapeHtml(title)} <span style="color:var(--faint);font-weight:1000">(${qLabel})</span></div>
+
+        <label class="hint">URL</label>
+        <input type="text" value="${escapeAttr(ev.url||"")}" placeholder="https://…" data-ev="url" data-id="${claim.id}" data-idx="${idx}"/>
+
+        <div style="height:8px"></div>
+
+        <div class="row">
+          <div class="field" style="min-width:170px">
+            <label>Stance</label>
+            <input type="text" value="${escapeAttr(ev.stance||"neutral")}" placeholder="support | contradict | neutral" data-ev="stance" data-id="${claim.id}" data-idx="${idx}"/>
+          </div>
+          <button class="btn secondary" data-act="fetch" data-id="${claim.id}" data-idx="${idx}">URL einlesen (Proxy)</button>
+        </div>
+
+        <div style="height:8px"></div>
+
+        <label class="hint">Zitat / relevanter Auszug (mind. 1–2 Sätze)</label>
+        <input type="text" value="${escapeAttr(ev.quote||"")}" placeholder="Zitat oder Kernaussage aus der Quelle…" data-ev="quote" data-id="${claim.id}" data-idx="${idx}"/>
+
+        <div style="height:8px"></div>
+
+        <label class="hint">Notizen (Datum, Kontext, warum relevant)</label>
+        <input type="text" value="${escapeAttr(ev.notes||"")}" placeholder="z.B. Datum, Abschnitt, Einschränkungen…" data-ev="notes" data-id="${claim.id}" data-idx="${idx}"/>
+      </div>
+    `;
+  }
+
+  function renderClaims(){
+    const root = $("claimsList");
+    root.innerHTML = "";
+
+    if (!state.claims.length){
+      root.innerHTML = `<div class="hint">Noch keine Claims. Klicke auf „Claims extrahieren“.</div>`;
+      return;
+    }
+
+    for (const c of state.claims){
+      const {score, label} = scoreClaim(c);
+      const badgeClass = score>=80 ? "good" : score>=60 ? "warn" : score>=40 ? "warn" : "bad";
+
+      const item = document.createElement("div");
+      item.className = "item";
+      item.innerHTML = `
+        <div class="top">
+          <div class="claimtxt">${escapeHtml(c.text)}</div>
+          <div class="badge ${badgeClass}">${escapeHtml(c.type)} • ${score}/100</div>
+        </div>
+
+        <div class="meta">
+          <div class="box">
+            <div class="k">Status</div>
+            <div class="v">${escapeHtml(label)}</div>
+          </div>
+          <div class="box">
+            <div class="k">Aktion</div>
+            <div class="v">
+              <button class="btn secondary" data-act="toggle" data-id="${c.id}">${c.open ? "Schließen" : "Öffnen"}</button>
+              <button class="btn secondary" data-act="search" data-id="${c.id}">Web-Suche-Links</button>
+              <button class="btn secondary" data-act="remove" data-id="${c.id}">Entfernen</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="details" style="margin-top:10px; display:${c.open ? "block" : "none"}">
+          <div class="small"><b>Belege hinzufügen</b> (Support / Contra / Neutral). Das Tool urteilt nicht politisch – es bewertet Transparenz & Beleglage.</div>
+
+          <div class="eviRow">
+            ${renderEvidenceEditor(c, 0, "Support-Beleg")}
+            ${renderEvidenceEditor(c, 1, "Contra-Beleg")}
+          </div>
+
+          <div class="hr"></div>
+
+          <div class="row">
+            <button class="btn secondary" data-act="addEv" data-id="${c.id}">+ weiterer Beleg</button>
+            <button class="btn" data-act="recalc" data-id="${c.id}">Score aktualisieren</button>
+          </div>
+        </div>
+      `;
+      root.appendChild(item);
+    }
+  }
+
+  function computeOverall(scoredClaims){
+    if (!scoredClaims.length){
+      return { score: "—", label: "—", reasons: ["Noch keine Claims."] };
+    }
+    const scores = scoredClaims.map(c => c.score);
+    const avg = Math.round(scores.reduce((a,b)=>a+b,0)/scores.length);
+
+    const withEv = scoredClaims.filter(c => (c.evidence||[]).length>0).length;
+    const evRatio = withEv / scoredClaims.length;
+    const evAdj = evRatio >= 0.75 ? +6 : evRatio >= 0.5 ? 0 : -10;
+
+    let score = Math.max(0, Math.min(100, avg + evAdj));
+
+    let label = "unbelegt / uneinheitlich";
+    if (score >= 80) label = "stark belegt (transparenter Report)";
+    else if (score >= 60) label = "solide, aber weiter absichern";
+    else if (score >= 40) label = "kritisch – Belege/Qualität fehlen";
+    else label = "sehr kritisch – schwach / widersprüchlich / manipulativ";
+
+    const reasons = [];
+    reasons.push(`Ø Claim-Score: ${avg}/100`);
+    reasons.push(`Claims mit Belegen: ${withEv}/${scoredClaims.length} (${Math.round(evRatio*100)}%)`);
+    if (evAdj) reasons.push(`Evidence-Abdeckung Anpassung: ${evAdj>0?"+":""}${evAdj}`);
+    reasons.push(`Score misst Transparenz/Beleglage – nicht “politische Richtigkeit”.`);
+
+    return { score, label, reasons };
+  }
+
+  function updateReportPreview(){
+    const topic = normalize($("topic").value);
+    const lang = normalize($("lang").value) || "de";
+    state.topic = topic;
+    state.lang = lang;
+
+    const scored = state.claims.map(c => {
+      const sc = scoreClaim(c);
+      return {
+        id: c.id,
+        text: c.text,
+        type: c.type,
+        score: sc.score,
+        label: sc.label,
+        reasons: sc.reasons,
+        evidence: (c.evidence||[]).filter(e => (e.url||e.quote||e.notes)).map(e => ({
+          url: e.url || "",
+          stance: e.stance || "neutral",
+          quote: e.quote || "",
+          notes: e.notes || "",
+          source_quality: e.url ? estimateSourceQuality(e.url) : {score:0,label:""}
+        }))
+      };
+    });
+
+    const overall = computeOverall(scored);
+    $("overallScore").textContent = overall.score;
+    $("overallLabel").innerHTML = `<b>Status:</b> ${escapeHtml(overall.label)}`;
+    $("overallReasons").innerHTML = overall.reasons.map(r => `<li>${escapeHtml(r)}</li>`).join("");
+
+    const report = {
+      meta: {
+        title: topic ? `FakeNews Filter Report – ${topic}` : "FakeNews Filter Report (MVP)",
+        created_at: state.createdAt,
+        language: lang,
+        method: "claim→evidence→source-quality→corroboration→context→manipulation-signals (no prefabricated topic answers)"
+      },
+      overall,
+      claims: scored
+    };
+
+    $("reportPreview").textContent = JSON.stringify(report, null, 2);
+    return report;
+  }
+
+  function buildShareText(report){
+    const o = report.overall;
+    const lines = [];
+    lines.push(report.meta.title);
+    lines.push(`Datum: ${new Date(report.meta.created_at).toLocaleString()}`);
+    lines.push(`Overall: ${o.score}/100 – ${o.label}`);
+    lines.push("");
+    lines.push("Claims:");
+    for (const c of report.claims.slice(0, 8)){
+      lines.push(`- (${c.score}/100) [${c.type}] ${c.text}`);
+      const ev = (c.evidence||[]).slice(0, 2);
+      for (const e of ev){
+        if (e.url) lines.push(`  • ${e.stance}: ${e.url}`);
+      }
+    }
+    lines.push("");
+    lines.push("Methodik: Claim→Belege→Quellenqualität→Mehrfachbestätigung→Kontext→Manipulationssignale. Keine vorgefertigten Themenurteile.");
+    return lines.join("\n");
+  }
+
+  function extractClaims(){
+    const text = normalize($("inputText").value);
+    if (!text){ toast("Bitte Text einfügen"); return; }
+    const sentences = splitSentences(text);
+    const picked = sentences.filter(isLikelyClaim);
+
+    const uniq = [];
+    const seen = new Set();
+    for (const s of picked){
+      const key = s.toLowerCase().replace(/\s+/g," ").slice(0,160);
+      if (!seen.has(key)){
+        seen.add(key);
+        uniq.push(s);
+      }
+    }
+
+    state.claims = uniq.slice(0, 18).map(makeClaimObject);
+    renderClaims();
+    updateReportPreview();
+    toast(`${state.claims.length} Claims`);
+  }
+
+  // Buttons
+  $("btnExtract").addEventListener("click", extractClaims);
+
+  $("btnScore").addEventListener("click", () => {
+    updateReportPreview();
+    renderClaims();
+    toast("Score berechnet");
+  });
+
+  $("btnClear").addEventListener("click", () => {
+    $("inputText").value = "";
+    state.claims = [];
+    renderClaims();
+    updateReportPreview();
+    toast("Geleert");
+  });
+
+  $("btnDemo").addEventListener("click", () => {
+    $("inputText").value =
+`Breaking: Niemand spricht darüber! Eine Studie zeigt, dass Produkt X das Risiko um 300% erhöht!!!
+Die Behörde Y habe das angeblich bestätigt.
+Laut Bericht vom 12.01.2026 sei die Inflation in Land Z real bei 25%.
+Man sagt außerdem, dass Politiker A heimlich Gesetz B geändert hat.`;
+    toast("Demo geladen");
+  });
+
+  $("btnCopy").addEventListener("click", async () => {
+    const report = updateReportPreview();
+    const txt = buildShareText(report);
+    await navigator.clipboard.writeText(txt);
+    toast("Report kopiert");
+  });
+
+  $("btnJson").addEventListener("click", () => {
+    const report = updateReportPreview();
+    const blob = new Blob([JSON.stringify(report, null, 2)], {type:"application/json"});
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "fakefilter-report.json";
+    a.click();
+    toast("JSON exportiert");
+  });
+
+  $("btnExpandAll").addEventListener("click", () => {
+    state.claims.forEach(c => c.open = true);
+    renderClaims();
+  });
+
+  $("btnCollapseAll").addEventListener("click", () => {
+    state.claims.forEach(c => c.open = false);
+    renderClaims();
+  });
+
+  $("btnJump").addEventListener("click", () => {
+    document.getElementById("app").scrollIntoView({behavior:"smooth", block:"start"});
+  });
+
+  // Delegation
+  $("claimsList").addEventListener("click", async (e) => {
+    const btn = e.target.closest("button");
+    if (!btn) return;
+
+    const act = btn.dataset.act;
+    const id = btn.dataset.id;
+    const idx = btn.dataset.idx ? Number(btn.dataset.idx) : null;
+    const claim = state.claims.find(c => c.id === id);
+    if (!claim) return;
+
+    if (act === "toggle"){ claim.open = !claim.open; renderClaims(); return; }
+    if (act === "remove"){ state.claims = state.claims.filter(c => c.id !== id); renderClaims(); updateReportPreview(); toast("Entfernt"); return; }
+    if (act === "addEv"){ claim.evidence.push({ url:"", stance:"neutral", quote:"", notes:"" }); claim.open = true; renderClaims(); return; }
+    if (act === "recalc"){ updateReportPreview(); renderClaims(); toast("Aktualisiert"); return; }
+
+    if (act === "search"){
+      const q = encodeURIComponent(claim.text);
+      window.open(`https://www.google.com/search?q=${q}`, "_blank");
+      window.open(`https://duckduckgo.com/?q=${q}`, "_blank");
+      window.open(`https://en.wikipedia.org/w/index.php?search=${q}`, "_blank");
+      return;
+    }
+
+    if (act === "fetch"){
+      const proxy = normalize($("proxyUrl").value);
+      const ev = claim.evidence[idx];
+      if (!ev || !ev.url) return toast("URL fehlt");
+      if (!proxy) return toast("Proxy-URL fehlt");
+
+      try{
+        btn.disabled = true;
+        btn.textContent = "Lese ein…";
+        const url = `${proxy.replace(/\/$/,"")}/extract?url=${encodeURIComponent(ev.url)}`;
+        const res = await fetch(url, { headers: { "accept":"application/json" }});
+        if (!res.ok) throw new Error("Fetch failed: " + res.status);
+        const data = await res.json();
+        const excerpt = (data.text||"").trim().slice(0, 240);
+        ev.notes = (ev.notes||"");
+        if (excerpt && !ev.notes.includes("AUTO-EXCERPT")){
+          ev.notes = `${ev.notes ? ev.notes + " | " : ""}AUTO-EXCERPT: ${excerpt}`;
+        }
+        renderClaims();
+        updateReportPreview();
+        toast("Quelle eingelesen");
+      }catch(err){
+        toast("Einlesen fehlgeschlagen");
+      }finally{
+        btn.disabled = false;
+        btn.textContent = "URL einlesen (Proxy)";
+      }
+      return;
+    }
+  });
+
+  $("claimsList").addEventListener("input", (e) => {
+    const inp = e.target.closest("input");
+    if (!inp) return;
+    const id = inp.dataset.id;
+    const idx = Number(inp.dataset.idx);
+    const key = inp.dataset.ev;
+    const claim = state.claims.find(c => c.id === id);
+    if (!claim || !claim.evidence[idx]) return;
+    claim.evidence[idx][key] = inp.value;
+    updateReportPreview();
+  });
+
+  // Init
+  renderClaims();
+  updateReportPreview();
+})();
+</script>
+</body>
+</html>
