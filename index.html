@@ -4,200 +4,173 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-  <!-- SEO -->
-  <title>LIG1 kaufen (Polygon) – Teil des fairen Systems werden</title>
-  <meta name="description" content="LIG1 auf Polygon kaufen (Uniswap). In Sekunden verstehen, warum LIG1 anders ist: Fairness-System, On-Chain verifizierbar, Community-Bewegung. Wallet-Besitz prüfen ohne MetaMask." />
+  <title>LIG1 kaufen – Teil des Fairness-Systems (Polygon)</title>
+  <meta name="description" content="In 10 Sekunden dabei: LIG1 auf Polygon über Uniswap kaufen. Transparent & verifizierbar. Community statt Manipulation." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
-  <meta name="theme-color" content="#ffffff" />
   <link rel="canonical" href="https://ligone-token.github.io/lig1/" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="LIG1 – Werde Teil des fairen Systems" />
-  <meta property="og:description" content="Kaufen über Uniswap (Polygon) + Wallet-Check. Contract & Pool verifizieren. Seriös, transparent, schnell." />
+  <meta property="og:title" content="LIG1 – Fairness-System auf Polygon" />
+  <meta property="og:description" content="Ein Klick → Uniswap. Transparent verifizierbar. Community statt Manipulation." />
   <meta property="og:image" content="https://ligone-token.github.io/lig1/og-lig1.png" />
   <meta property="og:url" content="https://ligone-token.github.io/lig1/" />
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="LIG1 – Teil des fairen Systems" />
-  <meta name="twitter:description" content="Uniswap kaufen + Wallet prüfen (ohne MetaMask). On-Chain verifizierbar." />
+  <meta name="twitter:title" content="LIG1 – Fairness-System" />
+  <meta name="twitter:description" content="Ein Klick → Uniswap. Transparent verifizierbar." />
   <meta name="twitter:image" content="https://ligone-token.github.io/lig1/og-lig1.png" />
 
-  <!-- Icons -->
   <link rel="icon" href="ligone_logo_32x32.png" />
-  <link rel="apple-touch-icon" href="ligone_logo_192.png" />
-
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
   <style>
     :root{
       --bg:#ffffff;
-      --bg2:#f6f7fb;
-      --card:#ffffff;
       --text:#0b1220;
       --muted:#5b6578;
       --line:#e7eaf2;
-
       --brand:#2563eb;
       --brand2:#16a34a;
-      --warn:#b45309;
-      --bad:#dc2626;
-
-      --shadow: 0 10px 30px rgba(16,24,40,.10);
-      --shadow2: 0 18px 50px rgba(16,24,40,.12);
-      --radius:16px;
+      --shadow: 0 18px 60px rgba(16,24,40,.12);
+      --radius:18px;
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background:
-        radial-gradient(900px 500px at 10% -10%, rgba(37,99,235,.10), transparent 60%),
-        radial-gradient(800px 520px at 90% 10%, rgba(22,163,74,.10), transparent 60%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
       color:var(--text);
-      line-height:1.45;
+      background:
+        radial-gradient(900px 520px at 15% -10%, rgba(37,99,235,.10), transparent 60%),
+        radial-gradient(900px 520px at 85% 0%, rgba(22,163,74,.08), transparent 60%),
+        linear-gradient(180deg, #fff, #f7f8fc);
     }
-    a{color:inherit}
-    .wrap{max-width:1120px;margin:0 auto;padding:22px 18px 90px}
-    .topbar{
+    .wrap{max-width:980px;margin:0 auto;padding:22px 16px 70px}
+    .top{
       display:flex;align-items:center;justify-content:space-between;gap:12px;
-      padding:12px 14px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.75);
+      padding:12px 14px;border:1px solid var(--line);border-radius:14px;
+      background:rgba(255,255,255,.85);
       backdrop-filter: blur(10px);
-      border-radius:14px;
-      box-shadow:var(--shadow);
+      box-shadow:0 10px 30px rgba(16,24,40,.06);
     }
-    .brand{
-      display:flex;align-items:center;gap:12px;min-width:0;
-    }
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
     .logo{
-      width:38px;height:38px;border-radius:12px;
+      width:40px;height:40px;border-radius:14px;
       background:linear-gradient(135deg, rgba(37,99,235,1), rgba(22,163,74,1));
-      color:white;
-      display:grid;place-items:center;
-      font-weight:900;
-      box-shadow:0 10px 25px rgba(37,99,235,.18);
+      color:#fff;display:grid;place-items:center;font-weight:900;
+      box-shadow:0 14px 34px rgba(37,99,235,.18);
       flex:0 0 auto;
     }
-    .brand b{font-size:14px;letter-spacing:.2px}
-    .brand small{display:block;color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:56vw}
+    .brand b{display:block;font-size:14px;letter-spacing:.2px}
+    .brand small{display:block;color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:60vw}
     .links{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
     .pill{
-      border:1px solid var(--line);
-      background:#fff;
-      padding:8px 10px;border-radius:999px;
-      font-size:12px;color:var(--muted);
       text-decoration:none;
-    }
-    .pill:hover{border-color:#d8deea;color:var(--text)}
-    .hero{
-      margin-top:16px;
       border:1px solid var(--line);
-      background:rgba(255,255,255,.85);
+      background:#fff;border-radius:999px;
+      padding:8px 10px;
+      font-size:12px;color:var(--muted);
+    }
+    .pill:hover{color:var(--text);border-color:#d8deea}
+
+    /* HERO: 1 Screen, 1 Aktion */
+    .hero{
+      margin-top:14px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.92);
       border-radius:var(--radius);
-      box-shadow:var(--shadow2);
+      box-shadow:var(--shadow);
       overflow:hidden;
     }
-    .heroIn{padding:26px 22px}
-    h1{margin:0 0 10px;font-size:36px;letter-spacing:-.4px}
-    .sub{color:var(--muted);max-width:78ch;margin:0 0 18px;font-size:15px}
-    .hook{
-      display:inline-flex;gap:10px;align-items:center;
-      background:linear-gradient(90deg, rgba(37,99,235,.08), rgba(22,163,74,.08));
+    .heroIn{padding:26px 20px 18px}
+    .tag{
+      display:inline-flex;align-items:center;gap:8px;
       border:1px solid rgba(37,99,235,.18);
-      padding:10px 12px;border-radius:999px;
-      font-weight:800;
-      margin-bottom:14px;
+      background:rgba(37,99,235,.06);
+      color:#1f3a8a;
+      padding:9px 12px;border-radius:999px;
+      font-weight:900;font-size:12px;
+      margin-bottom:12px;
     }
-    .hook span{color:var(--muted);font-weight:700}
-    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    h1{margin:0 0 10px;font-size:38px;letter-spacing:-.6px;line-height:1.05}
+    @media (max-width:720px){ h1{font-size:32px} }
+    .sub{margin:0 0 16px;color:var(--muted);font-size:15px;max-width:70ch}
+    .cta{
+      display:flex;gap:12px;flex-wrap:wrap;align-items:center;
+      margin-top:10px;
+    }
     .btn{
       display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:12px 16px;border-radius:12px;
-      text-decoration:none;
-      font-weight:900;
+      padding:14px 18px;
+      border-radius:14px;
+      font-weight:950;
       border:1px solid transparent;
-      cursor:pointer; user-select:none;
+      cursor:pointer;
+      text-decoration:none;
+      user-select:none;
       transition:transform .06s ease, filter .2s ease, border-color .2s ease;
     }
     .btn:active{transform:translateY(1px)}
     .btnPrimary{
-      background:linear-gradient(135deg, rgba(37,99,235,1), rgba(37,99,235,.85));
-      color:white;
-      box-shadow:0 14px 30px rgba(37,99,235,.18);
+      background:linear-gradient(135deg, rgba(37,99,235,1), rgba(37,99,235,.86));
+      color:#fff;
+      box-shadow:0 18px 40px rgba(37,99,235,.18);
+      font-size:15px;
     }
     .btnPrimary:hover{filter:brightness(1.03)}
     .btnSoft{
       background:#fff;
       border-color:var(--line);
       color:var(--text);
+      font-weight:900;
     }
     .btnSoft:hover{border-color:#d8deea}
+    .trustRow{
+      display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+      margin-top:14px;
+      padding:12px 12px;
+      border-top:1px solid var(--line);
+      background:linear-gradient(180deg, #fff, #fbfcff);
+      color:var(--muted);
+      font-size:12px;
+    }
+    .dot{
+      width:8px;height:8px;border-radius:99px;background:var(--brand2);
+      box-shadow:0 0 0 4px rgba(22,163,74,.12);
+      display:inline-block;margin-right:8px;
+    }
 
-    .grid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:14px;
-      padding:14px;
-    }
-    @media (max-width: 940px){
-      .grid{grid-template-columns:1fr}
-      .brand small{max-width:64vw}
-      h1{font-size:32px}
-    }
+    /* BELOW FOLD: optional, nicht im Weg */
+    .below{padding:14px 16px 18px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:900px){ .row{grid-template-columns:1fr} }
+
     .card{
       border:1px solid var(--line);
-      background:var(--card);
-      border-radius:var(--radius);
-      padding:18px;
-      box-shadow:var(--shadow);
-    }
-    .card h2{margin:0 0 10px;font-size:16px}
-    .cards3{
-      display:grid; grid-template-columns:repeat(3,1fr);
-      gap:12px; margin-top:14px;
-    }
-    @media (max-width: 940px){ .cards3{grid-template-columns:1fr} }
-    .mini{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:14px;
-      background:linear-gradient(180deg, #fff, #fbfcff);
-    }
-    .mini b{display:block;margin-bottom:6px}
-    .mini p{margin:0;color:var(--muted);font-size:13px}
-
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
-    @media (max-width: 940px){ .steps{grid-template-columns:1fr} }
-    .step{
-      border:1px solid var(--line);
-      border-radius:14px;
-      padding:12px;
+      border-radius:16px;
       background:#fff;
+      padding:16px;
+      box-shadow:0 10px 26px rgba(16,24,40,.06);
     }
-    .step .n{
-      width:26px;height:26px;border-radius:10px;
-      background:rgba(37,99,235,.10);
-      color:var(--brand);
-      display:grid;place-items:center;
-      font-weight:900;margin-bottom:8px;
-    }
-    .step b{display:block;margin-bottom:3px}
-    .step span{color:var(--muted);font-size:13px}
+    .card h2{margin:0 0 8px;font-size:14px}
+    .card p{margin:0;color:var(--muted);font-size:13px}
 
-    .k{color:var(--muted);font-size:12px;margin-bottom:6px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+    details{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fff;
+      padding:12px 14px;
+      box-shadow:0 10px 26px rgba(16,24,40,.06);
+    }
+    summary{cursor:pointer;font-weight:950}
     .mono{
+      margin-top:10px;
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
       font-size:12px;word-break:break-all;
-      background:#fbfcff;
       border:1px solid var(--line);
+      background:#fbfcff;
       border-radius:12px;
-      padding:10px 10px;
+      padding:10px;
     }
     .miniRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
     .miniBtn{
@@ -205,249 +178,154 @@
       background:#fff;
       color:var(--text);
       padding:10px 12px;border-radius:12px;
-      cursor:pointer;font-weight:900;font-size:13px;
+      cursor:pointer;font-weight:950;font-size:13px;
     }
     .miniBtn:hover{border-color:#d8deea}
 
-    .formRow{display:flex;gap:10px;flex-wrap:wrap}
+    /* Wallet check hidden by default */
+    .formRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
     .input{
-      flex:1 1 280px;min-width:240px;
-      padding:12px 12px;border-radius:12px;
+      flex:1 1 260px;min-width:240px;
+      padding:12px;border-radius:12px;
       border:1px solid var(--line);
       background:#fff;
-      color:var(--text);
       outline:none;
-      box-shadow: inset 0 0 0 1px transparent;
     }
-    .input:focus{border-color:rgba(37,99,235,.35); box-shadow: inset 0 0 0 1px rgba(37,99,235,.25)}
+    .input:focus{border-color:rgba(37,99,235,.35)}
     .status{
-      margin-top:12px;
-      border-radius:14px;
+      margin-top:10px;
       border:1px solid var(--line);
       background:#fff;
-      padding:12px 12px;
-      font-weight:900;
-    }
-    .sMuted{color:var(--muted);font-weight:700;font-size:12px;margin-top:6px}
-
-    .ok{color:var(--brand2)}
-    .bad{color:var(--bad)}
-    .warn{color:var(--warn)}
-
-    .proof{
-      display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
-      padding:12px 14px;
-      border:1px dashed rgba(37,99,235,.35);
       border-radius:14px;
-      background:rgba(37,99,235,.05);
-      margin-top:14px;
+      padding:12px;
+      font-weight:950;
     }
-    .proof b{font-size:13px}
-    .proof span{color:var(--muted);font-size:12px}
+    .muted{color:var(--muted);font-size:12px;margin-top:6px}
+    .ok{color:var(--brand2)}
+    .bad{color:#dc2626}
+    .warn{color:#b45309}
 
-    .sticky{
-      position:fixed;
-      left:0; right:0; bottom:0;
-      background:rgba(255,255,255,.88);
-      border-top:1px solid var(--line);
-      backdrop-filter: blur(12px);
-      padding:10px 12px;
-      z-index:50;
-    }
-    .stickyIn{
-      max-width:1120px;margin:0 auto;
-      display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
-    }
-    .stickyLeft{display:flex;flex-direction:column;gap:2px;min-width:220px}
-    .stickyLeft b{font-size:13px}
-    .stickyLeft small{color:var(--muted);font-size:12px}
-    .stickyRight{display:flex;gap:10px;flex-wrap:wrap}
     footer{
-      margin-top:16px;color:var(--muted);
-      font-size:12px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
+      margin-top:14px;
+      color:var(--muted);
+      font-size:12px;
+      display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
       padding:10px 4px;
     }
   </style>
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "name":"LIG1 On-Chain Zugang",
-    "url":"https://ligone-token.github.io/lig1/",
-    "description":"LIG1 kaufen (Polygon) – seriös, transparent, On-Chain verifizierbar. Wallet-Besitz prüfen ohne MetaMask."
-  }
-  </script>
 </head>
 
 <body>
   <div class="wrap">
-
-    <div class="topbar">
+    <div class="top">
       <div class="brand">
         <div class="logo">L1</div>
         <div style="min-width:0">
-          <b>LIG1 – Fairness System</b>
-          <small>In Sekunden verstehen • In 1 Klick kaufen • On-Chain verifizierbar</small>
+          <b>LIG1</b>
+          <small>Ein Klick → Uniswap • Transparent verifizierbar • Community-System</small>
         </div>
       </div>
       <div class="links">
         <a class="pill" href="https://t.me/+yA0uIxJ-oUA0Njdk" target="_blank" rel="noopener">Telegram</a>
         <a class="pill" href="mailto:project@ligone.ch">project@ligone.ch</a>
-        <a class="pill" href="https://ligone-token.github.io/ligone-web/" target="_blank" rel="noopener">Monitor</a>
       </div>
     </div>
 
-    <section class="hero">
+    <section class="hero" aria-label="Kaufen">
       <div class="heroIn">
-        <div class="hook">🚀 Neues System statt altes Spiel <span>• Fairness • Transparenz • Community</span></div>
-
-        <h1>Werde Teil des Systems, das nicht von Walen dominiert wird.</h1>
+        <div class="tag">⚡ Fairness-System • Community statt Kontrolle</div>
+        <h1>Wenn du ein neues Finanz-System willst, fang hier an.</h1>
         <p class="sub">
-          LIG1 ist für Menschen gebaut, die nicht mehr zusehen wollen, wie wenige den Markt steuern.
-          **Du kaufst dezentral über Uniswap (Polygon)** – und kannst danach alles on-chain verifizieren.
+          LIG1 ist für Menschen, die nicht länger im alten Spiel mitspielen wollen.
+          Du kaufst dezentral über Uniswap auf Polygon – transparent, öffentlich verifizierbar.
         </p>
 
-        <div class="ctaRow">
-          <a class="btn btnPrimary" id="buyTop" target="_blank" rel="noopener">Jetzt LIG1 kaufen (Uniswap)</a>
-          <a class="btn btnSoft" id="scanTokenTop" target="_blank" rel="noopener">Contract verifizieren</a>
-          <a class="btn btnSoft" id="scanPoolTop" target="_blank" rel="noopener">Pool/Liquidity prüfen</a>
-        </div>
-
-        <div class="cards3" aria-label="Warum LIG1">
-          <div class="mini">
-            <b>Fairness statt Manipulation</b>
-            <p>Ein System, das auf Gemeinschaft, Regeln und Transparenz setzt – nicht auf Marketing-Hype.</p>
-          </div>
-          <div class="mini">
-            <b>On-Chain beweisbar</b>
-            <p>Contract, Pool, Transfers: du kannst alles selbst prüfen. Keine „Trust me“-Versprechen.</p>
-          </div>
-          <div class="mini">
-            <b>Mitmachen in 1 Minute</b>
-            <p>Kaufen → Wallet prüfen → Community beitreten. Fertig. Du bist Teil der Bewegung.</p>
-          </div>
-        </div>
-
-        <div class="proof">
-          <div>
-            <b>🔍 100% transparent:</b>
-            <span>Token-Contract & Pool-Adresse sind unten sichtbar und kopierbar.</span>
-          </div>
-          <button class="miniBtn" type="button" onclick="document.getElementById('wallet').scrollIntoView({behavior:'smooth', block:'center'});">
-            Direkt zur Wallet-Prüfung
-          </button>
+        <div class="cta">
+          <a class="btn btnPrimary" id="buyNow" target="_blank" rel="noopener">Jetzt LIG1 kaufen</a>
+          <button class="btn btnSoft" type="button" onclick="openUrl(tokenScanUrl())">Contract prüfen</button>
         </div>
       </div>
 
-      <div class="grid">
-        <div class="card">
-          <h2>In 3 Schritten dabei (wirklich)</h2>
-          <div class="steps">
-            <div class="step">
-              <div class="n">1</div>
-              <b>Uniswap öffnen</b>
-              <span>Kaufen auf Polygon – direkt über den offiziellen Swap-Link.</span>
-            </div>
-            <div class="step">
-              <div class="n">2</div>
-              <b>Wallet prüfen</b>
-              <span>Adresse eingeben → Besitz wird on-chain geprüft (ohne Login).</span>
-            </div>
-            <div class="step">
-              <div class="n">3</div>
-              <b>Community</b>
-              <span>Telegram beitreten, Updates sehen, Bewegung stärken.</span>
-            </div>
+      <div class="trustRow">
+        <span><i class="dot"></i>Offizieller Uniswap-Link</span>
+        <span>•</span>
+        <span>On-Chain verifizierbar</span>
+        <span>•</span>
+        <span>Kein Login / keine Speicherung</span>
+      </div>
+
+      <div class="below">
+        <div class="row">
+          <div class="card">
+            <h2>Warum LIG1?</h2>
+            <p>
+              Weil Fairness nur funktioniert, wenn Regeln und Transparenz stärker sind als Manipulation.
+              Das System ist öffentlich prüfbar – du musst niemandem „glauben“.
+            </p>
+          </div>
+          <div class="card">
+            <h2>In 60 Sekunden dabei</h2>
+            <p>
+              1) Kaufen auf Uniswap • 2) Optional Besitz prüfen • 3) Community beitreten.
+              Fertig – du bist Teil der Bewegung.
+            </p>
+          </div>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <details>
+          <summary>Transparenz & Wallet-Prüfung (optional)</summary>
+
+          <div class="muted" style="margin-top:8px">
+            Hier nur wenn du’s brauchst – damit der Kauf oben nicht gebremst wird.
           </div>
 
-          <div style="height:12px"></div>
-
-          <h2>Verifizierbare Adressen</h2>
-
-          <div>
-            <div class="k">
-              <span>Token Contract</span>
-              <button class="miniBtn" type="button" onclick="copyText(CONTRACT)">Kopieren</button>
-            </div>
-            <div class="mono" id="contractTxt"></div>
-          </div>
-
-          <div style="height:10px"></div>
-
-          <div>
-            <div class="k">
-              <span>Pool Contract (Liquidity)</span>
-              <button class="miniBtn" type="button" onclick="copyText(POOL_ADDRESS)">Kopieren</button>
-            </div>
-            <div class="mono" id="poolTxt"></div>
-            <div class="sMuted">Pool ≠ Buy-Adresse. Kaufen immer über Uniswap.</div>
-          </div>
-
+          <div class="muted" style="margin-top:10px">Token Contract</div>
+          <div class="mono" id="contractTxt"></div>
           <div class="miniRow">
-            <button class="miniBtn" type="button" onclick="openUrl(uniswapUrl())">Uniswap öffnen</button>
-            <button class="miniBtn" type="button" onclick="openUrl(tokenScanUrl())">Token Scan</button>
-            <button class="miniBtn" type="button" onclick="openUrl(poolScanUrl())">Pool Scan</button>
+            <button class="miniBtn" type="button" onclick="copyText(CONTRACT)">Contract kopieren</button>
+            <button class="miniBtn" type="button" onclick="openUrl(tokenScanUrl())">Polygonscan Token</button>
           </div>
-        </div>
+
+          <div class="muted" style="margin-top:14px">Pool Contract (Liquidity)</div>
+          <div class="mono" id="poolTxt"></div>
+          <div class="miniRow">
+            <button class="miniBtn" type="button" onclick="copyText(POOL_ADDRESS)">Pool kopieren</button>
+            <button class="miniBtn" type="button" onclick="openUrl(poolScanUrl())">Polygonscan Pool</button>
+          </div>
+
+          <div class="muted" style="margin-top:14px">Wallet Besitz prüfen</div>
+          <div class="formRow">
+            <input class="input" id="wallet" placeholder="Wallet-Adresse 0x… eingeben" autocomplete="off" spellcheck="false">
+            <button class="miniBtn" type="button" onclick="checkWallet()">Prüfen</button>
+          </div>
+          <div id="status" class="status">Noch nicht geprüft.</div>
+          <div id="status2" class="muted"></div>
+        </details>
+
+        <div style="height:12px"></div>
 
         <div class="card">
-          <h2>Wallet Besitz prüfen</h2>
-
-          <div class="formRow">
-            <input class="input" id="wallet" inputmode="text" autocomplete="off" spellcheck="false"
-                   placeholder="Wallet-Adresse 0x… eingeben" aria-label="Wallet-Adresse" />
-            <button class="btn btnPrimary" type="button" onclick="checkWallet()">Prüfen</button>
-          </div>
-
-          <div id="status" class="status">Noch nicht geprüft.</div>
-          <div id="status2" class="sMuted"></div>
-
-          <div style="height:14px"></div>
-
           <h2>Community</h2>
-          <div class="ctaRow" style="margin-top:0">
-            <a class="btn btnSoft" href="https://t.me/+yA0uIxJ-oUA0Njdk" target="_blank" rel="noopener">Telegram Community</a>
-            <a class="btn btnSoft" href="mailto:project@ligone.ch">E-Mail Support</a>
-          </div>
-
-          <div class="sMuted" style="margin-top:10px">
-            Keine Daten werden gespeichert. Wallet-Check nutzt öffentliche RPC-Abfragen mit Fallback.
-          </div>
+          <p>
+            Fragen, Updates, Bewegung: <a href="https://t.me/+yA0uIxJ-oUA0Njdk" target="_blank" rel="noopener"><b>Telegram beitreten</b></a>
+            oder <a href="mailto:project@ligone.ch"><b>project@ligone.ch</b></a>
+          </p>
         </div>
       </div>
-
     </section>
 
     <footer>
-      <div>© <span id="year"></span> LIGONE • On-Chain Transparenz</div>
-      <div>Keine Anlageberatung • Nur öffentliche Blockchain-Informationen</div>
+      <div>© <span id="year"></span> LIGONE</div>
+      <div>Keine Anlageberatung • Öffentliche Blockchain-Daten</div>
     </footer>
-
-  </div>
-
-  <!-- Sticky Buy Bar -->
-  <div class="sticky" role="region" aria-label="Kaufen">
-    <div class="stickyIn">
-      <div class="stickyLeft">
-        <b>Bereit? 1 Klick → Uniswap (Polygon)</b>
-        <small>Teil des fairen Systems werden • Contract & Pool verifizierbar</small>
-      </div>
-      <div class="stickyRight">
-        <a class="btn btnPrimary" id="buySticky" target="_blank" rel="noopener">LIG1 jetzt kaufen</a>
-        <button class="btn btnSoft" type="button" onclick="openUrl(tokenScanUrl())">Verify</button>
-      </div>
-    </div>
   </div>
 
   <script>
-    /* =========================
-       KONFIG
-    ========================== */
+    /* KONFIG */
     const CONTRACT = "0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d";
     const POOL_ADDRESS = "0xd6791279B261c36c1E079ecE8Cb05079cc5e7e38";
-
     const RPCS = [
       "https://polygon-rpc.com",
       "https://rpc.ankr.com/polygon",
@@ -455,71 +333,27 @@
       "https://polygon-bor.publicnode.com"
     ];
 
-    function uniswapUrl(){
-      return "https://app.uniswap.org/swap?chain=polygon&outputCurrency=" + CONTRACT;
-    }
+    function uniswapUrl(){ return "https://app.uniswap.org/swap?chain=polygon&outputCurrency=" + CONTRACT; }
     function tokenScanUrl(){ return "https://polygonscan.com/token/" + CONTRACT; }
     function poolScanUrl(){ return "https://polygonscan.com/address/" + POOL_ADDRESS; }
+    function openUrl(url){ window.open(url, "_blank", "noopener"); }
 
-    /* =========================
-       INIT
-    ========================== */
     document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("buyNow").href = uniswapUrl();
     document.getElementById("contractTxt").textContent = CONTRACT;
     document.getElementById("poolTxt").textContent = POOL_ADDRESS;
 
-    document.getElementById("buyTop").href = uniswapUrl();
-    document.getElementById("buySticky").href = uniswapUrl();
-
-    document.getElementById("scanTokenTop").href = tokenScanUrl();
-    document.getElementById("scanPoolTop").href = poolScanUrl();
-
-    /* =========================
-       HELPERS
-    ========================== */
-    function openUrl(url){ window.open(url, "_blank", "noopener"); }
-
     async function copyText(txt){
-      try{
-        await navigator.clipboard.writeText(txt);
-        flashStatus("Kopiert ✔", "ok");
-      }catch{
+      try{ await navigator.clipboard.writeText(txt); }
+      catch{
         const ta=document.createElement("textarea");
         ta.value=txt; document.body.appendChild(ta);
         ta.select(); document.execCommand("copy");
         document.body.removeChild(ta);
-        flashStatus("Kopiert ✔", "ok");
       }
     }
 
-    let flashTimer=null;
-    function flashStatus(msg, tone){
-      clearTimeout(flashTimer);
-      const el=document.getElementById("status");
-      const el2=document.getElementById("status2");
-      const old=el.textContent, old2=el2.textContent;
-      el.textContent=msg;
-      el.className="status " + (tone||"");
-      el2.textContent="";
-      flashTimer=setTimeout(()=>{
-        el.textContent=old || "Noch nicht geprüft.";
-        el.className="status";
-        el2.textContent=old2 || "";
-      }, 1200);
-    }
-
-    function setStatus(text, tone){
-      const el=document.getElementById("status");
-      el.textContent=text;
-      el.className="status " + (tone||"");
-    }
-    function setStatus2(text){
-      document.getElementById("status2").textContent=text || "";
-    }
-
-    /* =========================
-       ETHERS LOADER
-    ========================== */
+    /* Wallet-Check (optional) */
     async function loadEthers(){
       if (window.ethers) return;
       await new Promise((resolve, reject) => {
@@ -545,19 +379,25 @@
       throw new Error("No RPC");
     }
 
-    /* =========================
-       WALLET CHECK
-    ========================== */
+    function setStatus(text, cls){
+      const el=document.getElementById("status");
+      el.textContent=text;
+      el.className="status " + (cls||"");
+    }
+    function setStatus2(text){ document.getElementById("status2").textContent=text||""; }
+    function trimNum(x){
+      const n=String(x);
+      if(!n.includes(".")) return n;
+      const [a,b]=n.split(".");
+      const cut=b.slice(0,6).replace(/0+$/,"");
+      return cut ? `${a}.${cut}` : a;
+    }
+
     async function checkWallet(){
-      const addr = (document.getElementById("wallet").value || "").trim();
-      if(!addr){
-        setStatus("Adresse eingeben", "warn");
-        setStatus2("");
-        return;
-      }
+      const addr=(document.getElementById("wallet").value||"").trim();
+      if(!addr){ setStatus("Adresse eingeben", "warn"); setStatus2(""); return; }
 
       await loadEthers();
-
       if(!ethers.utils.isAddress(addr)){
         setStatus("Ungültige Wallet-Adresse", "bad");
         setStatus2("Bitte prüfen: 0x… (42 Zeichen).");
@@ -565,7 +405,7 @@
       }
 
       setStatus("Prüfe Blockchain…", "warn");
-      setStatus2("RPC wird automatisch gewählt…");
+      setStatus2("RPC wird gewählt…");
 
       try{
         const { provider, rpc } = await getWorkingProvider();
@@ -575,7 +415,6 @@
           {"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"type":"function"}
         ];
         const c = new ethers.Contract(CONTRACT, abi, provider);
-
         const [balRaw, decimals, symbol] = await Promise.all([
           c.balanceOf(addr),
           c.decimals().catch(()=>18),
@@ -583,28 +422,16 @@
         ]);
 
         const formatted = ethers.utils.formatUnits(balRaw, decimals);
-        const has = balRaw.gt(0);
-
-        if(has){
-          setStatus(`✅ Besitz bestätigt: ${trimNum(formatted)} ${symbol}`, "ok");
+        if(balRaw.gt(0)){
+          setStatus(`✅ Besitz: ${trimNum(formatted)} ${symbol}`, "ok");
         }else{
-          setStatus(`⛔ Kein ${symbol}-Besitz in dieser Wallet`, "bad");
+          setStatus(`⛔ Kein ${symbol}-Besitz`, "bad");
         }
-
-        const now = new Date();
-        setStatus2(`RPC: ${rpc} • Rohwert: ${balRaw.toString()} • geprüft: ${now.toLocaleString("de-CH")}`);
+        setStatus2(`RPC: ${rpc} • Rohwert: ${balRaw.toString()}`);
       }catch(e){
-        setStatus("Netzwerkfehler – RPC antwortet nicht", "bad");
-        setStatus2("Polygon kann kurz überlastet sein. Bitte in 30 Sekunden erneut prüfen.");
+        setStatus("Netzwerkfehler (RPC)", "bad");
+        setStatus2("Polygon kann kurz überlastet sein. Bitte erneut versuchen.");
       }
-    }
-
-    function trimNum(x){
-      const n = String(x);
-      if(!n.includes(".")) return n;
-      const [a,b] = n.split(".");
-      const cut = b.slice(0, 6).replace(/0+$/,"");
-      return cut ? `${a}.${cut}` : a;
     }
   </script>
 </body>
