@@ -2,29 +2,24 @@
 <html lang="de">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-
-  <!-- SEO -->
-  <title>LIG1 – Fairness-System | 1 Klick → Uniswap (Polygon)</title>
-  <meta name="description" content="In Sekunden dabei: LIG1 auf Polygon über Uniswap kaufen. Seriöses Fintech-Design. On-Chain verifizierbar. Community statt Manipulation." />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>LIG1 – Jetzt dazugehören</title>
+  <meta name="description" content="1 Klick → Uniswap (Polygon). LIG1: Fairness-System, Community-Bewegung, on-chain verifizierbar." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://ligone-token.github.io/lig1/" />
-  <meta name="theme-color" content="#ffffff" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="LIG1 – Fairness-System (Polygon)" />
-  <meta property="og:description" content="1 Klick → Uniswap. Seriös, transparent, on-chain verifizierbar." />
+  <meta property="og:title" content="LIG1 – Jetzt dazugehören" />
+  <meta property="og:description" content="1 Klick → Uniswap (Polygon). Seriös, schnell, verifizierbar." />
   <meta property="og:image" content="https://ligone-token.github.io/lig1/og-lig1.png" />
   <meta property="og:url" content="https://ligone-token.github.io/lig1/" />
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="LIG1 – Fairness-System" />
-  <meta name="twitter:description" content="1 Klick → Uniswap (Polygon). Transparent verifizierbar." />
+  <meta name="twitter:title" content="LIG1 – Jetzt dazugehören" />
+  <meta name="twitter:description" content="1 Klick → Uniswap (Polygon). Seriös, schnell, verifizierbar." />
   <meta name="twitter:image" content="https://ligone-token.github.io/lig1/og-lig1.png" />
 
-  <!-- Icons -->
+  <meta name="theme-color" content="#ffffff" />
   <link rel="icon" href="ligone_logo_32x32.png" />
   <link rel="apple-touch-icon" href="ligone_logo_192.png" />
 
@@ -33,25 +28,27 @@
 
   <style>
     :root{
-      --bg: #ffffff;
-      --bg2:#f7f8fb;
-      --card:#ffffff;
+      --bg:#ffffff;
+      --bg2:#f6f7fb;
       --text:#0b1220;
       --muted:#5b667a;
-      --line:#e8ebf3;
-      --line2:#dfe4f0;
+      --line:#e7eaf2;
+      --line2:#dde3f2;
 
       --brand:#2457ff;
       --brand2:#19a65a;
-      --warn:#b45309;
-      --bad:#dc2626;
 
       --shadow: 0 18px 60px rgba(16,24,40,.10);
-      --shadow2: 0 10px 24px rgba(16,24,40,.08);
-      --radius: 20px;
+      --shadow2: 0 10px 26px rgba(16,24,40,.08);
+
+      --r16:16px;
+      --r20:20px;
 
       --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+
+      --safeB: env(safe-area-inset-bottom);
+      --safeT: env(safe-area-inset-top);
     }
 
     *{box-sizing:border-box}
@@ -61,245 +58,254 @@
       font-family:var(--font);
       color:var(--text);
       background:
-        radial-gradient(1200px 650px at 18% -10%, rgba(36,87,255,.12), transparent 60%),
-        radial-gradient(1000px 650px at 85% 0%, rgba(25,166,90,.10), transparent 58%),
-        radial-gradient(900px 700px at 50% 115%, rgba(0,0,0,.05), transparent 60%),
+        radial-gradient(1200px 720px at 12% -15%, rgba(36,87,255,.14), transparent 58%),
+        radial-gradient(1100px 720px at 88% -10%, rgba(25,166,90,.12), transparent 58%),
+        radial-gradient(900px 650px at 50% 115%, rgba(0,0,0,.06), transparent 60%),
         linear-gradient(180deg, var(--bg), var(--bg2));
+      overflow-x:hidden;
+    }
+    a{color:inherit}
+    .wrap{
+      max-width: 1120px;
+      margin:0 auto;
+      padding: 18px 14px calc(110px + var(--safeB));
     }
 
-    a{color:inherit}
-    .wrap{max-width:1100px;margin:0 auto;padding:22px 16px 96px}
+    /* Topbar */
     .topbar{
-      display:flex;align-items:center;justify-content:space-between;gap:12px;
-      padding:12px 14px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding: 12px 12px;
       border:1px solid var(--line);
-      background:rgba(255,255,255,.82);
+      border-radius: 18px;
+      background: rgba(255,255,255,.82);
       backdrop-filter: blur(12px);
-      border-radius:16px;
       box-shadow: var(--shadow2);
     }
-    .brand{
-      display:flex;align-items:center;gap:12px;min-width:0;
-    }
+    .brand{display:flex;align-items:center;gap:10px;min-width:0}
     .logo{
       width:42px;height:42px;border-radius:16px;
       background: linear-gradient(135deg, rgba(36,87,255,1), rgba(25,166,90,1));
-      color:#fff;
-      display:grid;place-items:center;
-      font-weight:900;
-      letter-spacing:-.5px;
-      box-shadow: 0 18px 40px rgba(36,87,255,.22);
+      color:#fff; display:grid; place-items:center;
+      font-weight:950; letter-spacing:-.5px;
+      box-shadow: 0 18px 44px rgba(36,87,255,.18);
       flex:0 0 auto;
     }
-    .brandText{min-width:0}
-    .brandText b{
-      display:block;font-size:14px;letter-spacing:.2px;line-height:1.1;
+    .btxt{min-width:0}
+    .btxt b{display:block;font-size:14px;letter-spacing:.2px;line-height:1.1}
+    .btxt small{
+      display:block; margin-top:3px;
+      color:var(--muted); font-size:12px;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+      max-width:60vw;
     }
-    .brandText small{
-      display:block;
-      font-size:12px;color:var(--muted);
-      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-      max-width:62vw;
-      margin-top:3px;
-    }
-    .nav{
-      display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;
-    }
+    .nav{display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end}
     .chip{
       text-decoration:none;
-      font-size:12px;font-weight:800;
+      font-size:12px; font-weight:900;
       color:var(--muted);
-      padding:9px 11px;
-      border-radius:999px;
       border:1px solid var(--line);
       background:#fff;
-      transition: border-color .2s ease, transform .06s ease, color .2s ease;
+      padding:9px 10px;
+      border-radius:999px;
+      transition: transform .06s ease, border-color .2s ease, color .2s ease;
     }
     .chip:hover{border-color:var(--line2); color:var(--text)}
     .chip:active{transform:translateY(1px)}
 
+    /* Hero Shell */
     .shell{
-      margin-top:16px;
+      margin-top:14px;
       border:1px solid var(--line);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,.9);
+      border-radius: 26px;
+      background: rgba(255,255,255,.92);
       box-shadow: var(--shadow);
       overflow:hidden;
+      position:relative;
+    }
+
+    /* BAM background glow */
+    .shell:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(900px 600px at 12% 0%, rgba(36,87,255,.18), transparent 62%),
+        radial-gradient(900px 600px at 88% 0%, rgba(25,166,90,.14), transparent 62%);
+      pointer-events:none;
+      opacity:.95;
     }
 
     .hero{
       position:relative;
-      padding:30px 22px 18px;
+      padding: 28px 18px 18px;
     }
-    .hero:before{
-      content:"";
-      position:absolute; inset:-1px;
-      background:
-        radial-gradient(900px 520px at 10% 0%, rgba(36,87,255,.10), transparent 60%),
-        radial-gradient(900px 520px at 90% 0%, rgba(25,166,90,.09), transparent 60%);
-      pointer-events:none;
-      opacity:.9;
-    }
-    .hero > *{position:relative}
 
     .badgeRow{
-      display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
       margin-bottom:14px;
     }
     .badge{
-      font-size:12px;font-weight:900;
-      color:#1f2a44;
-      padding:9px 12px;
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 9px 12px;
       border-radius:999px;
-      border:1px solid rgba(36,87,255,.14);
-      background: rgba(36,87,255,.06);
+      border:1px solid rgba(36,87,255,.16);
+      background: rgba(36,87,255,.07);
+      font-size:12px;
+      font-weight:950;
+      color:#12224a;
     }
-    .badge.ok{
+    .badge2{
       border-color: rgba(25,166,90,.18);
-      background: rgba(25,166,90,.07);
+      background: rgba(25,166,90,.08);
+      color:#0f3b24;
     }
 
     h1{
-      margin:0 0 12px;
-      font-size:44px;
-      letter-spacing:-1.0px;
-      line-height:1.02;
-    }
-    .sub{
-      margin:0 0 18px;
-      max-width:76ch;
-      font-size:16px;
-      color:var(--muted);
-      line-height:1.5;
-    }
-    @media (max-width: 760px){
-      h1{font-size:36px}
-      .sub{font-size:15px}
+      margin:0;
+      font-size: clamp(34px, 6vw, 56px);
+      line-height: 0.98;
+      letter-spacing: -1.2px;
     }
 
+    /* super short, not "KI text" */
+    .sub{
+      margin: 12px 0 0;
+      color:var(--muted);
+      font-size: 15px;
+      max-width: 60ch;
+    }
+
+    /* CTA */
     .ctaRow{
-      display:flex;gap:12px;flex-wrap:wrap;align-items:center;
-      margin-top:10px;
+      margin-top: 18px;
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
     }
     .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:14px 18px;
-      border-radius:16px;
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      border-radius: 18px;
+      padding: 14px 18px;
       border:1px solid transparent;
       cursor:pointer;
       text-decoration:none;
-      font-weight:950;
       user-select:none;
+      font-weight: 1000;
       transition: transform .06s ease, filter .2s ease, box-shadow .2s ease, border-color .2s ease;
       will-change: transform;
+      min-height: 52px;
     }
     .btn:active{transform:translateY(1px)}
     .btnPrimary{
       background: linear-gradient(135deg, rgba(36,87,255,1), rgba(36,87,255,.84));
       color:#fff;
-      box-shadow: 0 22px 55px rgba(36,87,255,.22);
-      font-size:15px;
+      box-shadow: 0 24px 60px rgba(36,87,255,.24);
+      position:relative;
+      overflow:hidden;
+    }
+    /* BAM pulse */
+    .btnPrimary:before{
+      content:"";
+      position:absolute; inset:-40%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.45), transparent 45%);
+      transform: translateX(-40%) rotate(12deg);
+      opacity:.55;
+      animation: sheen 2.8s ease-in-out infinite;
+      pointer-events:none;
+    }
+    @keyframes sheen{
+      0%{transform: translateX(-55%) rotate(12deg); opacity:.0}
+      18%{opacity:.55}
+      55%{transform: translateX(55%) rotate(12deg); opacity:.0}
+      100%{transform: translateX(55%) rotate(12deg); opacity:0}
     }
     .btnPrimary:hover{filter:brightness(1.03)}
     .btnGhost{
       background:#fff;
       color:var(--text);
       border-color: var(--line);
-      box-shadow: 0 10px 24px rgba(16,24,40,.06);
-      font-weight:900;
+      box-shadow: var(--shadow2);
+      font-weight:950;
     }
-    .btnGhost:hover{border-color: var(--line2)}
-
+    .btnGhost:hover{border-color:var(--line2)}
     .micro{
-      margin-top:12px;
-      display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+      margin-top: 14px;
+      display:flex; gap:10px; flex-wrap:wrap;
       color:var(--muted);
       font-size:12px;
     }
-    .tick{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:8px 10px;border-radius:999px;
+    .micro span{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 10px;
       border:1px solid var(--line);
+      border-radius:999px;
       background:#fff;
-      font-weight:800;
+      font-weight:900;
     }
     .dot{
-      width:9px;height:9px;border-radius:999px;background: var(--brand2);
+      width:9px;height:9px;border-radius:999px;
+      background: var(--brand2);
       box-shadow: 0 0 0 4px rgba(25,166,90,.12);
     }
 
-    .divider{
-      height:1px;background:var(--line);
-    }
+    .divider{height:1px;background:var(--line); position:relative}
 
-    .sections{
-      padding:16px;
+    /* below fold: tiny, responsive */
+    .below{
+      position:relative;
+      padding: 16px;
       display:grid;
-      grid-template-columns: 1.1fr .9fr;
+      grid-template-columns: 1.05fr .95fr;
       gap:12px;
-      background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.90));
+      background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.90));
     }
     @media (max-width: 980px){
-      .sections{grid-template-columns:1fr}
+      .below{grid-template-columns:1fr}
     }
 
     .card{
       border:1px solid var(--line);
-      border-radius: 18px;
       background:#fff;
-      padding:16px;
+      border-radius: 18px;
+      padding: 16px;
       box-shadow: var(--shadow2);
     }
-    .card h2{
-      margin:0 0 8px;
-      font-size:14px;
-      letter-spacing:.2px;
-    }
-    .card p{
-      margin:0;
-      color:var(--muted);
-      font-size:13px;
-      line-height:1.55;
-    }
+    .card h2{margin:0 0 8px;font-size:14px;letter-spacing:.2px}
+    .card p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}
 
     details{
       border:1px solid var(--line);
-      border-radius:18px;
       background:#fff;
+      border-radius:18px;
       box-shadow: var(--shadow2);
       overflow:hidden;
     }
     summary{
       cursor:pointer;
       list-style:none;
-      padding:14px 16px;
-      font-weight:950;
-      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding: 14px 16px;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      font-weight:1000;
     }
     summary::-webkit-details-marker{display:none}
     .chev{
       width:28px;height:28px;border-radius:10px;
       border:1px solid var(--line);
-      background:#fff;
       display:grid;place-items:center;
       color:var(--muted);
       transition: transform .2s ease;
       flex:0 0 auto;
     }
-    details[open] .chev{transform:rotate(180deg)}
-    .detailBody{padding:0 16px 16px}
-    .label{
-      margin-top:12px;
-      font-size:12px;
-      font-weight:900;
-      color:var(--muted);
-    }
-    .mono{
+    details[open] .chev{transform: rotate(180deg)}
+    .detailBody{padding: 0 16px 16px}
+    .label{margin-top:12px;font-size:12px;font-weight:1000;color:var(--muted)}
+    .monoBox{
       margin-top:8px;
       font-family:var(--mono);
       font-size:12px;
       border:1px solid var(--line);
-      background: #fbfcff;
+      background:#fbfcff;
       border-radius:14px;
       padding:10px;
       word-break:break-all;
@@ -308,10 +314,9 @@
     .miniBtn{
       border:1px solid var(--line);
       background:#fff;
-      color:var(--text);
-      padding:10px 12px;
       border-radius:14px;
-      font-weight:950;
+      padding:10px 12px;
+      font-weight:1000;
       cursor:pointer;
       transition: border-color .2s ease, transform .06s ease;
     }
@@ -320,11 +325,10 @@
 
     .formRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
     .input{
-      flex:1 1 280px;min-width:240px;
+      flex:1 1 260px; min-width: 220px;
       padding:12px 12px;
       border-radius:14px;
       border:1px solid var(--line);
-      background:#fff;
       outline:none;
       font-size:14px;
     }
@@ -333,63 +337,81 @@
       margin-top:10px;
       border:1px solid var(--line);
       border-radius:16px;
-      background:#fff;
       padding:12px;
-      font-weight:950;
+      font-weight:1000;
+      background:#fff;
     }
     .muted{color:var(--muted);font-size:12px;margin-top:6px}
-    .ok{color:var(--brand2)}
-    .bad{color:var(--bad)}
-    .warn{color:var(--warn)}
+    .ok{color: var(--brand2)}
+    .bad{color: #dc2626}
+    .warn{color: #b45309}
 
     footer{
-      margin-top:14px;
+      margin-top: 14px;
+      padding: 10px 4px;
+      display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
       color:var(--muted);
       font-size:12px;
-      display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
-      padding:10px 4px;
     }
 
-    /* sticky CTA */
+    /* Sticky CTA: mobile-perfect */
     .sticky{
-      position:fixed; left:0; right:0; bottom:0;
-      background: rgba(255,255,255,.88);
-      border-top:1px solid var(--line);
+      position:fixed;
+      left:0; right:0; bottom:0;
+      padding: 10px 12px calc(10px + var(--safeB));
+      background: rgba(255,255,255,.90);
+      border-top: 1px solid var(--line);
       backdrop-filter: blur(12px);
-      padding:10px 12px;
-      z-index: 60;
+      z-index: 50;
     }
     .stickyIn{
-      max-width:1100px;margin:0 auto;
-      display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+      max-width:1120px;
+      margin:0 auto;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
     }
-    .stickyLeft{
-      display:flex;flex-direction:column;gap:2px;min-width:220px
+    .sLeft{
+      display:flex; flex-direction:column; gap:2px;
+      min-width: 220px;
     }
-    .stickyLeft b{font-size:13px;letter-spacing:.2px}
-    .stickyLeft small{font-size:12px;color:var(--muted)}
-    .stickyRight{display:flex;gap:10px;flex-wrap:wrap}
-    .btnSmall{
-      padding:12px 14px;border-radius:14px;
-      font-size:14px;
+    .sLeft b{font-size:13px;letter-spacing:.2px}
+    .sLeft small{font-size:12px;color:var(--muted)}
+    .sRight{display:flex;gap:10px;flex-wrap:wrap}
+    .btnSmall{padding:12px 14px;border-radius:16px;font-size:14px;min-height:48px}
+
+    @media (max-width: 520px){
+      .sLeft{min-width: 0; width:100%}
+      .sRight{width:100%}
+      .btnSmall{flex:1 1 auto; width:100%}
+      .btnGhost.btnSmall{display:none;} /* mobile: only BUY */
+      .nav .chip:last-child{display:none;} /* hide Verify in top nav on tiny screens */
+      .wrap{padding-bottom: calc(140px + var(--safeB));}
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .btnPrimary:before{animation:none}
+      *{scroll-behavior:auto}
     }
   </style>
 </head>
 
 <body>
   <div class="wrap">
-
     <div class="topbar">
       <div class="brand">
         <div class="logo">L1</div>
-        <div class="brandText">
+        <div class="btxt">
           <b>LIG1</b>
-          <small>1 Klick → Uniswap (Polygon) • Transparent • Community-System</small>
+          <small>1 Klick → Uniswap (Polygon)</small>
         </div>
       </div>
       <div class="nav">
         <a class="chip" href="https://t.me/+yA0uIxJ-oUA0Njdk" target="_blank" rel="noopener">Telegram</a>
-        <a class="chip" href="mailto:project@ligone.ch">project@ligone.ch</a>
+        <a class="chip" href="mailto:project@ligone.ch">E-Mail</a>
         <a class="chip" href="#" onclick="openUrl(tokenScanUrl()); return false;">Verify</a>
       </div>
     </div>
@@ -397,41 +419,35 @@
     <section class="shell" aria-label="LIG1 Kaufen">
       <div class="hero">
         <div class="badgeRow">
-          <span class="badge">Fairness-System</span>
-          <span class="badge ok">On-Chain verifizierbar</span>
+          <span class="badge">🔥 Die Ersten verändern alles</span>
+          <span class="badge badge2">On-Chain verifizierbar</span>
         </div>
 
-        <h1>Du willst ein neues System? Dann sei früh dabei.</h1>
-        <p class="sub">
-          LIG1 ist für Menschen, die nicht mehr im alten Spiel leben wollen.
-          <b>Ein Klick öffnet Uniswap</b> – ohne Umwege, ohne Login. Alles ist transparent überprüfbar.
-        </p>
+        <!-- BAM: ultra short -->
+        <h1>Jetzt dazugehören.</h1>
+
+        <!-- one line only -->
+        <p class="sub">1 Klick öffnet Uniswap. Du bist drin.</p>
 
         <div class="ctaRow">
-          <a class="btn btnPrimary" id="buyNow" target="_blank" rel="noopener">
-            Jetzt LIG1 kaufen
-          </a>
-          <button class="btn btnGhost" type="button" onclick="openUrl(tokenScanUrl())">
-            Contract prüfen
-          </button>
+          <a class="btn btnPrimary" id="buyNow" target="_blank" rel="noopener">Jetzt LIG1 kaufen</a>
+          <button class="btn btnGhost" type="button" onclick="openUrl(tokenScanUrl())">Contract prüfen</button>
         </div>
 
         <div class="micro">
-          <span class="tick"><span class="dot"></span>Offizieller Swap-Link</span>
-          <span class="tick">Keine Datenspeicherung</span>
-          <span class="tick">Polygon • Uniswap</span>
+          <span><span class="dot"></span>Offizieller Swap-Link</span>
+          <span>Keine Datenspeicherung</span>
+          <span>Polygon • Uniswap</span>
         </div>
       </div>
 
       <div class="divider"></div>
 
-      <!-- BELOW THE FOLD: minimal, not in the way -->
-      <div class="sections">
+      <div class="below">
         <div class="card">
-          <h2>In 20 Sekunden erledigt</h2>
+          <h2>Warum so kurz?</h2>
           <p>
-            1) Kaufen auf Uniswap → 2) Optional verifizieren → 3) Community beitreten.
-            Mehr braucht es nicht. Die Seite bremst dich nicht – sie bringt dich zum Kauf.
+            Weil Entscheidungen in Sekunden fallen. Alles Technische ist verfügbar – aber es bremst den Kauf nicht.
           </p>
         </div>
 
@@ -442,14 +458,14 @@
           </summary>
           <div class="detailBody">
             <div class="label">Token Contract</div>
-            <div class="mono" id="contractTxt"></div>
+            <div class="monoBox" id="contractTxt"></div>
             <div class="rowBtns">
               <button class="miniBtn" type="button" onclick="copyText(CONTRACT)">Kopieren</button>
               <button class="miniBtn" type="button" onclick="openUrl(tokenScanUrl())">Polygonscan</button>
             </div>
 
             <div class="label">Pool Contract (Liquidity)</div>
-            <div class="mono" id="poolTxt"></div>
+            <div class="monoBox" id="poolTxt"></div>
             <div class="rowBtns">
               <button class="miniBtn" type="button" onclick="copyText(POOL_ADDRESS)">Kopieren</button>
               <button class="miniBtn" type="button" onclick="openUrl(poolScanUrl())">Pool ansehen</button>
@@ -469,7 +485,7 @@
                 Telegram
               </a>
               <a class="miniBtn" href="mailto:project@ligone.ch" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center;">
-                E-Mail
+                project@ligone.ch
               </a>
             </div>
 
@@ -485,17 +501,16 @@
       <div>© <span id="year"></span> LIGONE</div>
       <div>Keine Anlageberatung • Öffentliche Blockchain-Daten</div>
     </footer>
-
   </div>
 
-  <!-- Sticky CTA (always visible, but clean) -->
+  <!-- Sticky CTA -->
   <div class="sticky" role="region" aria-label="Kaufen">
     <div class="stickyIn">
-      <div class="stickyLeft">
-        <b>Bereit? 1 Klick → Uniswap</b>
-        <small>Seriös • Transparent • Polygon</small>
+      <div class="sLeft">
+        <b>1 Klick → Uniswap</b>
+        <small>Jetzt dabei sein</small>
       </div>
-      <div class="stickyRight">
+      <div class="sRight">
         <a class="btn btnPrimary btnSmall" id="buySticky" target="_blank" rel="noopener">LIG1 kaufen</a>
         <button class="btn btnGhost btnSmall" type="button" onclick="openUrl(tokenScanUrl())">Verify</button>
       </div>
@@ -514,9 +529,7 @@
       "https://polygon-bor.publicnode.com"
     ];
 
-    function uniswapUrl(){
-      return "https://app.uniswap.org/swap?chain=polygon&outputCurrency=" + CONTRACT;
-    }
+    function uniswapUrl(){ return "https://app.uniswap.org/swap?chain=polygon&outputCurrency=" + CONTRACT; }
     function tokenScanUrl(){ return "https://polygonscan.com/token/" + CONTRACT; }
     function poolScanUrl(){ return "https://polygonscan.com/address/" + POOL_ADDRESS; }
     function openUrl(url){ window.open(url, "_blank", "noopener"); }
@@ -525,7 +538,6 @@
     document.getElementById("year").textContent = new Date().getFullYear();
     document.getElementById("contractTxt").textContent = CONTRACT;
     document.getElementById("poolTxt").textContent = POOL_ADDRESS;
-
     document.getElementById("buyNow").href = uniswapUrl();
     document.getElementById("buySticky").href = uniswapUrl();
 
@@ -539,7 +551,7 @@
       }
     }
 
-    /* Wallet check (optional) */
+    /* Optional wallet check */
     async function loadEthers(){
       if (window.ethers) return;
       await new Promise((resolve, reject) => {
@@ -570,9 +582,7 @@
       el.textContent=text;
       el.className="status " + (cls||"");
     }
-    function setStatus2(text){
-      document.getElementById("status2").textContent=text || "";
-    }
+    function setStatus2(text){ document.getElementById("status2").textContent=text || ""; }
     function trimNum(x){
       const n=String(x);
       if(!n.includes(".")) return n;
@@ -603,13 +613,11 @@
           {"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"type":"function"}
         ];
         const c = new ethers.Contract(CONTRACT, abi, provider);
-
         const [balRaw, decimals, symbol] = await Promise.all([
           c.balanceOf(addr),
           c.decimals().catch(()=>18),
           c.symbol().catch(()=> "LIG1")
         ]);
-
         const formatted = ethers.utils.formatUnits(balRaw, decimals);
 
         if(balRaw.gt(0)){
