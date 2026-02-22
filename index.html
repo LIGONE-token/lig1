@@ -509,16 +509,25 @@
 
     /* init */
     document.getElementById("year").textContent = new Date().getFullYear();
-    document.getElementById("contractTxt").textContent = CONTRACT;
-    document.getElementById("poolTxt").textContent = POOL_ADDRESS;
-    document.getElementById("buyNow").href = uniswapUrl();
-    document.getElementById("buySticky").href = uniswapUrl();
+    const contractEl = document.getElementById("contractTxt");
+if (contractEl) contractEl.textContent = CONTRACT;
+
+const poolEl = document.getElementById("poolTxt");
+if (poolEl) poolEl.textContent = POOL_ADDRESS;
+
+const buyNowEl = document.getElementById("buyNow");
+if (buyNowEl) buyNowEl.href = uniswapUrl();
+
+const buyStickyEl = document.getElementById("buySticky");
+if (buyStickyEl) buyStickyEl.href = uniswapUrl();
 
     // Scarcity text (truthful)
     const left = Math.max(0, EARLY_SLOTS_TOTAL - EARLY_SLOTS_TAKEN);
     const scar = document.getElementById("scarcity");
-    scar.innerHTML = `<span class="pulse"></span>
-      <span><b>Nur noch ${left} Plätze frei</b> – Early-Member-Programm</span>`;
+if (scar) {
+  scar.innerHTML = `<span class="pulse"></span>
+  <span><b>Nur noch ${left} Plätze frei</b> – Early-Member-Programm</span>`;
+}
 
     // Transparenz chip opens details smoothly
     document.getElementById("openTransparency").addEventListener("click", (e)=>{
