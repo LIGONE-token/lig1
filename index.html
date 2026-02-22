@@ -1,223 +1,623 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-<!-- SEO -->
-<title>LIG1 | On-Chain Zugang</title>
-<meta name="description" content="LIG1 auf Polygon kaufen über Uniswap. Walletbesitz prüfen. Öffentliche Liquidität. Verifizierter Contract.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://ligone-token.github.io/lig1/">
+  <title>LIG1 kaufen (Polygon) – Wallet prüfen, Pool & Contract verifizieren</title>
+  <meta name="description" content="LIG1 auf Polygon kaufen (Uniswap) und Wallet-Besitz prüfen – ohne MetaMask. Verifizierter Contract, Pool-Adresse, Polygonscan, Live-Links & transparente On-Chain Daten." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#0b1220" />
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="LIG1 On-Chain Zugang">
-<meta property="og:description" content="Direkter Zugang über Uniswap. Wallet prüfen. Öffentliche Blockchain Daten.">
-<meta property="og:image" content="https://ligone-token.github.io/lig1/og-lig1.png">
-<meta property="og:url" content="https://ligone-token.github.io/lig1/">
+  <link rel="canonical" href="https://ligone-token.github.io/lig1/" />
+  <link rel="icon" href="ligone_logo_32x32.png" />
+  <link rel="apple-touch-icon" href="ligone_logo_192.png" />
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="LIG1 On-Chain Zugang">
-<meta name="twitter:description" content="Uniswap Kauf + Wallet Prüfung">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="LIG1 – On-Chain Zugang (Polygon)" />
+  <meta property="og:description" content="Uniswap-Kauf + Wallet-Prüfung ohne MetaMask. Contract & Pool verifizieren. Transparente On-Chain Links." />
+  <meta property="og:image" content="https://ligone-token.github.io/lig1/og-lig1.png" />
+  <meta property="og:url" content="https://ligone-token.github.io/lig1/" />
 
-<!-- Favicon -->
-<link rel="icon" href="ligone_logo_32x32.png">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="LIG1 – On-Chain Zugang (Polygon)" />
+  <meta name="twitter:description" content="Uniswap kaufen + Wallet prüfen (ohne MetaMask). Contract & Pool verifizieren." />
+  <meta name="twitter:image" content="https://ligone-token.github.io/lig1/og-lig1.png" />
 
-<style>
+  <!-- Preconnect for speed -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
 
-body{
-margin:0;
-font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-background:white;
-color:#0f172a;
-}
+  <style>
+    :root{
+      --bg:#070b14;
+      --panel:#0b1220;
+      --panel2:#0f1a2e;
+      --text:#eaf0ff;
+      --muted:#a8b3cf;
+      --line:rgba(255,255,255,.10);
+      --brand:#3b82f6;
+      --brand2:#22c55e;
+      --warn:#f59e0b;
+      --bad:#ef4444;
+      --ok:#22c55e;
+      --shadow: 0 18px 60px rgba(0,0,0,.45);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(1200px 700px at 10% -10%, rgba(59,130,246,.35), transparent 60%),
+        radial-gradient(900px 600px at 90% 10%, rgba(34,197,94,.22), transparent 55%),
+        radial-gradient(800px 600px at 50% 120%, rgba(245,158,11,.14), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.45;
+    }
+    a{color:inherit}
+    .wrap{max-width:1120px;margin:0 auto;padding:28px 18px 44px}
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+      padding:10px 14px;border:1px solid var(--line);
+      background:rgba(11,18,32,.55);
+      backdrop-filter: blur(10px);
+      border-radius:14px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:12px;min-width:0;
+    }
+    .logo{
+      width:36px;height:36px;border-radius:10px;
+      background:linear-gradient(135deg, rgba(59,130,246,.9), rgba(34,197,94,.8));
+      box-shadow:0 10px 30px rgba(59,130,246,.25);
+      display:grid;place-items:center;font-weight:900;color:#061024;
+      flex:0 0 auto;
+    }
+    .brand b{font-size:14px;letter-spacing:.2px}
+    .brand small{display:block;color:var(--muted);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:54vw}
+    .rightlinks{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+    .pill{
+      border:1px solid var(--line);
+      background:rgba(15,26,46,.5);
+      padding:8px 10px;border-radius:999px;
+      font-size:12px;color:var(--muted);
+      text-decoration:none;
+    }
+    .pill:hover{border-color:rgba(255,255,255,.18);color:var(--text)}
+    .hero{
+      margin-top:18px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(11,18,32,.78), rgba(11,18,32,.55));
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .heroIn{padding:26px 22px}
+    h1{margin:0 0 10px;font-size:34px;letter-spacing:-.3px}
+    .sub{color:var(--muted);max-width:72ch;margin:0 0 18px}
+    .ctaRow{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:12px 16px;border-radius:12px;
+      text-decoration:none;
+      font-weight:700;
+      border:1px solid transparent;
+      cursor:pointer;
+      user-select:none;
+      transition:transform .06s ease, filter .2s ease, border-color .2s ease;
+    }
+    .btn:active{transform:translateY(1px)}
+    .btnPrimary{
+      background:linear-gradient(135deg, rgba(59,130,246,1), rgba(59,130,246,.78));
+      color:white;
+      box-shadow:0 18px 40px rgba(59,130,246,.25);
+    }
+    .btnPrimary:hover{filter:brightness(1.05)}
+    .btnGhost{
+      background:rgba(15,26,46,.55);
+      border-color:var(--line);
+      color:var(--text);
+    }
+    .btnGhost:hover{border-color:rgba(255,255,255,.18)}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:14px;
+      padding:14px;
+    }
+    @media (max-width: 940px){
+      .grid{grid-template-columns:1fr}
+      .brand small{max-width:62vw}
+    }
+    .card{
+      border:1px solid var(--line);
+      background:rgba(11,18,32,.6);
+      border-radius:var(--radius);
+      padding:18px;
+    }
+    .card h2{
+      margin:0 0 10px;
+      font-size:16px;
+      letter-spacing:.2px;
+    }
+    .metaRow{
+      display:grid;gap:10px;
+      grid-template-columns: 1fr;
+    }
+    .k{
+      color:var(--muted);font-size:12px;margin-bottom:6px;
+      display:flex;align-items:center;justify-content:space-between;gap:8px;
+    }
+    .mono{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size:12px;word-break:break-all;
+      background:rgba(15,26,46,.6);
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:10px 10px;
+    }
+    .miniRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .miniBtn{
+      border:1px solid var(--line);
+      background:rgba(15,26,46,.55);
+      color:var(--text);
+      padding:10px 12px;border-radius:12px;
+      cursor:pointer;font-weight:700;font-size:13px;
+    }
+    .miniBtn:hover{border-color:rgba(255,255,255,.18)}
+    .note{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .formRow{display:flex;gap:10px;flex-wrap:wrap}
+    .input{
+      flex:1 1 280px;
+      min-width:240px;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(15,26,46,.55);
+      color:var(--text);
+      outline:none;
+    }
+    .input:focus{border-color:rgba(59,130,246,.55)}
+    .status{
+      margin-top:12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(15,26,46,.55);
+      padding:12px 12px;
+      font-weight:800;
+    }
+    .sMuted{color:var(--muted);font-weight:600;font-size:12px;margin-top:6px}
+    .badgeRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .badge{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(15,26,46,.4);
+      color:var(--muted);
+    }
+    .faq details{
+      border:1px solid var(--line);
+      background:rgba(11,18,32,.55);
+      border-radius:14px;
+      padding:12px 14px;
+      margin-top:10px;
+    }
+    .faq summary{
+      cursor:pointer;font-weight:800;
+    }
+    .faq p{color:var(--muted);margin:10px 0 0}
+    footer{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:12px;
+      display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
+      padding:10px 4px;
+    }
+    .ok{color:var(--ok)}
+    .bad{color:var(--bad)}
+    .warn{color:var(--warn)}
+  </style>
 
-.container{
-max-width:1100px;
-margin:auto;
-padding:40px 20px;
-}
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"LIG1 On-Chain Zugang",
+    "url":"https://ligone-token.github.io/lig1/",
+    "description":"LIG1 auf Polygon kaufen (Uniswap) und Wallet-Besitz prüfen – ohne MetaMask. Contract & Pool verifizieren."
+  }
+  </script>
 
-header{
-border-bottom:1px solid #e5e7eb;
-padding:18px 0;
-font-weight:700;
-}
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"LIGONE",
+    "url":"https://ligone-token.github.io/",
+    "email":"project@ligone.ch"
+  }
+  </script>
 
-h1{font-size:40px;margin:0 0 10px}
-h2{margin-top:50px}
-
-.btn{
-display:inline-block;
-padding:12px 18px;
-border-radius:8px;
-background:#0ea5e9;
-color:white;
-text-decoration:none;
-margin-top:12px;
-}
-
-.card{
-border:1px solid #e5e7eb;
-border-radius:10px;
-padding:20px;
-margin-top:20px;
-}
-
-input{
-width:100%;
-padding:12px;
-border-radius:8px;
-border:1px solid #e5e7eb;
-margin-top:10px;
-}
-
-button{
-padding:12px 18px;
-border:none;
-border-radius:8px;
-background:#0f172a;
-color:white;
-margin-top:10px;
-cursor:pointer;
-}
-
-.status{margin-top:10px;font-weight:700}
-
-footer{
-margin-top:60px;
-border-top:1px solid #e5e7eb;
-padding:30px 0;
-color:#64748b;
-font-size:14px;
-}
-
-</style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Brauche ich MetaMask oder Wallet-Connect?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Nein. Du kannst unten eine Wallet-Adresse eingeben und den LIG1-Bestand rein über öffentliche Blockchain-Daten prüfen."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Wie verifiziere ich Contract und Pool?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Nutze die Buttons zu Polygonscan (Token) und zum Pool-Contract. Dort siehst du Eigentümer, Transfers, Holder und Liquidity-Informationen."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body>
+  <div class="wrap">
 
-<div class="container">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo">L1</div>
+        <div style="min-width:0">
+          <b>LIG1 – On-Chain Zugang</b>
+          <small>Polygon • Wallet prüfen • Contract & Pool verifizieren • Uniswap Kauf</small>
+        </div>
+      </div>
+      <div class="rightlinks">
+        <a class="pill" href="https://t.me/+yA0uIxJ-oUA0Njdk" target="_blank" rel="noopener">Telegram</a>
+        <a class="pill" href="mailto:project@ligone.ch">E-Mail</a>
+        <a class="pill" href="https://ligone-token.github.io/ligone-web/" target="_blank" rel="noopener">LIGONE Web</a>
+      </div>
+    </div>
 
-<header>LIG1</header>
+    <section class="hero" aria-label="Hero">
+      <div class="heroIn">
+        <h1>Direkt zu LIG1 – ohne Umwege</h1>
+        <p class="sub">
+          Kaufen über Uniswap (Polygon), danach optional Wallet-Besitz prüfen. Alles basiert auf öffentlichen On-Chain Daten – transparent, verifizierbar, ohne Login.
+        </p>
 
-<h1>On-Chain Zugang zu LIG1</h1>
-<p>Handel erfolgt dezentral über Uniswap auf Polygon.</p>
+        <div class="badgeRow" aria-label="Trust badges">
+          <span class="badge">✅ Wallet-Check ohne MetaMask</span>
+          <span class="badge">🔎 Contract & Pool verifizierbar</span>
+          <span class="badge">🌐 Public RPC + Fallback</span>
+        </div>
 
-<a class="btn"
-href="https://app.uniswap.org/swap?chain=polygon&outputCurrency=0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d"
-target="_blank">
-Auf Uniswap kaufen
-</a>
+        <div class="ctaRow">
+          <a class="btn btnPrimary" id="buyLink" target="_blank" rel="noopener">
+            Auf Uniswap kaufen
+          </a>
+          <a class="btn btnGhost" id="scanToken" target="_blank" rel="noopener">
+            Polygonscan: Token ansehen
+          </a>
+          <a class="btn btnGhost" id="scanPool" target="_blank" rel="noopener">
+            Polygonscan: Pool ansehen
+          </a>
+        </div>
 
-<div class="card">
-<b>Token Contract:</b><br>
-<span id="contract">0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d</span>
-<br><br>
-<button onclick="copyContract()">Adresse kopieren</button>
-<button onclick="openScan()">Polygonscan</button>
-</div>
+        <div class="note">
+          Tipp: Wenn Uniswap „Token nicht gefunden“ zeigt, nutze den Contract unten zum Import.
+        </div>
+      </div>
 
-<h2>Wallet Besitz prüfen</h2>
-<input id="wallet" placeholder="0x...">
-<button onclick="checkWallet()">Prüfen</button>
-<div id="status" class="status"></div>
+      <div class="grid">
+        <div class="card">
+          <h2>Verifizierbare Adressen</h2>
 
-<h2>Community</h2>
+          <div class="metaRow">
+            <div>
+              <div class="k">
+                <span>Token Contract</span>
+                <button class="miniBtn" type="button" onclick="copyText(CONTRACT)">Kopieren</button>
+              </div>
+              <div class="mono" id="contractTxt"></div>
+            </div>
 
-<a class="btn"
-href="https://t.me/+yA0uIxJ-oUA0Njdk"
-target="_blank">
-Telegram Gruppe
-</a>
+            <div>
+              <div class="k">
+                <span>Pool Contract (Liquidity)</span>
+                <button class="miniBtn" type="button" onclick="copyText(POOL_ADDRESS)">Kopieren</button>
+              </div>
+              <div class="mono" id="poolTxt"></div>
+              <div class="note">Hinweis: Das ist die Pool-Adresse (nicht die Buy-Adresse). Kaufen erfolgt über Uniswap.</div>
+            </div>
+          </div>
 
-<a class="btn"
-href="mailto:project@ligone.ch">
-E-Mail Support
-</a>
+          <div class="miniRow">
+            <button class="miniBtn" type="button" onclick="openUrl(uniswapUrl())">Uniswap öffnen</button>
+            <button class="miniBtn" type="button" onclick="openUrl(tokenScanUrl())">Token Scan</button>
+            <button class="miniBtn" type="button" onclick="openUrl(poolScanUrl())">Pool Scan</button>
+          </div>
 
-<footer>© LIGONE</footer>
+          <div class="note">
+            Wenn Polygon gerade zickt: Wallet-Check nutzt mehrere RPC-Endpoints und wechselt automatisch.
+          </div>
+        </div>
 
-</div>
+        <div class="card">
+          <h2>Wallet Besitz prüfen</h2>
 
-<script>
+          <div class="formRow">
+            <input class="input" id="wallet" inputmode="text" autocomplete="off" spellcheck="false"
+              placeholder="Wallet-Adresse 0x… eingeben" aria-label="Wallet-Adresse" />
+            <button class="btn btnPrimary" type="button" onclick="checkWallet()">
+              Prüfen
+            </button>
+          </div>
 
-const CONTRACT="0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d";
-const RPC="https://polygon-rpc.com";
+          <div id="status" class="status">Noch nicht geprüft.</div>
+          <div id="status2" class="sMuted"></div>
 
-function copyContract(){
-navigator.clipboard.writeText(CONTRACT);
-alert("Contract kopiert");
-}
+          <div class="note">
+            Du bekommst den **exakten LIG1-Saldo** (formatiert) + Rohwert. Keine Daten werden gespeichert.
+          </div>
+        </div>
+      </div>
 
-function openScan(){
-window.open("https://polygonscan.com/token/"+CONTRACT,"_blank");
-}
+      <div class="grid" style="padding-top:0">
+        <div class="card faq">
+          <h2>FAQ (kurz & klar)</h2>
 
-async function loadEthers(){
-if(window.ethers) return;
-await new Promise(r=>{
-const s=document.createElement("script");
-s.src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.min.js";
-s.onload=r;
-document.body.appendChild(s);
-});
-}
+          <details>
+            <summary>Warum wirkt das „seriös“?</summary>
+            <p>
+              Weil du hier alles verifizieren kannst: Token-Contract, Pool-Contract, Polygonscan-Links,
+              und die Wallet-Prüfung basiert ausschließlich auf öffentlichen RPC-Abfragen.
+            </p>
+          </details>
 
-async function checkWallet(){
+          <details>
+            <summary>Warum kann der Check „Netzwerkfehler“ zeigen?</summary>
+            <p>
+              Polygon-RPCs können zeitweise überlastet sein. Diese Seite nutzt automatisch mehrere RPC-Endpoints.
+              Wenn es trotzdem scheitert: 30 Sekunden warten und erneut prüfen.
+            </p>
+          </details>
 
-const addr=document.getElementById("wallet").value.trim();
-const status=document.getElementById("status");
+          <details>
+            <summary>Was ist der Unterschied zwischen Token-Contract und Pool-Contract?</summary>
+            <p>
+              Der Token-Contract ist das Token selbst. Der Pool-Contract ist der Handels-/Liquidity-Pool
+              (wo die Liquidität liegt). Kaufen erfolgt immer über Uniswap – nicht „direkt“ an den Pool senden.
+            </p>
+          </details>
+        </div>
 
-if(!addr){
-status.textContent="Adresse eingeben";
-status.style.color="red";
-return;
-}
+        <div class="card">
+          <h2>Community & Support</h2>
+          <div class="ctaRow" style="margin-top:0">
+            <a class="btn btnGhost" href="https://t.me/+yA0uIxJ-oUA0Njdk" target="_blank" rel="noopener">Telegram Community</a>
+            <a class="btn btnGhost" href="mailto:project@ligone.ch">project@ligone.ch</a>
+          </div>
+          <div class="note">
+            Wenn du willst, kann hier später noch ein „Warum LIG1?“ Abschnitt rein (ultrakurz, 3 Bullets), ohne die Seite zu überladen.
+          </div>
+        </div>
+      </div>
+    </section>
 
-await loadEthers();
+    <footer>
+      <div>© <span id="year"></span> LIGONE • On-Chain Transparenz</div>
+      <div>Keine Anlageberatung • Nur öffentliche Blockchain-Daten</div>
+    </footer>
 
-if(!ethers.utils.isAddress(addr)){
-status.textContent="Ungültige Adresse";
-status.style.color="red";
-return;
-}
+  </div>
 
-status.textContent="Blockchain wird geprüft...";
+  <script>
+    /* =========================
+       KONFIG – HIER BEI BEDARF ÄNDERN
+    ========================== */
+    const CONTRACT = "0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d";
 
-try{
+    // Pool-Adresse (von dir genannt). Falls du eine andere Pool-Adresse meinst (V2/V3), hier austauschen:
+    const POOL_ADDRESS = "0xd6791279B261c36c1E079ecE8Cb05079cc5e7e38";
 
-const provider=new ethers.providers.JsonRpcProvider(RPC);
+    // Mehrere RPCs als Fallback (stabiler als nur 1 Endpoint)
+    const RPCS = [
+      "https://polygon-rpc.com",
+      "https://rpc.ankr.com/polygon",
+      "https://polygon.llamarpc.com",
+      "https://polygon-bor.publicnode.com"
+    ];
 
-const abi=[{
-constant:true,
-inputs:[{name:"owner",type:"address"}],
-name:"balanceOf",
-outputs:[{name:"",type:"uint256"}],
-type:"function"
-}];
+    // Uniswap Link (du kannst optional inputCurrency setzen)
+    function uniswapUrl(){
+      // Standard: outputCurrency = LIG1 Contract
+      return "https://app.uniswap.org/swap?chain=polygon&outputCurrency=" + CONTRACT;
+      // Alternative (wenn du USDC bevorzugst):
+      // return "https://app.uniswap.org/swap?chain=polygon&inputCurrency=USDC&outputCurrency=" + CONTRACT;
+    }
 
-const contract=new ethers.Contract(CONTRACT,abi,provider);
-const balance=await contract.balanceOf(addr);
+    function tokenScanUrl(){ return "https://polygonscan.com/token/" + CONTRACT; }
+    function poolScanUrl(){ return "https://polygonscan.com/address/" + POOL_ADDRESS; }
 
-if(balance.gt(0)){
-status.textContent="LIG1 Besitz bestätigt";
-status.style.color="green";
-}else{
-status.textContent="Kein LIG1 Besitz";
-status.style.color="red";
-}
+    /* =========================
+       UI INIT
+    ========================== */
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("contractTxt").textContent = CONTRACT;
+    document.getElementById("poolTxt").textContent = POOL_ADDRESS;
 
-}catch{
-status.textContent="Netzwerkfehler";
-status.style.color="red";
-}
+    const buy = document.getElementById("buyLink");
+    buy.href = uniswapUrl();
 
-}
+    const scanToken = document.getElementById("scanToken");
+    scanToken.href = tokenScanUrl();
 
-</script>
+    const scanPool = document.getElementById("scanPool");
+    scanPool.href = poolScanUrl();
 
+    /* =========================
+       HELPERS
+    ========================== */
+    function openUrl(url){ window.open(url, "_blank", "noopener"); }
+
+    async function copyText(txt){
+      try{
+        await navigator.clipboard.writeText(txt);
+        toast("Kopiert ✔");
+      }catch{
+        // Fallback
+        const ta=document.createElement("textarea");
+        ta.value=txt; document.body.appendChild(ta);
+        ta.select(); document.execCommand("copy");
+        document.body.removeChild(ta);
+        toast("Kopiert ✔");
+      }
+    }
+
+    let toastTimer=null;
+    function toast(msg){
+      clearTimeout(toastTimer);
+      const el = document.getElementById("status");
+      const el2 = document.getElementById("status2");
+      const old = el.textContent;
+      const old2 = el2.textContent;
+      el.textContent = msg;
+      el.className = "status ok";
+      el2.textContent = "";
+      toastTimer=setTimeout(()=>{
+        el.textContent = old || "Noch nicht geprüft.";
+        el.className = "status";
+        el2.textContent = old2 || "";
+      }, 1400);
+    }
+
+    function setStatus(text, tone){
+      const el = document.getElementById("status");
+      el.textContent = text;
+      el.className = "status " + (tone || "");
+    }
+    function setStatus2(text){
+      document.getElementById("status2").textContent = text || "";
+    }
+
+    /* =========================
+       ETHERS LOADER
+    ========================== */
+    async function loadEthers(){
+      if (window.ethers) return;
+      await new Promise((resolve, reject) => {
+        const s = document.createElement("script");
+        s.src = "https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.min.js";
+        s.onload = resolve;
+        s.onerror = reject;
+        document.head.appendChild(s);
+      });
+    }
+
+    /* =========================
+       RPC PROVIDER WITH FALLBACK
+    ========================== */
+    async function getWorkingProvider(){
+      // Try RPCs in order; pick first that answers quickly
+      for (const url of RPCS){
+        try{
+          const p = new ethers.providers.JsonRpcProvider(url);
+          // lightweight call
+          await Promise.race([
+            p.getBlockNumber(),
+            new Promise((_,rej)=>setTimeout(()=>rej(new Error("timeout")), 4000))
+          ]);
+          return { provider: p, rpc: url };
+        }catch(e){
+          // try next
+        }
+      }
+      throw new Error("No RPC available");
+    }
+
+    /* =========================
+       WALLET CHECK
+    ========================== */
+    async function checkWallet(){
+      const input = document.getElementById("wallet");
+      const addr = (input.value || "").trim();
+      if(!addr){
+        setStatus("Adresse eingeben", "warn");
+        setStatus2("");
+        return;
+      }
+
+      await loadEthers();
+
+      if(!ethers.utils.isAddress(addr)){
+        setStatus("Ungültige Wallet-Adresse", "bad");
+        setStatus2("Format prüfen: 0x… (42 Zeichen).");
+        return;
+      }
+
+      setStatus("Prüfe Blockchain…", "warn");
+      setStatus2("RPC wird automatisch gewählt…");
+
+      try{
+        const { provider, rpc } = await getWorkingProvider();
+
+        // Minimal ERC20 ABI: decimals + symbol + balanceOf
+        const abi = [
+          {"constant":true,"inputs":[{"name":"owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"type":"function"},
+          {"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"type":"function"},
+          {"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"type":"function"}
+        ];
+
+        const c = new ethers.Contract(CONTRACT, abi, provider);
+
+        // Parallel calls
+        const [balRaw, decimals, symbol] = await Promise.all([
+          c.balanceOf(addr),
+          c.decimals().catch(()=>18),
+          c.symbol().catch(()=> "LIG1")
+        ]);
+
+        const formatted = ethers.utils.formatUnits(balRaw, decimals);
+        const has = balRaw.gt(0);
+
+        if(has){
+          setStatus(`✅ Besitz bestätigt: ${trimNum(formatted)} ${symbol}`, "ok");
+        }else{
+          setStatus(`⛔ Kein ${symbol}-Besitz in dieser Wallet`, "bad");
+        }
+
+        const now = new Date();
+        setStatus2(`RPC: ${rpc} • Rohwert: ${balRaw.toString()} • geprüft: ${now.toLocaleString("de-CH")}`);
+
+      }catch(e){
+        setStatus("Netzwerkfehler – RPC antwortet nicht", "bad");
+        setStatus2("Polygon kann kurz überlastet sein. Bitte in 30 Sekunden erneut prüfen.");
+      }
+    }
+
+    function trimNum(x){
+      // Make it look clean: max 6 decimals, strip trailing zeros
+      const n = String(x);
+      if(!n.includes(".")) return n;
+      const [a,b] = n.split(".");
+      const cut = b.slice(0, 6).replace(/0+$/,"");
+      return cut ? `${a}.${cut}` : a;
+    }
+  </script>
 </body>
 </html>
