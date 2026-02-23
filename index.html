@@ -430,6 +430,12 @@
   font-size:13px;
   color:#64748b;
 }
+    .ctaBlock{
+  display:flex;
+  flex-direction:column;   /* ← stapelt vertikal */
+  align-items:center;
+  gap:14px;
+}
   </style>
 </head>
 
@@ -456,10 +462,17 @@
   <div class="heroInner">
     <div class="momentum">+13,57% seit 16.01.2026</div>
     <h1>Einfach ab 5$ testen und halten</h1>
-<div id="scarcity" class="scarcity"></div>
-    <a class="cta" href="https://app.uniswap.org/swap?chain=polygon&outputCurrency=0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d" target="_blank">
-      Jetzt dabei sein
-    </a>
+<div class="ctaBlock">
+
+  <div id="scarcity" class="scarcity"></div>
+
+  <a class="cta"
+     href="https://app.uniswap.org/swap?chain=polygon&outputCurrency=0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d"
+     target="_blank">
+     Jetzt dabei sein
+  </a>
+
+</div>
 
     <div class="micro">
       Uniswap • Polygon • On-Chain verifizierbar
@@ -490,7 +503,7 @@
        Plätze = Early-Member-Programm (z. B. Vorteile/Jackpot-Qualifikation).
        Stelle diese Werte real ein – dann ist die Aussage korrekt und stark. */
     const EARLY_SLOTS_TOTAL = 500;     // Gesamtplätze im Early-Member-Programm
-    const EARLY_SLOTS_TAKEN = 463;     // bereits vergeben (real setzen)
+    const EARLY_SLOTS_TAKEN = 469;     // bereits vergeben (real setzen)
 
     const CONTRACT = "0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d";
     const POOL_ADDRESS = "0xd6791279B261c36c1E079ecE8Cb05079cc5e7e38";
