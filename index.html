@@ -463,7 +463,9 @@
 
     <section class="hero">
   <div class="heroInner">
-    <div class="momentum">+13,57% seit 16.01.2026</div>
+    <div class="momentum" id="liveMomentum">
+  Lade Performance...
+</div>
     <h1>Einfach ab 5$ testen und halten</h1>
 <div class="ctaBlock">
 
@@ -644,5 +646,32 @@ if (scar) {
       }
     }
   </script>
+  <script>
+async function loadMomentum(){
+  try{
+    const res = await fetch("https://ligone-token.github.io/ligone-web/data/performance-since-2026-01-16.json?v=" + Date.now(), { cache:"no-store" });
+    if(!res.ok) return;
+
+    const data = await res.json();
+    const lig1 = data.find(x => x.asset === "LIG1");
+    if(!lig1) return;
+
+    const change = Number(lig1.total_percent);
+
+    const el = document.getElementById("liveMomentum");
+
+    el.textContent = 
+      (change >= 0 ? "+" : "") + change.toFixed(2) + "% seit 16.01.2026";
+
+    el.style.color = change >= 0 ? "#16a34a" : "#dc2626";
+
+  }catch(e){
+    document.getElementById("liveMomentum").textContent =
+      "Performance derzeit nicht verfügbar";
+  }
+}
+
+loadMomentum();
+</script>
 </body>
 </html>
