@@ -1,678 +1,393 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="google-site-verification" content="YRRh6jvBiPgsqxbRXpFUyRfganm4lP1V1yTXE7MvlhQ" />
 
-  <title>LIG1 – Jetzt Teil des neuen Systems werden</title>
-  <meta name="description" content="1 Klick → Uniswap (Polygon). LIG1: Teil des neuen Systems werden. Early-Member-Plätze (Programm) limitiert. On-Chain verifizierbar." />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
-  <link rel="canonical" href="https://ligone-token.github.io/lig1/" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
+<title>LIG1 Token – Kaufen auf Uniswap Polygon | LIGONE</title>
+
+<meta name="description" content="LIG1 Token auf Polygon kaufen. Werde Teil des LIGONE Systems. On-Chain verifizierbar. Early-Member Plätze limitiert.">
+
+<meta name="keywords" content="LIG1, LIGONE, LIG1 Token, Polygon Token, Uniswap Polygon Token, DeFi Polygon">
+
+<meta name="robots" content="index,follow">
+
+<link rel="canonical" href="https://ligone-token.github.io/lig1/">
+
+<meta name="theme-color" content="#0b0f1f">
+
+<!-- OpenGraph -->
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="LIG1 – Jetzt Teil des Systems werden">
+<meta property="og:description" content="LIG1 Token kaufen auf Polygon über Uniswap.">
 <meta property="og:url" content="https://ligone-token.github.io/lig1/">
-<meta property="og:title" content="LIG1 – Jetzt Teil des neuen Systems werden">
-<meta property="og:description" content="+13,57% seit 16.01.2026">
 <meta property="og:image" content="https://ligone-token.github.io/lig1/og-lig1.jpg">
-<meta property="og:image:secure_url" content="https://ligone-token.github.io/lig1/og-lig1.jpg">
-<meta property="og:image:type" content="image/jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://ligone-token.github.io/lig1/og-lig1.jpg">
 
-  <!-- Favicon (nur das) -->
-  <link rel="icon" type="image/png" sizes="32x32" href="ligone_logo_32x32.png">
+<link rel="icon" type="image/png" href="ligone_logo_32x32.png">
 
-  <meta name="theme-color" content="#ffffff" />
+<!-- Structured data -->
 
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"WebSite",
+"name":"LIG1",
+"url":"https://ligone-token.github.io/lig1/",
+"description":"LIG1 Token des LIGONE Systems auf Polygon."
+}
+</script>
 
-  <style>
-    :root{
-      --bg:#ffffff;
-      --bg2:#f7f8fc;
-      --text:#0b1220;
-      --muted:#5b667a;
-      --line:#e7ebf3;
+<style>
 
-      --brand:#2457ff;
-      --brand2:#22c55e;
-      --warm:#f59e0b;
-      --bad:#dc2626;
-      --warn:#b45309;
-
-      --shadow: 0 26px 80px rgba(16,24,40,.12);
-      --shadow2: 0 10px 26px rgba(16,24,40,.08);
-
-      --r16:16px;
-      --r20:20px;
-      --r26:26px;
-
-      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-
-      --safeB: env(safe-area-inset-bottom);
-    }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:var(--font);
-      color:var(--text);
-      background:
-        radial-gradient(1100px 680px at 12% -10%, rgba(36,87,255,.16), transparent 60%),
-        radial-gradient(1100px 680px at 88% -10%, rgba(34,197,94,.13), transparent 60%),
-        radial-gradient(900px 640px at 50% 115%, rgba(245,158,11,.12), transparent 60%),
-        linear-gradient(180deg, var(--bg), var(--bg2));
-      overflow-x:hidden;
-    }
-    a{color:inherit}
-
-    .wrap{
-      max-width: 1080px;
-      margin:0 auto;
-      padding: 18px 14px calc(132px + var(--safeB));
-    }
-
-    /* Topbar */
-    .topbar{
-      display:flex;align-items:center;justify-content:space-between;gap:12px;
-      padding:12px 12px;
-      border:1px solid var(--line);
-      border-radius:18px;
-      background:rgba(255,255,255,.88);
-      backdrop-filter: blur(12px);
-      box-shadow: var(--shadow2);
-    }
-    .brand{display:flex;align-items:center;gap:10px;min-width:0}
-    .logo{
-      width:44px;height:44px;border-radius:14px;
-      background:#fff; overflow:hidden;
-      box-shadow: 0 10px 24px rgba(16,24,40,.10);
-      flex:0 0 auto;
-      display:flex;align-items:center;justify-content:center;
-    }
-    .logo img{width:100%;height:100%;object-fit:cover;display:block}
-    .btxt{min-width:0}
-    .btxt b{display:block;font-size:14px;letter-spacing:.2px;line-height:1.1}
-    .btxt small{
-      display:block;margin-top:3px;
-      color:var(--muted);font-size:12px;
-      white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-      max-width:60vw;
-    }
-    .nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-    .chip{
-      text-decoration:none;
-      font-size:12px;font-weight:950;
-      color:var(--muted);
-      border:1px solid var(--line);
-      background:#fff;
-      padding:9px 10px;border-radius:999px;
-      transition: transform .06s ease, border-color .2s ease, color .2s ease;
-      user-select:none;
-    }
-    .chip:hover{border-color:#dbe2f2;color:var(--text)}
-    .chip:active{transform:translateY(1px)}
-
-    /* HERO BAM */
-    .hero{
-      margin-top:14px;
-      border:1px solid var(--line);
-      border-radius: var(--r26);
-      background: rgba(255,255,255,.92);
-      box-shadow: var(--shadow);
-      position:relative;
-      overflow:hidden;
-      isolation:isolate;
-    }
-    .hero:before{
-      content:"";
-      position:absolute;inset:-2px;
-      background:
-        radial-gradient(980px 620px at 12% 0%, rgba(36,87,255,.20), transparent 62%),
-        radial-gradient(980px 620px at 88% 0%, rgba(34,197,94,.16), transparent 62%),
-        radial-gradient(900px 620px at 50% 120%, rgba(245,158,11,.14), transparent 60%);
-      pointer-events:none;
-      opacity:.98;
-      z-index:-1;
-    }
-    /* subtle giant watermark */
-    .watermark{
-      position:absolute; inset:auto -20px -60px auto;
-      font-weight:1000;
-      letter-spacing:-6px;
-      font-size: clamp(72px, 14vw, 160px);
-      color: rgba(11,18,32,.05);
-      transform: rotate(-10deg);
-      user-select:none;
-      pointer-events:none;
-    }
-
-    .heroIn{padding: 28px 18px 18px; position:relative}
-    .rowTop{
-      display:flex; align-items:flex-start; justify-content:space-between; gap:12px;
-      flex-wrap:wrap;
-    }
-
-    /* Scarcity banner */
-    .scarcity{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid rgba(245,158,11,.24);
-      background: rgba(245,158,11,.10);
-      font-weight:1000;
-      font-size:12px;
-      color:#5a3a00;
-      box-shadow: 0 10px 24px rgba(245,158,11,.10);
-    }
-    .pulse{
-      width:10px;height:10px;border-radius:999px;
-      background: var(--warm);
-      box-shadow: 0 0 0 0 rgba(245,158,11,.35);
-      animation:pulse 1.4s infinite;
-    }
-    @keyframes pulse{
-      0%{box-shadow: 0 0 0 0 rgba(245,158,11,.35)}
-      70%{box-shadow: 0 0 0 10px rgba(245,158,11,0)}
-      100%{box-shadow: 0 0 0 0 rgba(245,158,11,0)}
-    }
-
-    h1{
-      margin: 14px 0 0;
-      font-size: clamp(36px, 6.4vw, 62px);
-      line-height: 1.00;
-      letter-spacing: -1.2px;
-    }
-    .sub{
-      margin: 12px 0 0;
-      color:var(--muted);
-      font-size: 15px;
-      max-width: 46ch;
-    }
-
-    .ctaRow{
-      margin-top: 18px;
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      align-items:center;
-    }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      gap:10px;
-      border-radius: 18px;
-      padding: 14px 18px;
-      border:1px solid transparent;
-      cursor:pointer;
-      text-decoration:none;
-      user-select:none;
-      font-weight: 1000;
-      transition: transform .06s ease, filter .2s ease, box-shadow .2s ease, border-color .2s ease;
-      min-height: 54px;
-      will-change: transform;
-    }
-    .btn:active{transform:translateY(1px)}
-    .btnPrimary{
-      background: linear-gradient(135deg, rgba(36,87,255,1), rgba(36,87,255,.84));
-      color:#fff;
-      box-shadow: 0 24px 70px rgba(36,87,255,.24);
-      position:relative;
-      overflow:hidden;
-    }
-    .btnPrimary:before{
-      content:"";
-      position:absolute; inset:-55%;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.42), transparent 45%);
-      transform: translateX(-55%) rotate(10deg);
-      opacity:.0;
-      animation: sheen 2.5s ease-in-out infinite;
-      pointer-events:none;
-    }
-    @keyframes sheen{
-      0%{transform: translateX(-55%) rotate(10deg); opacity:0}
-      18%{opacity:.55}
-      55%{transform: translateX(55%) rotate(10deg); opacity:0}
-      100%{transform: translateX(55%) rotate(10deg); opacity:0}
-    }
-    .btnPrimary:hover{filter:brightness(1.03)}
-    .btnSoft{
-      background:#fff;
-      border-color: var(--line);
-      color:var(--text);
-      box-shadow: var(--shadow2);
-      font-weight:950;
-    }
-    .btnSoft:hover{border-color:#dbe2f2}
-
-    .trust{
-      margin-top: 14px;
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      color:var(--muted);
-      font-size:12px;
-    }
-    .trust span{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:8px 10px;border-radius:999px;
-      border:1px solid var(--line);
-      background:#fff;
-      font-weight:900;
-    }
-    .dotOk{
-      width:9px;height:9px;border-radius:999px;
-      background: var(--brand2);
-      box-shadow: 0 0 0 4px rgba(34,197,94,.12);
-    }
-
-    .divider{height:1px;background:var(--line)}
-
-    /* below: transparency hidden */
-    .more{
-      padding: 14px 16px 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.90));
-    }
-    details{
-      border:1px solid var(--line);
-      background:#fff;
-      border-radius:18px;
-      box-shadow: var(--shadow2);
-      overflow:hidden;
-    }
-    summary{
-      cursor:pointer;
-      list-style:none;
-      padding: 14px 16px;
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      font-weight:1000;
-      color:#182033;
-    }
-    summary::-webkit-details-marker{display:none}
-    .chev{
-      width:28px;height:28px;border-radius:10px;
-      border:1px solid var(--line);
-      display:grid;place-items:center;
-      color:var(--muted);
-      transition: transform .2s ease;
-      background:#fff;
-      flex:0 0 auto;
-    }
-    details[open] .chev{transform: rotate(180deg)}
-    .detailBody{padding:0 16px 16px}
-    .label{margin-top:12px;font-size:12px;font-weight:1000;color:var(--muted)}
-    .monoBox{
-      margin-top:8px;
-      font-family:var(--mono);
-      font-size:12px;
-      border:1px solid var(--line);
-      background:#fbfcff;
-      border-radius:14px;
-      padding:10px;
-      word-break:break-all;
-    }
-    .rowBtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    .miniBtn{
-      border:1px solid var(--line);
-      background:#fff;
-      border-radius:14px;
-      padding:10px 12px;
-      font-weight:1000;
-      cursor:pointer;
-      transition: border-color .2s ease, transform .06s ease;
-      text-decoration:none;
-      display:inline-flex;align-items:center;justify-content:center;
-      color:var(--text);
-    }
-    .miniBtn:hover{border-color:#dbe2f2}
-    .miniBtn:active{transform:translateY(1px)}
-    .formRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    .input{
-      flex:1 1 260px; min-width: 220px;
-      padding:12px 12px;border-radius:14px;
-      border:1px solid var(--line);
-      outline:none;font-size:14px;background:#fff;
-    }
-    .input:focus{border-color: rgba(36,87,255,.35); box-shadow: 0 0 0 4px rgba(36,87,255,.10)}
-    .status{
-      margin-top:10px;border:1px solid var(--line);
-      border-radius:16px;padding:12px;font-weight:1000;background:#fff;
-    }
-    .muted{color:var(--muted);font-size:12px;margin-top:6px}
-    .ok{color: var(--brand2)}
-    .bad{color: var(--bad)}
-    .warn{color: var(--warn)}
-
-    footer{
-      margin-top:14px;
-      padding:10px 4px;
-      display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
-      color:var(--muted);font-size:12px;
-    }
-
-    /* Sticky CTA */
-    .sticky{
-      position:fixed;left:0;right:0;bottom:0;
-      padding:10px 12px calc(10px + var(--safeB));
-      background: rgba(255,255,255,.92);
-      border-top:1px solid var(--line);
-      backdrop-filter: blur(12px);
-      z-index: 50;
-    }
-    .stickyIn{
-      max-width:1080px;margin:0 auto;
-      display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
-    }
-    .sLeft{display:flex;flex-direction:column;gap:2px;min-width:220px}
-    .sLeft b{font-size:13px;letter-spacing:.2px}
-    .sLeft small{font-size:12px;color:var(--muted)}
-    .sRight{display:flex;gap:10px;flex-wrap:wrap}
-    .btnSmall{padding:12px 14px;border-radius:16px;font-size:14px;min-height:48px}
-
-    @media (max-width: 520px){
-      .sLeft{min-width:0;width:100%}
-      .sRight{width:100%}
-      .btnSmall{width:100%;flex:1 1 auto}
-      .btnSoft.btnSmall{display:none} /* mobile: nur BUY */
-      .nav .chip:last-child{display:none}
-      .wrap{padding-bottom: calc(150px + var(--safeB));}
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      .btnPrimary:before{animation:none}
-      .pulse{animation:none}
-    }
-    .hero{
-  margin-top:30px;
-  text-align:center;
-  padding:60px 20px;
+:root{
+--bg:#05070f;
+--bg2:#02040b;
+--text:#eef2ff;
+--muted:#94a3b8;
+--brand:#2563eb;
+--line:rgba(255,255,255,.06);
+--font:ui-sans-serif,system-ui;
 }
 
-.momentum{
-  font-size:18px;
-  font-weight:900;
-  color:#16a34a;
-  margin-bottom:20px;
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:var(--font);
+color:var(--text);
+
+background:
+radial-gradient(1200px 700px at 10% -10%,rgba(37,99,235,.35),transparent 60%),
+radial-gradient(1200px 700px at 90% -10%,rgba(34,197,94,.25),transparent 60%),
+linear-gradient(180deg,var(--bg),var(--bg2));
+}
+
+.wrap{
+max-width:1100px;
+margin:auto;
+padding:24px 18px 140px;
+}
+
+/* topbar */
+
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+background:rgba(10,12,25,.8);
+border:1px solid var(--line);
+border-radius:16px;
+
+padding:14px 16px;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo{
+width:42px;
+height:42px;
+border-radius:10px;
+overflow:hidden;
+}
+
+.logo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.btxt small{
+font-size:12px;
+color:var(--muted);
+}
+
+.nav{display:flex;gap:10px}
+
+.chip{
+padding:8px 14px;
+border-radius:999px;
+border:1px solid var(--line);
+font-size:12px;
+color:var(--muted);
+text-decoration:none;
+}
+
+/* hero */
+
+.hero{
+margin-top:40px;
+padding:70px 40px;
+border-radius:28px;
+background:linear-gradient(180deg,rgba(15,20,40,.9),rgba(8,10,25,.95));
+border:1px solid var(--line);
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+@media(max-width:900px){
+.hero{grid-template-columns:1fr}
 }
 
 .hero h1{
-  font-size:clamp(40px,6vw,72px);
-  margin:0 0 30px;
-  letter-spacing:-1px;
+font-size:clamp(48px,6vw,76px);
+font-weight:900;
+
+background:linear-gradient(90deg,#fff,#60a5fa);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+margin:10px 0 20px;
 }
+
+.momentum{
+font-weight:900;
+color:#22c55e;
+margin-bottom:16px;
+}
+
+.heroImg img{
+width:100%;
+border-radius:20px;
+box-shadow:0 40px 100px rgba(0,0,0,.6);
+}
+
+/* scarcity */
+
+.scarcity{
+display:inline-flex;
+gap:10px;
+align-items:center;
+
+padding:10px 16px;
+
+border-radius:999px;
+
+background:rgba(245,158,11,.12);
+border:1px solid rgba(245,158,11,.3);
+
+font-weight:800;
+font-size:13px;
+color:#fbbf24;
+}
+
+/* CTA */
 
 .cta{
-  display:inline-block;
-  padding:18px 32px;
-  font-size:18px;
-  font-weight:900;
-  background:#2457ff;
-  color:#fff;
-  border-radius:20px;
-  text-decoration:none;
-  box-shadow:0 20px 60px rgba(36,87,255,.3);
-  transition:.2s ease;
-}
+display:inline-block;
+margin-top:20px;
 
-.cta:hover{
-  transform:translateY(-2px);
-  box-shadow:0 25px 70px rgba(36,87,255,.4);
+padding:18px 36px;
+
+font-size:20px;
+font-weight:900;
+
+border-radius:20px;
+
+background:linear-gradient(135deg,#2563eb,#1d4ed8);
+
+color:white;
+text-decoration:none;
+
+box-shadow:
+0 25px 70px rgba(37,99,235,.45),
+0 0 40px rgba(37,99,235,.35);
 }
 
 .micro{
-  margin-top:18px;
-  font-size:13px;
-  color:#64748b;
+margin-top:16px;
+font-size:13px;
+color:var(--muted);
 }
-    .ctaBlock{
-  display:flex;
-  flex-direction:column;   /* ← stapelt vertikal */
-  align-items:center;
-  gap:14px;
+
+/* footer */
+
+footer{
+margin-top:30px;
+display:flex;
+justify-content:space-between;
+font-size:12px;
+color:var(--muted);
 }
-    #scarcity{
-  margin-bottom:10px;
+
+/* sticky buy */
+
+.sticky{
+position:fixed;
+bottom:0;
+left:0;
+right:0;
+
+background:rgba(10,12,25,.9);
+border-top:1px solid var(--line);
+
+padding:14px 18px;
 }
-  </style>
+
+.stickyIn{
+max-width:1100px;
+margin:auto;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.btnPrimary{
+padding:12px 20px;
+border-radius:14px;
+
+font-weight:800;
+
+background:linear-gradient(135deg,#2563eb,#1d4ed8);
+color:white;
+
+text-decoration:none;
+}
+
+</style>
+
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="topbar">
-      <div class="brand">
-        <div class="logo">
-          <img src="ligone_logo.jpg" alt="LIGONE Logo">
-        </div>
-        <div class="btxt">
-          <b>LIG1</b>
-          <small>1 Klick → Uniswap (Polygon)</small>
-        </div>
-      </div>
-      <div class="nav">
-        <a class="chip" href="https://t.me/+yA0uIxJ-oUA0Njdk" target="_blank" rel="noopener">Telegram</a>
-        <a class="chip" href="mailto:project@ligone.ch">E-Mail</a>
-        <a class="chip" href="#" id="openTransparency">Transparenz</a>
-      </div>
-    </div>
 
-    <section class="hero">
-  <div class="heroInner">
-    <div class="momentum" id="liveMomentum">
-  Lade Performance...
+<div class="wrap">
+
+<div class="topbar">
+
+<div class="brand">
+<div class="logo">
+<img src="ligone_logo.jpg" alt="LIGONE Logo">
 </div>
-    <h1>Einfach ab 5$ testen und halten</h1>
-<div class="ctaBlock">
 
-  <div id="scarcity" class="scarcity"></div>
+<div class="btxt">
+<b>LIG1</b>
+<small>1 Klick → Uniswap (Polygon)</small>
+</div>
+</div>
 
-  <a class="cta"
-     href="https://app.uniswap.org/swap?chain=polygon&outputCurrency=0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d"
-     target="_blank">
-     Jetzt dabei sein
-  </a>
+<div class="nav">
+<a class="chip" href="https://t.me/+yA0uIxJ-oUA0Njdk" target="_blank">Telegram</a>
+<a class="chip" href="mailto:project@ligone.ch">E-Mail</a>
+</div>
 
 </div>
 
-    <div class="micro">
-      Uniswap • Polygon • On-Chain verifizierbar
-    </div>
-  </div>
+<section class="hero">
+
+<div>
+
+<div class="momentum" id="liveMomentum">
+Lade Performance...
+</div>
+
+<h1>LIG1 Token auf Polygon kaufen</h1>
+
+<div class="scarcity" id="scarcity"></div>
+
+<a class="cta"
+href="https://app.uniswap.org/swap?chain=polygon&outputCurrency=0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d"
+target="_blank">
+Jetzt dabei sein
+</a>
+
+<div class="micro">
+Uniswap • Polygon • On-Chain verifizierbar
+</div>
+
+</div>
+
+<div class="heroImg">
+<img src="lig1-hero.jpg" alt="LIG1 Token System Illustration">
+</div>
+
 </section>
-    <footer>
-      <div>© <span id="year"></span> LIGONE</div>
-      <div>Keine Anlageberatung • Öffentliche Blockchain-Daten</div>
-    </footer>
-  </div>
 
-  <div class="sticky" role="region" aria-label="Kaufen">
-    <div class="stickyIn">
-      <div class="sLeft">
-        <b>Jetzt dabei sein</b>
-        <small>1 Klick → Uniswap (Polygon)</small>
-      </div>
-      <div class="sRight">
-        <a class="btn btnPrimary btnSmall" id="buySticky" target="_blank" rel="noopener">LIG1 kaufen</a>
-        <button class="btn btnSoft btnSmall" type="button" onclick="openUrl('https://t.me/+yA0uIxJ-oUA0Njdk')">Community</button>
-      </div>
-    </div>
-  </div>
+<footer>
 
-  <script>
-    /* ========= CONFIG =========
-       Plätze = Early-Member-Programm (z. B. Vorteile/Jackpot-Qualifikation).
-       Stelle diese Werte real ein – dann ist die Aussage korrekt und stark. */
-    const EARLY_SLOTS_TOTAL = 500;     // Gesamtplätze im Early-Member-Programm
-    const EARLY_SLOTS_TAKEN = 469;     // bereits vergeben (real setzen)
+<div>© <span id="year"></span> LIGONE</div>
 
-    const CONTRACT = "0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d";
-    const POOL_ADDRESS = "0xd6791279B261c36c1E079ecE8Cb05079cc5e7e38";
+<div>Keine Anlageberatung • Öffentliche Blockchain-Daten</div>
 
-    const RPCS = [
-      "https://polygon-rpc.com",
-      "https://rpc.ankr.com/polygon",
-      "https://polygon.llamarpc.com",
-      "https://polygon-bor.publicnode.com"
-    ];
+</footer>
 
-    function uniswapUrl(){ return "https://app.uniswap.org/swap?chain=polygon&outputCurrency=" + CONTRACT; }
-    function tokenScanUrl(){ return "https://polygonscan.com/token/" + CONTRACT; }
-    function poolScanUrl(){ return "https://polygonscan.com/address/" + POOL_ADDRESS; }
-    function openUrl(url){ window.open(url, "_blank", "noopener"); }
+</div>
 
-    /* init */
-    document.getElementById("year").textContent = new Date().getFullYear();
-    const contractEl = document.getElementById("contractTxt");
-if (contractEl) contractEl.textContent = CONTRACT;
+<div class="sticky">
 
-const poolEl = document.getElementById("poolTxt");
-if (poolEl) poolEl.textContent = POOL_ADDRESS;
+<div class="stickyIn">
 
-const buyNowEl = document.getElementById("buyNow");
-if (buyNowEl) buyNowEl.href = uniswapUrl();
+<div>
+<b>Jetzt LIG1 kaufen</b>
+</div>
 
-const buyStickyEl = document.getElementById("buySticky");
-if (buyStickyEl) buyStickyEl.href = uniswapUrl();
+<a class="btnPrimary"
+href="https://app.uniswap.org/swap?chain=polygon&outputCurrency=0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d"
+target="_blank">
 
-    // Scarcity text (truthful)
-    const left = Math.max(0, EARLY_SLOTS_TOTAL - EARLY_SLOTS_TAKEN);
-    const scar = document.getElementById("scarcity");
-if (scar) {
-  scar.innerHTML = `<span class="pulse"></span>
-  <span><b>Nur noch ${left} Plätze frei</b> – Early-Member-Programm</span>`;
-}
+LIG1 kaufen
 
-    // Transparenz chip opens details smoothly
-    document.getElementById("openTransparency").addEventListener("click", (e)=>{
-      e.preventDefault();
-      const d = document.getElementById("transparency");
-      d.open = true;
-      d.scrollIntoView({behavior:"smooth", block:"start"});
-    });
+</a>
 
-    async function copyText(txt){
-      try{ await navigator.clipboard.writeText(txt); }
-      catch{
-        const ta=document.createElement("textarea");
-        ta.value=txt; document.body.appendChild(ta);
-        ta.select(); document.execCommand("copy");
-        document.body.removeChild(ta);
-      }
-    }
+</div>
 
-    /* Optional wallet check */
-    async function loadEthers(){
-      if (window.ethers) return;
-      await new Promise((resolve, reject) => {
-        const s = document.createElement("script");
-        s.src = "https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.min.js";
-        s.onload = resolve;
-        s.onerror = reject;
-        document.head.appendChild(s);
-      });
-    }
+</div>
 
-    async function getWorkingProvider(){
-      for (const url of RPCS){
-        try{
-          const p = new ethers.providers.JsonRpcProvider(url);
-          await Promise.race([
-            p.getBlockNumber(),
-            new Promise((_,rej)=>setTimeout(()=>rej(new Error("timeout")), 4000))
-          ]);
-          return { provider:p, rpc:url };
-        }catch(e){}
-      }
-      throw new Error("No RPC");
-    }
+<script>
 
-    function setStatus(text, cls){
-      const el=document.getElementById("status");
-      el.textContent=text;
-      el.className="status " + (cls||"");
-    }
-    function setStatus2(text){ document.getElementById("status2").textContent=text || ""; }
-    function trimNum(x){
-      const n=String(x);
-      if(!n.includes(".")) return n;
-      const [a,b]=n.split(".");
-      const cut=b.slice(0,6).replace(/0+$/,"");
-      return cut ? `${a}.${cut}` : a;
-    }
+document.getElementById("year").textContent=new Date().getFullYear()
 
-    async function checkWallet(){
-      const addr=(document.getElementById("wallet").value||"").trim();
-      if(!addr){ setStatus("Adresse eingeben", "warn"); setStatus2(""); return; }
+const TOTAL=500
+const TAKEN=469
 
-      await loadEthers();
-      if(!ethers.utils.isAddress(addr)){
-        setStatus("Ungültige Wallet-Adresse", "bad");
-        setStatus2("Bitte prüfen: 0x… (42 Zeichen).");
-        return;
-      }
+const left=TOTAL-TAKEN
 
-      setStatus("Prüfe Blockchain…", "warn");
-      setStatus2("RPC wird automatisch gewählt…");
+document.getElementById("scarcity").innerHTML=
+"Nur noch "+left+" Plätze frei – Early Member Programm"
 
-      try{
-        const { provider, rpc } = await getWorkingProvider();
-        const abi = [
-          {"constant":true,"inputs":[{"name":"owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"type":"function"},
-          {"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"type":"function"},
-          {"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"type":"function"}
-        ];
-        const c = new ethers.Contract(CONTRACT, abi, provider);
-        const [balRaw, decimals, symbol] = await Promise.all([
-          c.balanceOf(addr),
-          c.decimals().catch(()=>18),
-          c.symbol().catch(()=> "LIG1")
-        ]);
-        const formatted = ethers.utils.formatUnits(balRaw, decimals);
-
-        if(balRaw.gt(0)){
-          setStatus(`✅ Besitz: ${trimNum(formatted)} ${symbol}`, "ok");
-        }else{
-          setStatus(`⛔ Kein ${symbol}-Besitz`, "bad");
-        }
-        setStatus2(`RPC: ${rpc} • Rohwert: ${balRaw.toString()}`);
-      }catch(e){
-        setStatus("Netzwerkfehler (RPC)", "bad");
-        setStatus2("Polygon kann kurz überlastet sein. Bitte erneut versuchen.");
-      }
-    }
-  </script>
-  <script>
 async function loadMomentum(){
-  try{
-    const res = await fetch("https://ligone-token.github.io/ligone-web/data/performance-since-2026-01-16.json?v=" + Date.now(), { cache:"no-store" });
-    if(!res.ok) return;
 
-    const data = await res.json();
-    const lig1 = data.find(x => x.asset === "LIG1");
-    if(!lig1) return;
+try{
 
-    const change = Number(lig1.total_percent);
+const res=await fetch(
+"https://ligone-token.github.io/ligone-web/data/performance-since-2026-01-16.json?v="+Date.now()
+)
 
-    const el = document.getElementById("liveMomentum");
+const data=await res.json()
 
-    el.textContent = 
-      (change >= 0 ? "+" : "") + change.toFixed(2) + "% seit 16.01.2026";
+const lig1=data.find(x=>x.asset==="LIG1")
 
-    el.style.color = change >= 0 ? "#16a34a" : "#dc2626";
+const change=Number(lig1.total_percent)
 
-  }catch(e){
-    document.getElementById("liveMomentum").textContent =
-      "Performance derzeit nicht verfügbar";
-  }
+const el=document.getElementById("liveMomentum")
+
+el.textContent=
+(change>=0?"+":"")+change.toFixed(2)+"% seit 16.01.2026"
+
+}catch{
+
+document.getElementById("liveMomentum").textContent=
+"Performance derzeit nicht verfügbar"
+
 }
 
-loadMomentum();
+}
+
+loadMomentum()
+
 </script>
+
 </body>
 </html>
