@@ -1,260 +1,266 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>LIG1 Token – Kaufen auf Uniswap Polygon | LIGONE</title>
+<title>LIG1 Token – LIGONE System auf Polygon</title>
 
-<meta name="description" content="LIG1 Token auf Polygon kaufen. Werde Teil des LIGONE Systems. On-Chain verifizierbar. Early-Member Plätze limitiert.">
+<meta name="description"
+content="LIG1 ist ein Token auf der Polygon Blockchain und Teil des LIGONE Systems. Transparent, on-chain überprüfbar und direkt über Uniswap verfügbar.">
 
-<meta name="keywords" content="LIG1, LIGONE, LIG1 Token, Polygon Token, Uniswap Polygon Token, DeFi Polygon">
+<meta name="keywords"
+content="LIG1, LIGONE, Polygon Token, DeFi Polygon, Crypto Token">
 
 <meta name="robots" content="index,follow">
 
 <link rel="canonical" href="https://ligone-token.github.io/lig1/">
 
-<meta name="theme-color" content="#0b0f1f">
-
 <!-- OpenGraph -->
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="LIG1 – Jetzt Teil des Systems werden">
-<meta property="og:description" content="LIG1 Token kaufen auf Polygon über Uniswap.">
-<meta property="og:url" content="https://ligone-token.github.io/lig1/">
-<meta property="og:image" content="https://ligone-token.github.io/lig1/og-lig1.jpg">
+<meta property="og:title" content="LIG1 – Teil des LIGONE Systems">
+<meta property="og:description" content="Token auf Polygon. Direkt über Uniswap verfügbar.">
+<meta property="og:image" content="lig1-hero-bg.jpg">
+
+<!-- Twitter -->
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://ligone-token.github.io/lig1/og-lig1.jpg">
+<meta name="twitter:title" content="LIG1 Token">
+<meta name="twitter:description" content="Token auf Polygon – Teil des LIGONE Systems">
 
-<link rel="icon" type="image/png" href="ligone_logo_32x32.png">
-
-<!-- Structured data -->
+<!-- Schema.org -->
 
 <script type="application/ld+json">
 {
 "@context":"https://schema.org",
-"@type":"WebSite",
-"name":"LIG1",
-"url":"https://ligone-token.github.io/lig1/",
-"description":"LIG1 Token des LIGONE Systems auf Polygon."
+"@type":"Product",
+"name":"LIG1 Token",
+"description":"Token des LIGONE Systems auf der Polygon Blockchain",
+"brand":{
+"@type":"Brand",
+"name":"LIGONE"
+}
 }
 </script>
 
 <style>
 
-:root{
---bg:#05070f;
---bg2:#02040b;
---text:#eef2ff;
---muted:#94a3b8;
---brand:#2563eb;
---line:rgba(255,255,255,.06);
---font:ui-sans-serif,system-ui;
-}
-
-*{box-sizing:border-box}
-
 body{
 margin:0;
-font-family:var(--font);
-color:var(--text);
-
-background:
-radial-gradient(1200px 700px at 10% -10%,rgba(37,99,235,.35),transparent 60%),
-radial-gradient(1200px 700px at 90% -10%,rgba(34,197,94,.25),transparent 60%),
-linear-gradient(180deg,var(--bg),var(--bg2));
+font-family:Arial,Helvetica,sans-serif;
+background:#f4f7fb;
+color:#0f172a;
 }
 
-.wrap{
-max-width:1100px;
-margin:auto;
-padding:24px 18px 140px;
-}
+/* NAV */
 
-/* topbar */
+nav{
 
-.topbar{
 display:flex;
 justify-content:space-between;
 align-items:center;
 
-background:rgba(10,12,25,.8);
-border:1px solid var(--line);
-border-radius:16px;
+padding:20px 40px;
 
-padding:14px 16px;
+background:white;
+
+box-shadow:0 2px 20px rgba(0,0,0,.05);
+
 }
 
-.brand{
-display:flex;
-align-items:center;
-gap:10px;
-}
+nav a{
 
-.logo{
-width:42px;
-height:42px;
-border-radius:10px;
-overflow:hidden;
-}
+margin-left:20px;
 
-.logo img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.btxt small{
-font-size:12px;
-color:var(--muted);
-}
-
-.nav{display:flex;gap:10px}
-
-.chip{
-padding:8px 14px;
-border-radius:999px;
-border:1px solid var(--line);
-font-size:12px;
-color:var(--muted);
 text-decoration:none;
+
+font-weight:600;
+
+color:#2563eb;
+
 }
 
-/* hero */
+/* HERO */
 
 .hero{
-margin-top:40px;
-padding:70px 40px;
-border-radius:28px;
-background:linear-gradient(180deg,rgba(15,20,40,.9),rgba(8,10,25,.95));
-border:1px solid var(--line);
 
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
+height:100vh;
+
+display:flex;
 align-items:center;
-}
+justify-content:center;
 
-@media(max-width:900px){
-.hero{grid-template-columns:1fr}
+text-align:center;
+
+background:
+linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.92)),
+url("lig1-hero-bg.jpg");
+
+background-size:cover;
+background-position:center;
+
+padding:40px;
+
 }
 
 .hero h1{
-font-size:clamp(48px,6vw,76px);
-font-weight:900;
 
-background:linear-gradient(90deg,#fff,#60a5fa);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
+font-size:56px;
 
-margin:10px 0 20px;
+margin-bottom:20px;
+
 }
 
-.momentum{
-font-weight:900;
-color:#22c55e;
-margin-bottom:16px;
-}
+.hero p{
 
-.heroImg img{
-width:100%;
-border-radius:20px;
-box-shadow:0 40px 100px rgba(0,0,0,.6);
-}
+max-width:700px;
 
-/* scarcity */
+margin:auto;
 
-.scarcity{
-display:inline-flex;
-gap:10px;
-align-items:center;
+font-size:18px;
 
-padding:10px 16px;
+color:#475569;
 
-border-radius:999px;
-
-background:rgba(245,158,11,.12);
-border:1px solid rgba(245,158,11,.3);
-
-font-weight:800;
-font-size:13px;
-color:#fbbf24;
 }
 
 /* CTA */
 
 .cta{
+
 display:inline-block;
-margin-top:20px;
 
-padding:18px 36px;
-
-font-size:20px;
-font-weight:900;
-
-border-radius:20px;
-
-background:linear-gradient(135deg,#2563eb,#1d4ed8);
-
-color:white;
-text-decoration:none;
-
-box-shadow:
-0 25px 70px rgba(37,99,235,.45),
-0 0 40px rgba(37,99,235,.35);
-}
-
-.micro{
-margin-top:16px;
-font-size:13px;
-color:var(--muted);
-}
-
-/* footer */
-
-footer{
 margin-top:30px;
-display:flex;
-justify-content:space-between;
-font-size:12px;
-color:var(--muted);
-}
 
-/* sticky buy */
+padding:16px 36px;
 
-.sticky{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
+background:#2563eb;
 
-background:rgba(10,12,25,.9);
-border-top:1px solid var(--line);
-
-padding:14px 18px;
-}
-
-.stickyIn{
-max-width:1100px;
-margin:auto;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.btnPrimary{
-padding:12px 20px;
-border-radius:14px;
-
-font-weight:800;
-
-background:linear-gradient(135deg,#2563eb,#1d4ed8);
 color:white;
 
+border-radius:12px;
+
+font-weight:bold;
+
+font-size:18px;
+
 text-decoration:none;
+
+box-shadow:0 10px 30px rgba(37,99,235,.3);
+
+}
+
+/* SECTION */
+
+.section{
+
+max-width:1100px;
+
+margin:120px auto;
+
+padding:0 20px;
+
+text-align:center;
+
+}
+
+.section h2{
+
+font-size:36px;
+
+margin-bottom:20px;
+
+}
+
+.section p{
+
+color:#475569;
+
+line-height:1.6;
+
+}
+
+/* GRID */
+
+.grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:30px;
+
+margin-top:40px;
+
+}
+
+.card{
+
+background:white;
+
+padding:30px;
+
+border-radius:16px;
+
+box-shadow:0 10px 40px rgba(0,0,0,.05);
+
+}
+
+/* INFO */
+
+.info{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:60px;
+
+align-items:center;
+
+margin-top:60px;
+
+}
+
+.info img{
+
+width:100%;
+
+max-width:420px;
+
+}
+
+/* CONTRACT */
+
+.contract{
+
+background:white;
+
+padding:30px;
+
+border-radius:16px;
+
+max-width:600px;
+
+margin:40px auto;
+
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:40px;
+}
+
+.info{
+grid-template-columns:1fr;
+}
+
 }
 
 </style>
@@ -263,131 +269,212 @@ text-decoration:none;
 
 <body>
 
-<div class="wrap">
+<!-- NAVIGATION -->
 
-<div class="topbar">
+<nav>
 
-<div class="brand">
-<div class="logo">
-<img src="ligone_logo.jpg" alt="LIGONE Logo">
-</div>
+<div><b>LIG1</b></div>
 
-<div class="btxt">
-<b>LIG1</b>
-<small>1 Klick → Uniswap (Polygon)</small>
-</div>
-</div>
+<div>
 
-<div class="nav">
-<a class="chip" href="https://t.me/+yA0uIxJ-oUA0Njdk" target="_blank">Telegram</a>
-<a class="chip" href="mailto:project@ligone.ch">E-Mail</a>
-</div>
+<a href="https://app.uniswap.org/#/swap?outputCurrency=0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d&chain=polygon" target="_blank">
+Uniswap
+</a>
+
+<a href="https://polygonscan.com/token/0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d" target="_blank">
+PolygonScan
+</a>
 
 </div>
+
+</nav>
+
+<!-- HERO -->
 
 <section class="hero">
 
 <div>
 
-<div class="momentum" id="liveMomentum">
-Lade Performance...
-</div>
+<h1>Werde Teil des LIG1 Systems</h1>
 
-<h1>LIG1 Token auf Polygon kaufen</h1>
+<p>
 
-<div class="scarcity" id="scarcity"></div>
+LIG1 ist ein Token auf der Polygon Blockchain und Teil des
+LIGONE Systems. Alle Transaktionen sind transparent
+und öffentlich überprüfbar.
+
+</p>
 
 <a class="cta"
-href="https://app.uniswap.org/swap?chain=polygon&outputCurrency=0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d"
+href="https://app.uniswap.org/#/swap?outputCurrency=0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d&chain=polygon"
 target="_blank">
-Jetzt dabei sein
+
+Jetzt LIG1 kaufen
+
 </a>
 
-<div class="micro">
-Uniswap • Polygon • On-Chain verifizierbar
-</div>
-
-</div>
-
-<div class="heroImg">
-<img src="lig1-hero.jpg" alt="LIG1 Token System Illustration">
 </div>
 
 </section>
 
-<footer>
+<!-- WAS IST LIG1 -->
 
-<div>© <span id="year"></span> LIGONE</div>
+<section class="section">
 
-<div>Keine Anlageberatung • Öffentliche Blockchain-Daten</div>
+<h2>Was ist LIG1?</h2>
 
-</footer>
-
-</div>
-
-<div class="sticky">
-
-<div class="stickyIn">
+<div class="info">
 
 <div>
-<b>Jetzt LIG1 kaufen</b>
+
+<p>
+
+LIG1 ist ein digitaler Token auf der Polygon Blockchain
+und Teil des LIGONE Systems.
+
+Die Infrastruktur ermöglicht schnelle,
+kostengünstige und transparente Transaktionen.
+
+</p>
+
+<p>
+
+Alle Token-Transfers können öffentlich
+auf der Blockchain eingesehen werden.
+
+</p>
+
 </div>
 
-<a class="btnPrimary"
-href="https://app.uniswap.org/swap?chain=polygon&outputCurrency=0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d"
+<div>
+
+<img src="lig1-phone.png" alt="LIG1 auf Smartphone">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- VORTEILE -->
+
+<section class="section">
+
+<h2>Warum LIG1?</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Polygon Infrastruktur</h3>
+<p>Schnelle Transaktionen und niedrige Gebühren.</p>
+</div>
+
+<div class="card">
+<h3>On-Chain Transparenz</h3>
+<p>Alle Daten sind öffentlich überprüfbar.</p>
+</div>
+
+<div class="card">
+<h3>Direkter Zugang</h3>
+<p>Token direkt über Uniswap verfügbar.</p>
+</div>
+
+<div class="card">
+<h3>Frühe Teilnahme</h3>
+<p>Frühe Teilnehmer profitieren am meisten.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- SYSTEM -->
+
+<section class="section">
+
+<h2>Das LIGONE System</h2>
+
+<div class="info">
+
+<div>
+
+<img src="lig1-system.png" alt="LIGONE System">
+
+</div>
+
+<div>
+
+<p>
+
+Das LIGONE System verbindet Wallets,
+Token und Blockchain Infrastruktur.
+
+Durch die Polygon Blockchain bleiben
+Transaktionen schnell und kostengünstig.
+
+</p>
+
+<p>
+
+Alle Aktivitäten sind transparent
+und jederzeit überprüfbar.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTRACT -->
+
+<section class="section">
+
+<h2>Token Informationen</h2>
+
+<div class="contract">
+
+<p><b>Contract Adresse</b></p>
+
+<p>
+0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d
+</p>
+
+<p>
+
+<a href="https://polygonscan.com/token/0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d" target="_blank">
+Auf PolygonScan ansehen
+</a>
+
+</p>
+
+</div>
+
+</section>
+
+<!-- FINAL CTA -->
+
+<section class="section">
+
+<h2>Jetzt Teil des Systems werden</h2>
+
+<p>
+
+Der Einstieg ist einfach: Wallet verbinden
+und LIG1 über Uniswap erwerben.
+
+</p>
+
+<a class="cta"
+href="https://app.uniswap.org/#/swap?outputCurrency=0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d&chain=polygon"
 target="_blank">
 
-LIG1 kaufen
+Jetzt LIG1 sichern
 
 </a>
 
-</div>
-
-</div>
-
-<script>
-
-document.getElementById("year").textContent=new Date().getFullYear()
-
-const TOTAL=500
-const TAKEN=469
-
-const left=TOTAL-TAKEN
-
-document.getElementById("scarcity").innerHTML=
-"Nur noch "+left+" Plätze frei – Early Member Programm"
-
-async function loadMomentum(){
-
-try{
-
-const res=await fetch(
-"https://ligone-token.github.io/ligone-web/data/performance-since-2026-01-16.json?v="+Date.now()
-)
-
-const data=await res.json()
-
-const lig1=data.find(x=>x.asset==="LIG1")
-
-const change=Number(lig1.total_percent)
-
-const el=document.getElementById("liveMomentum")
-
-el.textContent=
-(change>=0?"+":"")+change.toFixed(2)+"% seit 16.01.2026"
-
-}catch{
-
-document.getElementById("liveMomentum").textContent=
-"Performance derzeit nicht verfügbar"
-
-}
-
-}
-
-loadMomentum()
-
-</script>
+</section>
 
 </body>
 </html>
