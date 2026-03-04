@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
 
 <meta charset="UTF-8">
@@ -8,10 +7,10 @@
 
 <meta name="google-site-verification" content="YRRh6jvBiPgsqxbRXpFUyRfganm4lP1V1yTXE7MvlhQ">
 
-<title>LIG1 – Token des LIGONE Systems</title>
+<title>LIG1 – LIGONE System</title>
 
 <meta name="description"
-content="LIG1 ist ein Token auf der Polygon Blockchain und Teil des LIGONE Systems. Transparent, on-chain überprüfbar und über Uniswap handelbar.">
+content="LIG1 ist ein Token auf der Polygon Blockchain und Teil des LIGONE Systems. Transparent, on-chain überprüfbar und direkt über Uniswap verfügbar.">
 
 <meta name="robots" content="index,follow">
 
@@ -19,9 +18,9 @@ content="LIG1 ist ein Token auf der Polygon Blockchain und Teil des LIGONE Syste
 href="https://ligone-token.github.io/lig1/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="LIG1 – Teil des LIGONE Systems">
+<meta property="og:title" content="LIG1 – LIGONE System">
 <meta property="og:description"
-content="Token auf Polygon. Transparent und on-chain überprüfbar.">
+content="Token auf der Polygon Blockchain. Transparent und öffentlich überprüfbar.">
 <meta property="og:image"
 content="https://ligone-token.github.io/lig1/og-lig1.jpg">
 
@@ -36,12 +35,12 @@ content="https://ligone-token.github.io/lig1/og-lig1.jpg">
 body{
 margin:0;
 font-family:Inter,Arial;
-background:#f6f8fc;
+background:#f8fafc;
 color:#0f172a;
 line-height:1.6;
 }
 
-/* NAV */
+/* NAVBAR */
 
 nav{
 display:flex;
@@ -49,7 +48,7 @@ justify-content:space-between;
 align-items:center;
 padding:20px 60px;
 background:white;
-border-bottom:1px solid #e7ebf3;
+border-bottom:1px solid #e2e8f0;
 }
 
 .brand{
@@ -61,8 +60,7 @@ font-weight:800;
 
 .brand img{
 width:42px;
-height:42px;
-border-radius:12px;
+border-radius:10px;
 }
 
 nav a{
@@ -72,7 +70,7 @@ font-weight:600;
 color:#0f172a;
 }
 
-/* LAYOUT */
+/* CONTAINER */
 
 .container{
 max-width:1200px;
@@ -89,6 +87,21 @@ gap:80px;
 align-items:center;
 }
 
+.performance{
+
+display:inline-block;
+padding:8px 14px;
+
+background:#eef2ff;
+
+border-radius:8px;
+
+font-weight:700;
+
+margin-bottom:20px;
+
+}
+
 .hero h1{
 font-size:64px;
 line-height:1.05;
@@ -101,135 +114,226 @@ color:#475569;
 margin-bottom:30px;
 }
 
+/* PHONE IMAGE */
+
 .hero img{
-width:520px;
-filter:drop-shadow(0 60px 80px rgba(0,0,0,.25));
+width:650px;
+max-width:100%;
+filter:drop-shadow(0 60px 100px rgba(0,0,0,.25));
+mix-blend-mode:multiply;
 background:transparent;
 }
 
 /* BUTTON */
 
 .cta{
+
 display:inline-block;
+
 padding:16px 36px;
+
 background:#2563eb;
+
 color:white;
+
 border-radius:12px;
+
 text-decoration:none;
+
 font-weight:700;
+
 }
 
 /* TRUST */
 
 .trust{
+
 margin-top:100px;
+
 display:grid;
+
 grid-template-columns:repeat(3,1fr);
+
 gap:30px;
+
 }
 
 .trustbox{
+
 background:white;
+
 padding:30px;
+
 border-radius:14px;
+
 box-shadow:0 10px 40px rgba(0,0,0,.05);
+
+}
+
+/* EXPLANATION */
+
+.explain{
+
+margin-top:120px;
+
+max-width:900px;
+
+font-size:18px;
+
 }
 
 /* SYSTEM */
 
 .section{
+
 margin-top:140px;
+
 display:grid;
+
 grid-template-columns:1fr 1fr;
+
 gap:80px;
+
 align-items:center;
+
 }
 
 .section img{
-width:100%;
-max-width:420px;
+width:420px;
 }
 
 /* FEATURES */
 
 .features{
+
 margin-top:120px;
+
 display:grid;
+
 grid-template-columns:repeat(3,1fr);
+
 gap:30px;
+
 }
 
 .card{
+
 background:white;
+
 padding:30px;
+
 border-radius:14px;
+
 box-shadow:0 10px 40px rgba(0,0,0,.05);
+
 }
 
 /* TOKEN */
 
 .token{
+
 margin-top:120px;
+
 background:white;
+
 padding:60px;
+
 border-radius:14px;
+
 box-shadow:0 10px 40px rgba(0,0,0,.05);
+
 }
 
 .tokenGrid{
+
 display:grid;
+
 grid-template-columns:repeat(2,1fr);
+
 gap:30px;
+
 }
 
 /* FAQ */
 
 .faq{
+
 margin-top:120px;
+
 max-width:900px;
+
 }
 
-/* CTA BLOCK */
+/* CTA */
 
 .ctaBlock{
+
 margin-top:140px;
+
 text-align:center;
+
 background:white;
+
 padding:80px;
+
 border-radius:14px;
+
 box-shadow:0 10px 40px rgba(0,0,0,.05);
+
 }
 
 /* FOOTER */
 
 footer{
+
 margin-top:140px;
+
 padding:40px;
+
 background:#0f172a;
+
 color:white;
+
 text-align:center;
+
 }
 
 /* STICKY BUY */
 
 .stickyBuy{
+
 position:fixed;
+
 bottom:0;
+
 left:0;
+
 right:0;
+
 background:white;
+
 border-top:1px solid #e5e7eb;
+
 padding:16px;
+
 text-align:center;
+
 }
 
 .stickyBuy a{
+
 background:#2563eb;
+
 color:white;
+
 padding:14px 28px;
+
 border-radius:10px;
+
 text-decoration:none;
+
 font-weight:700;
+
 }
 
 /* MOBILE */
@@ -238,10 +342,6 @@ font-weight:700;
 
 .hero{
 grid-template-columns:1fr;
-}
-
-.hero img{
-width:100%;
 }
 
 .section{
@@ -257,7 +357,11 @@ grid-template-columns:1fr;
 }
 
 .hero h1{
-font-size:42px;
+font-size:40px;
+}
+
+.hero img{
+width:100%;
 }
 
 }
@@ -294,13 +398,17 @@ font-size:42px;
 
 <div>
 
+<div id="performance" class="performance">
+Loading performance...
+</div>
+
 <h1>LIG1 – Token des LIGONE Systems</h1>
 
 <p>
 
 LIG1 ist ein Token auf der Polygon Blockchain und Teil
 des LIGONE Systems. Alle Transaktionen sind öffentlich
-auf der Blockchain überprüfbar und transparent nachvollziehbar.
+auf der Blockchain überprüfbar.
 
 </p>
 
@@ -340,8 +448,8 @@ für schnelle Transaktionen und niedrige Gebühren.
 <h3>On-Chain Transparenz</h3>
 
 <p>
-Alle Token-Transfers sind öffentlich
-auf der Blockchain überprüfbar.
+Alle Transfers sind öffentlich auf der Blockchain
+einsehbar.
 </p>
 
 </div>
@@ -351,11 +459,28 @@ auf der Blockchain überprüfbar.
 <h3>Dezentrale Infrastruktur</h3>
 
 <p>
-Der Token ist über dezentrale Börsen
-direkt handelbar.
+Der Token ist direkt über dezentrale Börsen
+handelbar.
 </p>
 
 </div>
+
+</section>
+
+<section class="explain">
+
+<h2>Was ist LIG1?</h2>
+
+<p>
+
+LIG1 ist ein digitaler Token auf der Polygon Blockchain
+und Teil des LIGONE Systems.
+
+Das Ziel ist eine transparente Infrastruktur,
+in der Transaktionen öffentlich überprüfbar
+und dauerhaft auf der Blockchain gespeichert sind.
+
+</p>
 
 </section>
 
@@ -377,45 +502,8 @@ Das LIGONE System kombiniert Blockchain-Technologie
 mit einer offenen digitalen Infrastruktur.
 
 Alle Transaktionen werden auf der Polygon Blockchain
-gespeichert und können öffentlich überprüft werden.
+gespeichert und können jederzeit überprüft werden.
 
-</p>
-
-</div>
-
-</section>
-
-<section class="features">
-
-<div class="card">
-
-<h3>Transparente Technologie</h3>
-
-<p>
-Blockchain ermöglicht offene und
-nachvollziehbare Transaktionen.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Schnelle Infrastruktur</h3>
-
-<p>
-Polygon sorgt für schnelle und günstige
-Transaktionen.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>Offenes System</h3>
-
-<p>
-Das Projekt basiert auf
-dezentraler Blockchain-Technologie.
 </p>
 
 </div>
@@ -461,22 +549,10 @@ PolygonScan
 <h2>Häufig gestellte Fragen</h2>
 
 <h4>Was ist LIG1?</h4>
-<p>
-LIG1 ist ein Token auf der Polygon Blockchain
-und Teil des LIGONE Systems.
-</p>
+<p>LIG1 ist ein Token auf der Polygon Blockchain.</p>
 
 <h4>Wo kann man LIG1 kaufen?</h4>
-<p>
-Der Token ist über Uniswap auf der
-Polygon Blockchain handelbar.
-</p>
-
-<h4>Ist das System transparent?</h4>
-<p>
-Ja. Alle Transaktionen sind öffentlich
-auf der Blockchain einsehbar.
-</p>
+<p>Direkt über Uniswap auf der Polygon Blockchain.</p>
 
 </section>
 
@@ -485,7 +561,7 @@ auf der Blockchain einsehbar.
 <h2>Jetzt Teil des Systems werden</h2>
 
 <p>
-LIG1 kann direkt über Uniswap erworben werden.
+LIG1 ist direkt über Uniswap handelbar.
 </p>
 
 <a class="cta"
@@ -502,7 +578,6 @@ LIG1 kaufen
 <footer>
 
 <p>© LIGONE System</p>
-<p>Polygon Blockchain • On-Chain Transparenz</p>
 
 </footer>
 
