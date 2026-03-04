@@ -1,110 +1,126 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
 
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>LIG1 – Polygon Token handelbar über Uniswap</title>
+<title>LIG1 – Polygon Token auf Uniswap</title>
 
-<meta name="description" content="LIG1 ist ein transparenter Token auf der Polygon Blockchain. Dezentral handelbar über Uniswap und vollständig on-chain verifizierbar.">
+<meta name="description" content="LIG1 ist ein transparenter Token auf der Polygon Blockchain. Handelbar über Uniswap und vollständig on-chain verifizierbar.">
 
 <meta name="keywords" content="Polygon Token, DeFi Token Polygon, LIG1 Token, Uniswap Token">
 
 <link rel="canonical" href="https://ligone-token.github.io/lig1/">
 
-<meta property="og:type" content="website">
 <meta property="og:title" content="LIG1 – Polygon Token">
-<meta property="og:description" content="Transparenter Token auf der Polygon Blockchain.">
-<meta property="og:image" content="https://ligone-token.github.io/lig1/og-lig1.jpg">
-<meta property="og:url" content="https://ligone-token.github.io/lig1/">
-
-<meta name="twitter:card" content="summary_large_image">
-
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"FinancialProduct",
-"name":"LIG1 Token",
-"description":"Token auf der Polygon Blockchain handelbar über Uniswap",
-"url":"https://ligone-token.github.io/lig1/"
-}
-</script>
+<meta property="og:description" content="Transparenter Token auf der Polygon Blockchain">
+<meta property="og:image" content="og-lig1.jpg">
+<meta property="og:type" content="website">
 
 <style>
 
 body{
 margin:0;
 font-family:system-ui,-apple-system,Segoe UI,Roboto;
-background:#0f172a;
-color:white;
+color:#0b1220;
+background:#ffffff;
 line-height:1.7;
 }
 
 .container{
-max-width:900px;
+max-width:1100px;
 margin:auto;
-padding:40px 20px;
+padding:60px 20px;
 }
 
 .hero{
-text-align:center;
-padding:90px 20px 60px;
-}
 
-.hero img{
-max-width:240px;
-margin-bottom:30px;
+height:90vh;
+
+background:
+linear-gradient(rgba(255,255,255,0.85),rgba(255,255,255,0.95)),
+url("hero-bg.webp");
+
+background-size:cover;
+background-position:center;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-align:center;
 }
 
 .hero h1{
-font-size:clamp(44px,6vw,72px);
+font-size:clamp(48px,7vw,80px);
 margin-bottom:20px;
 }
 
 .hero p{
 font-size:20px;
-color:#cbd5e1;
+color:#475569;
 }
 
 .cta{
+
 display:inline-block;
 margin-top:30px;
-padding:18px 36px;
-background:#2563eb;
-border-radius:14px;
+
+padding:18px 40px;
+
+background:#2457ff;
+
 color:white;
+
 font-weight:700;
+
+border-radius:16px;
+
 text-decoration:none;
+
+font-size:18px;
+
+box-shadow:0 20px 50px rgba(36,87,255,.25);
+
 }
 
 .trust{
-margin-top:30px;
+margin-top:25px;
 font-size:14px;
-color:#94a3b8;
+color:#64748b;
 }
 
 section{
-padding:60px 0;
-border-top:1px solid #1e293b;
+padding:80px 0;
 }
 
 h2{
-font-size:32px;
+font-size:36px;
 margin-bottom:20px;
 }
 
 .cards{
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:20px;
-margin-top:30px;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+margin-top:40px;
+
 }
 
 .card{
-background:#1e293b;
-padding:25px;
-border-radius:14px;
+
+background:#f5f7fb;
+
+padding:30px;
+
+border-radius:16px;
+
 }
 
 .steps li{
@@ -112,34 +128,43 @@ margin-bottom:10px;
 }
 
 .tokenbox{
-background:#1e293b;
-padding:25px;
-border-radius:14px;
+
+background:#f5f7fb;
+
+padding:30px;
+
+border-radius:16px;
+
 word-break:break-all;
+
 }
 
 footer{
+
 text-align:center;
-padding:40px 20px;
-font-size:14px;
-color:#94a3b8;
-border-top:1px solid #1e293b;
+
+padding:40px;
+
+color:#64748b;
+
+border-top:1px solid #e2e8f0;
+
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="hero">
+<section class="hero">
 
-<img src="lig1-logo.png" alt="LIG1 Polygon Token Logo">
+<div>
 
 <h1>LIG1</h1>
 
 <p>
-Ein transparenter Token auf der Polygon Blockchain.
-Dezentral handelbar über Uniswap.
+Ein transparenter Token auf der Polygon Blockchain
 </p>
 
 <a class="cta"
@@ -154,6 +179,8 @@ Polygon • Uniswap • On-Chain verifizierbar
 
 </div>
 
+</section>
+
 <div class="container">
 
 <section>
@@ -166,11 +193,6 @@ dezentral über Uniswap und alle Transaktionen können öffentlich
 auf der Blockchain überprüft werden.
 </p>
 
-<p>
-Das Projekt versteht sich als transparentes Experiment innerhalb
-des dezentralen Finanzsystems.
-</p>
-
 </section>
 
 <section>
@@ -180,43 +202,39 @@ des dezentralen Finanzsystems.
 <div class="cards">
 
 <div class="card">
+
 <h3>Transparenz</h3>
+
 <p>
 Alle Daten sind öffentlich auf der Blockchain sichtbar
 und können von jedem überprüft werden.
 </p>
+
 </div>
 
 <div class="card">
+
 <h3>Polygon Netzwerk</h3>
+
 <p>
-Schnelle Transaktionen und sehr niedrige Gebühren
+Schnelle Transaktionen und niedrige Gebühren
 durch die Polygon Blockchain.
 </p>
+
 </div>
 
 <div class="card">
+
 <h3>Dezentraler Handel</h3>
+
 <p>
 Der Handel erfolgt direkt über Uniswap
 ohne zentrale Plattform.
 </p>
-</div>
 
 </div>
 
-</section>
-
-<section>
-
-<h2>Warum Polygon?</h2>
-
-<p>
-Polygon ist eine der führenden Blockchains für
-DeFi Anwendungen. Sie ermöglicht schnelle
-Transaktionen, niedrige Gebühren und ist
-voll kompatibel mit Ethereum.
-</p>
+</div>
 
 </section>
 
@@ -251,7 +269,8 @@ voll kompatibel mit Ethereum.
 <p><b>DEX:</b> Uniswap</p>
 
 <p><b>Contract:</b><br>
-0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d</p>
+0x92b3677ae2ea7c19aa4fa56936d11be99bcac37d
+</p>
 
 </div>
 
@@ -262,21 +281,8 @@ voll kompatibel mit Ethereum.
 <h2>Transparenz</h2>
 
 <p>
-Alle Transaktionen und Tokenbestände sind öffentlich
-auf der Blockchain sichtbar und können unabhängig
-über Blockchain Explorer überprüft werden.
-</p>
-
-</section>
-
-<section>
-
-<h2>Community</h2>
-
-<p>
-<a href="https://t.me/+yA0uIxJ-oUA0Njdk" target="_blank">
-Telegram Community
-</a>
+Alle Transaktionen sind öffentlich auf der Blockchain sichtbar
+und können über Blockchain Explorer überprüft werden.
 </p>
 
 </section>
